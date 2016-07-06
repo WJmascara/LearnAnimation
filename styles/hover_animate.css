@@ -1,0 +1,150 @@
+/*==================== content-style ====================*/
+/* line 4, ../sass/hover_animate.scss */
+.hover-grid [class*="grid-box"] {
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* line 17, ../sass/hover_animate.scss */
+.hover-grid [class*="grid-box"] .img-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* line 28, ../sass/hover_animate.scss */
+.hover-grid [class*="grid-box"] .txt-box {
+  text-align: center;
+  color: #fff;
+}
+/* line 31, ../sass/hover_animate.scss */
+.hover-grid [class*="grid-box"] .txt-box h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+/* line 35, ../sass/hover_animate.scss */
+.hover-grid [class*="grid-box"] .txt-box p {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+/* line 41, ../sass/hover_animate.scss */
+.hover-grid .grid-box1 {
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 50%;
+}
+/* line 46, ../sass/hover_animate.scss */
+.hover-grid .grid-box1 .img-box {
+  background-image: url(../images/thumbs/1.jpg);
+}
+/* line 50, ../sass/hover_animate.scss */
+.hover-grid .grid-box2 {
+  left: 0;
+  top: 50%;
+  width: 25%;
+  height: 50%;
+}
+/* line 55, ../sass/hover_animate.scss */
+.hover-grid .grid-box2 .img-box {
+  background-image: url(../images/thumbs/2.jpg);
+}
+/* line 59, ../sass/hover_animate.scss */
+.hover-grid .grid-box3 {
+  left: 25%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+}
+/* line 64, ../sass/hover_animate.scss */
+.hover-grid .grid-box3 .img-box {
+  background-image: url(../images/thumbs/5.jpg);
+}
+/* line 68, ../sass/hover_animate.scss */
+.hover-grid .grid-box4 {
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 50%;
+}
+/* line 73, ../sass/hover_animate.scss */
+.hover-grid .grid-box4 .img-box {
+  background-image: url(../images/thumbs/4.jpg);
+}
+/* line 77, ../sass/hover_animate.scss */
+.hover-grid .grid-box5 {
+  left: 50%;
+  top: 50%;
+  width: 25%;
+  height: 50%;
+}
+/* line 82, ../sass/hover_animate.scss */
+.hover-grid .grid-box5 .img-box {
+  background-image: url(../images/bg.jpg);
+}
+/* line 86, ../sass/hover_animate.scss */
+.hover-grid .grid-box6 {
+  left: 75%;
+  top: 50%;
+  width: 25%;
+  height: 50%;
+}
+/* line 91, ../sass/hover_animate.scss */
+.hover-grid .grid-box6 .img-box {
+  background-image: url(../images/thumbs/6.jpg);
+}
+
+/*=========================== animate-style ========================*/
+/* line 106, ../sass/hover_animate.scss */
+.hover-effect1 .img-box {
+  opacity: .6;
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+/* line 113, ../sass/hover_animate.scss */
+.hover-effect1 .txt-box p,
+.hover-effect1 .txt-box h2 {
+  -webkit-transform: translate3d(0, 20px, 0) scale(1.1);
+  transform: translate3d(0, 20px, 0) scale(1.1);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+/* line 119, ../sass/hover_animate.scss */
+.hover-effect1 .txt-box p {
+  padding: 3%;
+  border: 1px solid #fff;
+  opacity: 0;
+}
+/* line 126, ../sass/hover_animate.scss */
+.hover-effect1:hover .img-box {
+  opacity: .8;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+/* line 132, ../sass/hover_animate.scss */
+.hover-effect1:hover .txt-box p {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+/* line 137, ../sass/hover_animate.scss */
+.hover-effect1:hover .txt-box h2 {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
