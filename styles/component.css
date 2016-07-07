@@ -1033,83 +1033,71 @@ button.trigger span::before {
     transition-property: transform, opacity;
 }
 
+
 /*
     .intro-effect-grid:not(.notrans) .header p {
     -webkit-transition-property: opacity;
     transition-property: opacity;*/
-}
 
+
+}
 .intro-effect-grid:not(.notrans) .bg-img,
 .intro-effect-grid:not(.notrans) .title {
     -webkit-transition-property: -webkit-transform;
     transition-property: transform;
 }
-
 .intro-effect-grid:not(.notrans) .header h1,
 .intro-effect-grid:not(.notrans) .codrops-demos a {
     -webkit-transition-property: color;
     transition-property: color;
 }
-
 .intro-effect-grid:not(.notrans) .grid li:nth-child(5),
 .intro-effect-grid:not(.notrans) .bg-img,
 .intro-effect-grid:not(.notrans) .title,
 .intro-effect-grid:not(.notrans) .header h1,
 
 /*.intro-effect-grid:not(.notrans) .header p,*/
-
 .intro-effect-grid:not(.notrans) .codrops-demos a {
     -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     -webkit-transition-duration: 1s;
     transition-duration: 1s;
 }
-
 .intro-effect-grid .codrops-demos a {
     color: #fff;
 }
-
 .intro-effect-grid.modify .codrops-demos a {
     color: #cf7000;
 }
-
 .intro-effect-grid .codrops-demos a.current-demo {
     border-bottom: 3px solid #fff;
 }
-
 .intro-effect-grid.modify .codrops-demos a.current-demo {
     border-color: #cf7000;
 }
-
 .intro-effect-grid .title {
     max-width: 900px;
     padding-top: 2em;
 }
-
 .intro-effect-grid.modify .title {
     -webkit-transform: translateX(-50%) translateY(0);
     transform: translateX(-50%) translateY(0);
 }
-
 .intro-effect-grid .content > div {
     margin-top: 40px;
     color: #2e3337;
 }
-
 .intro-effect-grid .header h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     padding: 0 0 0.6em;
 }
-
 .intro-effect-grid.modify .header h1 {
     color: #2d3b44;
 }
-
 .intro-effect-grid .header p.subline {
     font-size: 1.5em;
 }
-
 .intro-effect-grid .grid {
     list-style: none;
     margin: 0;
@@ -1121,59 +1109,44 @@ button.trigger span::before {
     height: 50%;
     z-index: 0;
 }
-
 .intro-effect-grid .grid li:nth-child(5) .img-box {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
     -webkit-transform: scale(0);
     transform: scale(0);
-    opacity: 0;
 }
-
 .intro-effect-grid.modify .grid li:nth-child(5) .img-box {
     -webkit-transform: scale(1);
     transform: scale(1);
-    opacity: 1;
 }
-
-.intro-effect-grid .grid li:nth-child(5) h2 {
-    color: #de8721;
-}
-
-.intro-effect-grid .grid li:nth-child(6) {
-    top: 50%;
-    left: 75%;
-    height: 50%;
-    width: 25%;
-    background-image: url(../images/thumbs/6.jpg);
-}
-
 .intro-effect-grid.modify .bg-img {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
 }
 
-
 /* Media Queries */
-
 @media screen and (max-width: 47em) {
     .title,
     .content {
         font-size: 70%;
     }
+    
     .codrops-demos a {
         font-size: 80%;
     }
+    
     .intro-effect-side .title {
         width: 100%;
         padding: 0 1em;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
     }
+    
     .intro-effect-side.modify .bg-img::before {
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%);
     }
+    
     .intro-effect-side .bg-img::after {
         border-left-width: 0px;
         border-right-width: 0px;
@@ -1181,34 +1154,40 @@ button.trigger span::before {
         left: 0px;
         background: rgba(255, 255, 255, 0.1);
     }
+    
     .intro-effect-side.modify .bg-img::after {
         background: rgba(255, 255, 255, 0.8);
     }
+    
     .intro-effect-sidefixed .content {
         width: 100%;
         margin-left: auto;
     }
+    
     .intro-effect-sidefixed .bg-img::after {
         width: 95%;
     }
 }
-
 @media screen and (max-width: 27em) {
     .intro-effect-jam3 .content {
         padding: 0 2em 5em;
     }
+    
     .intro-effect-grid .grid li h2 {
         display: none;
     }
+    
     .intro-effect-push .header .title {
         top: 60px;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
     }
+    
     .title,
     .content {
         font-size: 50%;
     }
+    
     button.trigger::before {
         display: none;
     }
