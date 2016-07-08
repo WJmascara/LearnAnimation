@@ -1,97 +1,105 @@
 /*==================== content-style ====================*/
 
-.hover-grid {
-    [class*="grid-box"] {
+[class*="grid-box"] {
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    background: #3085a3;
+    .img-box {
         position: absolute;
-        overflow: hidden;
-        cursor: pointer;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        .img-box {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-        }
-        .txt-box {
-            text-align: center;
-            color: #fff;
-            padding: 10%;
-            h2 {
-                font-size: 24px;
-                text-transform: uppercase;
-            }
-            p {
-                font-size: 14px;
-                letter-spacing: 1px;
-            }
-        }
-    }
-    .grid-box1 {
         left: 0;
         top: 0;
-        width: 25%;
-        height: 50%;
-        .img-box {
-            background-image: url(../images/thumbs/1.jpg);
-        }
-    }
-    .grid-box2 {
-        left: 0;
-        top: 50%;
-        width: 25%;
-        height: 50%;
-        .img-box {
-            background-image: url(../images/thumbs/2.jpg);
-        }
-    }
-    .grid-box3 {
-        left: 25%;
-        top: 0;
-        width: 25%;
+        z-index: -1;
+        width: 100%;
         height: 100%;
-        .img-box {
-            background-image: url(../images/thumbs/10.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    .txt-box {
+        text-align: center;
+        color: #fff;
+        padding: 10%;
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 14px;
+            letter-spacing: 1px;
         }
     }
-    .grid-box4 {
-        left: 50%;
-        top: 0;
-        width: 50%;
-        height: 50%;
-        .img-box {
-            background-image: url(../images/thumbs/6.jpg);
-        }
+}
+
+.grid-box1 {
+    left: 0;
+    top: 0;
+    width: 25%;
+    height: 50%;
+    .img-box {
+        background-image: url(../images/thumbs/11.jpg);
     }
-    .grid-box5 {
-        left: 50%;
-        top: 50%;
-        width: 25%;
-        height: 50%;
-        .img-box {
-            background-image: url(../images/bg.jpg);
-        }
+}
+
+.grid-box2 {
+    left: 0;
+    top: 50%;
+    width: 25%;
+    height: 50%;
+    .img-box {
+        background-image: url(../images/thumbs/7.jpg);
     }
-    .grid-box6 {
-        left: 75%;
-        top: 50%;
-        width: 25%;
-        height: 50%;
-        .img-box {
-            background-image: url(../images/thumbs/12.jpg);
-        }
+}
+
+.grid-box3 {
+    left: 25%;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    .img-box {
+        background-image: url(../images/thumbs/1.jpg);
+    }
+}
+
+.grid-box4 {
+    left: 50%;
+    top: 0;
+    width: 50%;
+    height: 50%;
+    .img-box {
+        background-image: url(../images/thumbs/5.jpg);
+    }
+}
+
+.grid-box5 {
+    left: 50%;
+    top: 50%;
+    width: 25%;
+    height: 50%;
+    background: transparent;
+    .img-box {
+        background-image: url(../images/bg.jpg);
+    }
+}
+
+.grid-box6 {
+    left: 75%;
+    top: 50%;
+    width: 25%;
+    height: 50%;
+    .img-box {
+        background-image: url(../images/thumbs/6.jpg);
     }
 }
 
@@ -181,9 +189,8 @@
 }
 
 .hover-effect3 {
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
     .img-box {
+        opacity: .7;
         -webkit-transform: translate3d(0, 0, 200px);
         transform: translate3d(0, 0, 200px);
     }
@@ -212,6 +219,7 @@
     }
     &:hover {
         .img-box {
+            opacity: .9;
             -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
         }
@@ -238,8 +246,10 @@
 
 .hover-effect4 {
     .img-box {
-        -webkit-transform: translate3d(-10px, 0, 0);
-        transform: translate3d(-10px, 0, 0);
+        width: 120%;
+        opacity: .7;
+        -webkit-transform: translate3d(-10%, 0, 0);
+        transform: translate3d(-10%, 0, 0);
     }
     .txt-box {
         h2 {
@@ -268,7 +278,7 @@
     }
     &:hover {
         .img-box {
-            opacity: .4;
+            opacity: .9;
             -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
         }
@@ -349,4 +359,62 @@
     }
 }
 
-.hover-effect6 {}
+.hover-effect6 {
+    .img-box {
+        height: 120%;
+        opacity: .9;
+        -webkit-transform: translate3d(0, -10%, 0);
+        transform: translate3d(0, -10%, 0);
+    }
+    .txt-box {
+        position: relative;
+        p {
+            opacity: 0;
+        }
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            -webkit-transform-origin: right top;
+            transform-origin: right top;
+            @include base-transition(all, .35s, ease);
+        }
+        &:before {
+            width: 120%;
+            height: 100%;
+            left: -10%;
+            top: 0;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+        }
+        &:after {
+            width: 100%;
+            height: 120%;
+            top: -10%;
+            left: 0;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+        }
+    }
+    &:hover {
+        .img-box {
+            opacity: .7;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        .txt-box {
+            p {
+                opacity: 1;
+            }
+            &:before,
+            &:after {
+                -webkit-transform: scale(1, 1);
+                transform: scale(1, 1);
+            }
+        }
+    }
+}

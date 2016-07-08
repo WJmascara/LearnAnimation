@@ -59,8 +59,7 @@ body,
 .title h1 {
     padding: 0 0 0.2em;
     color: #fff;
-    font-weight: 800;
-    font-size: 3.25em;
+    font: 800 3.25em "Tahoma";
     margin: 0 auto;
 }
 
@@ -1086,11 +1085,6 @@ button.trigger span::before {
 .intro-effect-grid .content > div {
     margin-top: 40px;
     color: #2e3337;
-}
-.intro-effect-grid .header h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    padding: 0 0 0.6em;
 }
 .intro-effect-grid.modify .header h1 {
     color: #2d3b44;
