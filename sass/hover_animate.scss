@@ -1,105 +1,102 @@
-/*==================== content-style ====================*/
+/*==================== nav-style ====================*/
 
-[class*="grid-box"] {
-    position: absolute;
-    overflow: hidden;
-    cursor: pointer;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
-    background: #3085a3;
-    .img-box {
-        position: absolute;
+.header {
+    .nav {
+        position: fixed;
         left: 0;
         top: 0;
-        z-index: -1;
         width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    }
-    .txt-box {
-        text-align: center;
-        color: #fff;
-        padding: 10%;
-        h2 {
-            font-size: 24px;
-            text-transform: uppercase;
+        height: 48px;
+        line-height: 48px;
+        background: #e1e3e4;
+        border-top: 1px solid #d2d6d5;
+        border-bottom: 1px solid #d2d6d5;
+        .menu {
+            > ul {
+                overflow: hidden;
+                > li {
+                    float: left;
+                    border-right: 1px solid #d2d6d5;
+                    &:last-child {
+                        border-right: none;
+                    }
+                    > span {
+                        position: relative;
+                        display: block;
+                        padding: 0 30px 0 15px;
+                        color: #313131;
+                        font-size: 15px;
+                        cursor: pointer;
+                        &:before,
+                        &:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            right: 19px;
+                            width: 2px;
+                            height: 8px;
+                            margin-top: -3px;
+                            background: #A6ABAB;
+                            -webkit-transform: rotate(-45deg);
+                            transform: rotate(-45deg);
+                            -webkit-transition: all .25s ease-out;
+                            transition: all .25s ease-out;
+                        }
+                        &:after {
+                            right: 15px;
+                            -webkit-transform: rotate(-135deg);
+                            transform: rotate(-135deg);
+                        }
+                        &.open,
+                        &:hover {
+                            background-color: #F4F4F4;
+                            &:before {
+                                right: 15px;
+                            }
+                            &:after {
+                                right: 19px;
+                            }
+                        }
+                    }
+                }
+            }
         }
-        p {
-            font-size: 14px;
-            letter-spacing: 1px;
+    }
+    .list-tags {
+        position: relative;
+        top: 48px;
+        padding: 30px 20px 24px 20px;
+        overflow: hidden;
+        border-bottom: 1px solid #d2d6d5;
+        > ul {
+            > li {
+                position: relative;
+                float: left;
+                margin: 0 6px 6px 0;
+                line-height: 24px;
+                font-size: 13px;
+                > a {
+                    display: block;
+                    height: 23px;
+                    padding: 0 10px;
+                    background: #F4F4F4;
+                    color: #313131;
+                    border-radius: 2px;
+                    -webkit-transition: all .25s ease-out;
+                    transition: all .25s ease-out;
+                    &:hover,
+                    &.current {
+                        background: #444 !important;
+                        color: #fff;
+                    }
+                    &.popular {
+                        background-color: #3C948B;
+                        color: #fff;
+                    }
+                }
+            }
         }
-    }
-}
-
-.grid-box1 {
-    left: 0;
-    top: 0;
-    width: 25%;
-    height: 50%;
-    .img-box {
-        background-image: url(../images/thumbs/11.jpg);
-    }
-}
-
-.grid-box2 {
-    left: 0;
-    top: 50%;
-    width: 25%;
-    height: 50%;
-    .img-box {
-        background-image: url(../images/thumbs/7.jpg);
-    }
-}
-
-.grid-box3 {
-    left: 25%;
-    top: 0;
-    width: 25%;
-    height: 100%;
-    .img-box {
-        background-image: url(../images/thumbs/1.jpg);
-    }
-}
-
-.grid-box4 {
-    left: 50%;
-    top: 0;
-    width: 50%;
-    height: 50%;
-    .img-box {
-        background-image: url(../images/thumbs/5.jpg);
-    }
-}
-
-.grid-box5 {
-    left: 50%;
-    top: 50%;
-    width: 25%;
-    height: 50%;
-    background: transparent;
-    .img-box {
-        background-image: url(../images/bg.jpg);
-    }
-}
-
-.grid-box6 {
-    left: 75%;
-    top: 50%;
-    width: 25%;
-    height: 50%;
-    .img-box {
-        background-image: url(../images/thumbs/6.jpg);
     }
 }
 
@@ -111,10 +108,62 @@
     transition: $property $duration $type;
 }
 
-.img-box,
-.txt-box h2,
-.txt-box p {
-    @include base-transition(all, .35s, ease);
+.grid-list {
+    position: relative;
+    top: 98px;
+    width: 1423px;
+    margin: 0 auto;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    > ul {
+        margin-left: -23px;
+        > li {
+            position: relative;
+            float: left;
+            margin: 0 23px 35px 0;
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            width: 439px;
+            height: 314px;
+            background: #3C948B;
+            overflow: hidden;
+            //content center
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            cursor: pointer;
+            .img-box {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 0;
+                @include base-transition(all, .35s, ease);
+            }
+            .txt-box {
+                text-align: center;
+                color: #fff;
+                padding: 3em;
+                font-family: "Tahoma";
+                text-align: left;
+                h2 {
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    @include base-transition(all, .35s, ease);
+                }
+                p {
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    @include base-transition(all, .35s, ease);
+                }
+            }
+        }
+    }
 }
 
 .hover-effect1 {
@@ -164,6 +213,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
+        z-index: 1;
         height: 10px;
         width: 100%;
         background: #fff;
@@ -210,6 +260,7 @@
         position: absolute;
         left: 50%;
         top: 50%;
+        z-index: 1;
         -webkit-transform: translate3d(-50%, -50%, 0);
         transform: translate3d(-50%, -50%, 0);
         width: 80%;
@@ -250,6 +301,9 @@
         opacity: .7;
         -webkit-transform: translate3d(-10%, 0, 0);
         transform: translate3d(-10%, 0, 0);
+        img {
+            width: 120%;
+        }
     }
     .txt-box {
         h2 {
@@ -365,6 +419,9 @@
         opacity: .9;
         -webkit-transform: translate3d(0, -10%, 0);
         transform: translate3d(0, -10%, 0);
+        img {
+            height: 120%;
+        }
     }
     .txt-box {
         position: relative;
@@ -380,9 +437,9 @@
             @include base-transition(all, .35s, ease);
         }
         &:before {
-            width: 120%;
+            width: 110%;
             height: 100%;
-            left: -10%;
+            left: -5%;
             top: 0;
             border-top: 1px solid #fff;
             border-bottom: 1px solid #fff;
@@ -391,8 +448,8 @@
         }
         &:after {
             width: 100%;
-            height: 120%;
-            top: -10%;
+            height: 110%;
+            top: -5%;
             left: 0;
             border-left: 1px solid #fff;
             border-right: 1px solid #fff;
