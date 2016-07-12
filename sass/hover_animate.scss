@@ -1,3 +1,9 @@
+@mixin base-transition($property, $duration, $type) {
+    -webkit-transition: $property $duration $type;
+    transition: $property $duration $type;
+}
+
+
 /*==================== nav-style ====================*/
 
 .header {
@@ -69,6 +75,8 @@
         padding: 30px 20px 24px 20px;
         overflow: hidden;
         border-bottom: 1px solid #d2d6d5;
+        display: none;
+        @include base-transition(all, .2s, ease);
         > ul {
             > li {
                 position: relative;
@@ -102,11 +110,6 @@
 
 
 /*=========================== animate-style ========================*/
-
-@mixin base-transition($property, $duration, $type) {
-    -webkit-transition: $property $duration $type;
-    transition: $property $duration $type;
-}
 
 .grid-list {
     position: relative;

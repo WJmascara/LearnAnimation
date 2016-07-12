@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +15,7 @@
 
         <header class="header">
             <nav class="nav">
-                <div class="menu">
+                <div class="menu" id="menu">
                     <ul>
                         <li class="dropdown">
                             <span>Hover Effects</span>
@@ -27,7 +26,7 @@
                     </ul>
                 </div>
             </nav>
-            <div class="list-tags">
+            <div class="list-tags filter-hover">
                 <ul>
                     <li>
                         <a href="javascript:;">hover effect1</a>
@@ -51,6 +50,18 @@
                     <li><a href="javascript:;">hover effect18</a></li>
                 </ul>
             </div>
+            <div class="list-tags filter-element">
+                <ul>
+                    <li>
+                        <a href="javascript:;">clouds</a>
+                    </li>
+                    <li><a href="javascript:;" class="popular">eyes blinking</a></li>
+                    <li><a href="javascript:;">stars</a></li>
+                    <li><a href="javascript:;">leaves</a></li>
+                    <li><a href="javascript:;">balls fly</a></li>
+                    <li><a href="javascript:;">light</a></li>
+                </ul>
+            </div>
             <div class="grid-list">
                 <ul>
                     <li class="hover-effect1">
@@ -59,7 +70,7 @@
                         </div>
                         <div class="txt-box">
                             <h2>Lonely Rider</h2>
-                            <P>Rider likes to play with crayons and pencils</P>
+                            <p>Rider likes to play with crayons and pencils</p>
                         </div>
                     </li>
                     <li class="hover-effect2">
@@ -76,7 +87,7 @@
                         </div>
                         <div class="txt-box">
                             <h2>Waiting</h2>
-                            <P>How long do we have to wait</P>
+                            <p>How long do we have to wait</p>
                         </div>
                     </li>
                     <li class="hover-effect4">
@@ -85,7 +96,7 @@
                         </div>
                         <div class="txt-box">
                             <h2>Crazy</h2>
-                            <P>When Layla appears, she brings an eternal summer along.</P>
+                            <p>When Layla appears, she brings an eternal summer along.</p>
                         </div>
                     </li>
                     <li class="hover-effect5">
@@ -94,7 +105,7 @@
                         </div>
                         <div class="txt-box">
                             <h2>CREATE</h2>
-                            <P>I will meet my creators</P>
+                            <p>I will meet my creators</p>
                         </div>
                     </li>
                     <li class="hover-effect6">
@@ -103,62 +114,12 @@
                         </div>
                         <div class="txt-box">
                             <h2>Bubba</h2>
-                            <P>Bubba likes to appear out of thin air.</P>
+                            <p>Bubba likes to appear out of thin air.</p>
                         </div>
                     </li>
                 </ul>
             </div>
-            <!--
-            <ul class="grid hover-grid">
-    <li class="grid-box1 hover-effect1">
-        <div class="img-box">
-        </div>
-        <div class="txt-box">
-            <h2>Lonely Rider</h2>
-            <P>Rider likes to play with crayons and pencils</P>
-        </div>
-    </li>
-    <li class="grid-box2 hover-effect2">
-        <div class="img-box">
-        </div>
-        <div class="txt-box">
-            <h2>HolySADIE</h2>
-        </div>
-    </li>
-    <li class="grid-box3 hover-effect3">
-        <div class="img-box">
-        </div>
-        <div class="txt-box">
-            <h2>Waiting</h2>
-            <P>How long do we have to wait</P>
-        </div>
-    </li>
-    <li class="grid-box4 hover-effect4">
-        <div class="img-box">
-        </div>
-        <div class="txt-box">
-            <h2>Crazy</h2>
-            <P>When Layla appears, she brings an eternal summer along.</P>
-        </div>
-    </li>
-    <li class="grid-box5 hover-effect5">
-        <div class="img-box">
-        </div>
-        <div class="txt-box">
-            <h2>CREATE</h2>
-            <P>I will meet my creators</P>
-        </div>
-    </li>
-    <li class="grid-box6 hover-effect6">
-        <div class="img-box">
-        </div>
-        <div class="txt-box">
-            <h2>Bubba</h2>
-            <P>Bubba likes to appear out of thin air.</P>
-        </div>
-    </li>
-</ul>
--->
+
             <div class="bg-img"><img src="images/bg.jpg" alt="Background Image"></div>
             <div class="title">
             </div>
@@ -168,6 +129,7 @@
 
         </article>
     </div>
+
     <!-- /container -->
     <script src="scripts/classie.js"></script>
     <script>
@@ -311,8 +273,26 @@
             trigger.addEventListener('click', function () {
                 toggle('reveal');
             });
+
+            //nav click dropdown
+            var oli = document.getElementById("menu").getElementsByTagName("li");
+            var tagList = document.getElementsByClassName("list-tags");
+            for (var i = 0, len = oli.length; i < len; i++) {
+                oli[i].index = i;
+                oli[i].onclick = function () {
+
+                    for (var j = 0, len = oli.length; j < len; j++) {
+                        oli[j].getElementsByTagName("span")[0].className = "";
+                        tagList[j].style.display = "none";
+                    }
+                    this.getElementsByTagName("span")[0].className = "open";
+                    tagList[this.index].style.display = "block";
+                }
+            }
         })();
     </script>
+
+
 </body>
 
 </html>
