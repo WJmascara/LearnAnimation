@@ -277,7 +277,8 @@
             //nav click dropdown
             var oli = document.getElementById("menu").getElementsByTagName("li");
             var tagList = document.getElementsByClassName("list-tags");
-            for (var i = 0, len = oli.length; i < len; i++) {
+            //            console.log(tagList instanceof Array);
+            /*--for (var i = 0, len = oli.length; i < len; i++) {
                 oli[i].index = i;
                 oli[i].onclick = function () {
 
@@ -287,6 +288,12 @@
                     }
                     this.getElementsByTagName("span")[0].className = "open";
                     tagList[this.index].style.display = "block";
+                }
+            }--*/
+
+            for (var i = 0, len = oli.length; i < len; i++) {
+                oli[i].onclick = function () {
+                    console.log(i);
                 }
             }
         })();

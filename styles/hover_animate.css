@@ -125,6 +125,7 @@
 /* line 123, ../sass/hover_animate.scss */
 .grid-list > ul > li {
   position: relative;
+  overflow: hidden;
   float: left;
   margin: 0 23px 35px 0;
   -webkit-transition: all 0.3s ease-out;
@@ -144,7 +145,7 @@
   align-items: center;
   cursor: pointer;
 }
-/* line 144, ../sass/hover_animate.scss */
+/* line 145, ../sass/hover_animate.scss */
 .grid-list > ul > li .img-box {
   position: absolute;
   left: 0;
@@ -153,7 +154,7 @@
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-/* line 151, ../sass/hover_animate.scss */
+/* line 152, ../sass/hover_animate.scss */
 .grid-list > ul > li .txt-box {
   text-align: center;
   color: #fff;
@@ -161,14 +162,14 @@
   font-family: "Tahoma";
   text-align: left;
 }
-/* line 157, ../sass/hover_animate.scss */
+/* line 158, ../sass/hover_animate.scss */
 .grid-list > ul > li .txt-box h2 {
   font-size: 24px;
   text-transform: uppercase;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-/* line 162, ../sass/hover_animate.scss */
+/* line 163, ../sass/hover_animate.scss */
 .grid-list > ul > li .txt-box p {
   font-size: 14px;
   letter-spacing: 1px;
@@ -176,47 +177,47 @@
   transition: all 0.35s ease;
 }
 
-/* line 173, ../sass/hover_animate.scss */
+/* line 174, ../sass/hover_animate.scss */
 .hover-effect1 .img-box {
   opacity: .6;
   -webkit-transform: scale(1.15);
   transform: scale(1.15);
 }
-/* line 179, ../sass/hover_animate.scss */
+/* line 180, ../sass/hover_animate.scss */
 .hover-effect1 .txt-box p,
 .hover-effect1 .txt-box h2 {
   -webkit-transform: translate3d(0, 20px, 0) scale(1.1);
   transform: translate3d(0, 20px, 0) scale(1.1);
 }
-/* line 184, ../sass/hover_animate.scss */
+/* line 185, ../sass/hover_animate.scss */
 .hover-effect1 .txt-box p {
   padding: 3%;
   border: 1px solid #fff;
   opacity: 0;
 }
-/* line 191, ../sass/hover_animate.scss */
+/* line 192, ../sass/hover_animate.scss */
 .hover-effect1:hover .img-box {
   opacity: .8;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-/* line 197, ../sass/hover_animate.scss */
+/* line 198, ../sass/hover_animate.scss */
 .hover-effect1:hover .txt-box p {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0) scale(1);
   transform: translate3d(0, 0, 0) scale(1);
 }
-/* line 202, ../sass/hover_animate.scss */
+/* line 203, ../sass/hover_animate.scss */
 .hover-effect1:hover .txt-box h2 {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 211, ../sass/hover_animate.scss */
+/* line 212, ../sass/hover_animate.scss */
 .hover-effect2 .img-box {
   opacity: .5;
 }
-/* line 214, ../sass/hover_animate.scss */
+/* line 215, ../sass/hover_animate.scss */
 .hover-effect2:before {
   content: "";
   position: absolute;
@@ -231,38 +232,38 @@
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-/* line 228, ../sass/hover_animate.scss */
+/* line 229, ../sass/hover_animate.scss */
 .hover-effect2:hover .img-box {
   opacity: .9;
 }
-/* line 232, ../sass/hover_animate.scss */
+/* line 233, ../sass/hover_animate.scss */
 .hover-effect2:hover .txt-box h2 {
   -webkit-transform: translate3d(0, 30px, 0);
   transform: translate3d(0, 30px, 0);
 }
-/* line 237, ../sass/hover_animate.scss */
+/* line 238, ../sass/hover_animate.scss */
 .hover-effect2:hover:before {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 245, ../sass/hover_animate.scss */
+/* line 246, ../sass/hover_animate.scss */
 .hover-effect3 .img-box {
   opacity: .7;
   -webkit-transform: translate3d(0, 0, 200px);
   transform: translate3d(0, 0, 200px);
 }
-/* line 251, ../sass/hover_animate.scss */
+/* line 252, ../sass/hover_animate.scss */
 .hover-effect3 .txt-box h2 {
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
 }
-/* line 255, ../sass/hover_animate.scss */
+/* line 256, ../sass/hover_animate.scss */
 .hover-effect3 .txt-box p {
   -webkit-transform: translate3d(0, 50%, 0);
   transform: translate3d(0, 50%, 0);
 }
-/* line 260, ../sass/hover_animate.scss */
+/* line 261, ../sass/hover_animate.scss */
 .hover-effect3:after, .hover-effect3:before {
   content: "";
   position: absolute;
@@ -277,50 +278,50 @@
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-/* line 275, ../sass/hover_animate.scss */
+/* line 276, ../sass/hover_animate.scss */
 .hover-effect3:hover .img-box {
   opacity: .9;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 281, ../sass/hover_animate.scss */
+/* line 282, ../sass/hover_animate.scss */
 .hover-effect3:hover .txt-box h2 {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 285, ../sass/hover_animate.scss */
+/* line 286, ../sass/hover_animate.scss */
 .hover-effect3:hover .txt-box p {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 290, ../sass/hover_animate.scss */
+/* line 291, ../sass/hover_animate.scss */
 .hover-effect3:hover:before {
   -webkit-transform: translate3d(-50%, -50%, 0) rotate(45deg);
   transform: translate3d(-50%, -50%, 0) rotate(45deg);
 }
-/* line 294, ../sass/hover_animate.scss */
+/* line 295, ../sass/hover_animate.scss */
 .hover-effect3:hover:after {
   -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
   transform: translate3d(-50%, -50%, 0) rotate(-45deg);
 }
 
-/* line 302, ../sass/hover_animate.scss */
+/* line 303, ../sass/hover_animate.scss */
 .hover-effect4 .img-box {
   width: 120%;
   opacity: .7;
   -webkit-transform: translate3d(-10%, 0, 0);
   transform: translate3d(-10%, 0, 0);
 }
-/* line 307, ../sass/hover_animate.scss */
+/* line 308, ../sass/hover_animate.scss */
 .hover-effect4 .img-box img {
   width: 120%;
 }
-/* line 312, ../sass/hover_animate.scss */
+/* line 313, ../sass/hover_animate.scss */
 .hover-effect4 .txt-box h2 {
   position: relative;
   text-align: left;
 }
-/* line 315, ../sass/hover_animate.scss */
+/* line 316, ../sass/hover_animate.scss */
 .hover-effect4 .txt-box h2:after {
   content: "";
   position: absolute;
@@ -336,39 +337,39 @@
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-/* line 330, ../sass/hover_animate.scss */
+/* line 331, ../sass/hover_animate.scss */
 .hover-effect4 .txt-box p {
   opacity: 0;
   -webkit-transform: translate3d(50px, 0, 0);
   transform: translate3d(50px, 0, 0);
 }
-/* line 337, ../sass/hover_animate.scss */
+/* line 338, ../sass/hover_animate.scss */
 .hover-effect4:hover .img-box {
   opacity: .9;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 344, ../sass/hover_animate.scss */
+/* line 345, ../sass/hover_animate.scss */
 .hover-effect4:hover .txt-box h2:after {
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
-/* line 349, ../sass/hover_animate.scss */
+/* line 350, ../sass/hover_animate.scss */
 .hover-effect4:hover .txt-box p {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 359, ../sass/hover_animate.scss */
+/* line 360, ../sass/hover_animate.scss */
 .hover-effect5 .img-box {
   opacity: .7;
 }
-/* line 362, ../sass/hover_animate.scss */
+/* line 363, ../sass/hover_animate.scss */
 .hover-effect5 .txt-box {
   position: relative;
 }
-/* line 364, ../sass/hover_animate.scss */
+/* line 365, ../sass/hover_animate.scss */
 .hover-effect5 .txt-box:before, .hover-effect5 .txt-box:after {
   content: "";
   position: absolute;
@@ -379,72 +380,72 @@
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 374, ../sass/hover_animate.scss */
+/* line 375, ../sass/hover_animate.scss */
 .hover-effect5 .txt-box:before {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
 }
-/* line 380, ../sass/hover_animate.scss */
+/* line 381, ../sass/hover_animate.scss */
 .hover-effect5 .txt-box:after {
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
   -webkit-transform: scale(1, 0);
   transform: scale(1, 0);
 }
-/* line 386, ../sass/hover_animate.scss */
+/* line 387, ../sass/hover_animate.scss */
 .hover-effect5 .txt-box h2 {
   -webkit-transform: translate3d(0, -10px, 0);
   transform: translate3d(0, -10px, 0);
 }
-/* line 390, ../sass/hover_animate.scss */
+/* line 391, ../sass/hover_animate.scss */
 .hover-effect5 .txt-box p {
   opacity: 0;
   -webkit-transform: translate3d(0, 10px, 0);
   transform: translate3d(0, 10px, 0);
 }
-/* line 397, ../sass/hover_animate.scss */
+/* line 398, ../sass/hover_animate.scss */
 .hover-effect5:hover .img-box {
   opacity: .9;
 }
-/* line 401, ../sass/hover_animate.scss */
+/* line 402, ../sass/hover_animate.scss */
 .hover-effect5:hover .txt-box:before, .hover-effect5:hover .txt-box:after {
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
-/* line 406, ../sass/hover_animate.scss */
+/* line 407, ../sass/hover_animate.scss */
 .hover-effect5:hover .txt-box h2 {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 410, ../sass/hover_animate.scss */
+/* line 411, ../sass/hover_animate.scss */
 .hover-effect5:hover .txt-box p {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 420, ../sass/hover_animate.scss */
+/* line 421, ../sass/hover_animate.scss */
 .hover-effect6 .img-box {
   height: 120%;
   opacity: .9;
   -webkit-transform: translate3d(0, -10%, 0);
   transform: translate3d(0, -10%, 0);
 }
-/* line 425, ../sass/hover_animate.scss */
+/* line 426, ../sass/hover_animate.scss */
 .hover-effect6 .img-box img {
   height: 120%;
 }
-/* line 429, ../sass/hover_animate.scss */
+/* line 430, ../sass/hover_animate.scss */
 .hover-effect6 .txt-box {
   position: relative;
 }
-/* line 431, ../sass/hover_animate.scss */
+/* line 432, ../sass/hover_animate.scss */
 .hover-effect6 .txt-box p {
   opacity: 0;
 }
-/* line 434, ../sass/hover_animate.scss */
+/* line 435, ../sass/hover_animate.scss */
 .hover-effect6 .txt-box:before, .hover-effect6 .txt-box:after {
   content: "";
   position: absolute;
@@ -453,7 +454,7 @@
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-/* line 442, ../sass/hover_animate.scss */
+/* line 443, ../sass/hover_animate.scss */
 .hover-effect6 .txt-box:before {
   width: 110%;
   height: 100%;
@@ -464,7 +465,7 @@
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
 }
-/* line 452, ../sass/hover_animate.scss */
+/* line 453, ../sass/hover_animate.scss */
 .hover-effect6 .txt-box:after {
   width: 100%;
   height: 110%;
@@ -475,17 +476,17 @@
   -webkit-transform: scale(1, 0);
   transform: scale(1, 0);
 }
-/* line 464, ../sass/hover_animate.scss */
+/* line 465, ../sass/hover_animate.scss */
 .hover-effect6:hover .img-box {
   opacity: .7;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 470, ../sass/hover_animate.scss */
+/* line 471, ../sass/hover_animate.scss */
 .hover-effect6:hover .txt-box p {
   opacity: 1;
 }
-/* line 473, ../sass/hover_animate.scss */
+/* line 474, ../sass/hover_animate.scss */
 .hover-effect6:hover .txt-box:before, .hover-effect6:hover .txt-box:after {
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
