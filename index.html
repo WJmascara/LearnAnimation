@@ -64,57 +64,69 @@
             </div>
             <div class="grid-list">
                 <ul>
-                    <li class="hover-effect1">
-                        <div class="img-box">
-                            <img src="images/thumbs/11.jpg" width="439" height="314" alt="">
-                        </div>
-                        <div class="txt-box">
-                            <h2>Lonely Rider</h2>
-                            <p>Rider likes to play with crayons and pencils</p>
-                        </div>
-                    </li>
-                    <li class="hover-effect2">
-                        <div class="img-box">
-                            <img src="images/thumbs/7.jpg" width="439" height="314" alt="">
-                        </div>
-                        <div class="txt-box">
-                            <h2>HolySADIE</h2>
+                    <li>
+                        <div class="hover-effect0">
+                            <a href="#" class="img-box">
+                                <img src="images/thumbs/1.jpg" alt="">
+                            </a>
+                            <div class="txt-box">
+                                <h2>Lonely Rider</h2>
+                                <p>Rider likes to play with crayons and pencils</p>
+                            </div>
                         </div>
                     </li>
-                    <li class="hover-effect3">
-                        <div class="img-box">
-                            <img src="images/thumbs/1.jpg" width="439" height="314" alt="">
-                        </div>
-                        <div class="txt-box">
-                            <h2>Waiting</h2>
-                            <p>How long do we have to wait</p>
-                        </div>
-                    </li>
-                    <li class="hover-effect4">
-                        <div class="img-box">
-                            <img src="images/thumbs/5.jpg" width="439" height="314" alt="">
-                        </div>
-                        <div class="txt-box">
-                            <h2>Crazy</h2>
-                            <p>When Layla appears, she brings an eternal summer along.</p>
+                    <li>
+                        <div class="hover-effect1">
+                            <a href="#" class="img-box">
+                                <img src="images/thumbs/2.jpg" alt="">
+                            </a>
+                            <div class="txt-box">
+                                <h2>HolySADIE</h2>
+                            </div>
                         </div>
                     </li>
-                    <li class="hover-effect5">
-                        <div class="img-box">
-                            <img src="images/bg.jpg" width="439" height="314" alt="">
-                        </div>
-                        <div class="txt-box">
-                            <h2>CREATE</h2>
-                            <p>I will meet my creators</p>
+                    <li>
+                        <div class="hover-effect2">
+                            <a href="#" class="img-box">
+                                <img src="images/thumbs/3.jpg" alt="">
+                            </a>
+                            <div class="txt-box">
+                                <h2>Waiting</h2>
+                                <p>How long do we have to wait</p>
+                            </div>
                         </div>
                     </li>
-                    <li class="hover-effect6">
-                        <div class="img-box">
-                            <img src="images/thumbs/6.jpg" width="439" height="314" alt="">
+                    <li>
+                        <div class="hover-effect3">
+                            <a href="#" class="img-box">
+                                <img src="images/thumbs/4.jpg" alt="">
+                            </a>
+                            <div class="txt-box">
+                                <h2>Crazy</h2>
+                                <p>When Layla appears, she brings an eternal summer along.</p>
+                            </div>
                         </div>
-                        <div class="txt-box">
-                            <h2>Bubba</h2>
-                            <p>Bubba likes to appear out of thin air.</p>
+                    </li>
+                    <li>
+                        <div class="hover-effect4">
+                            <a href="#" class="img-box">
+                                <img src="images/thumbs/5.jpg" alt="">
+                            </a>
+                            <div class="txt-box">
+                                <h2>CREATE</h2>
+                                <p>I will meet my creators</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hover-effect5">
+                            <a href="#" class="img-box">
+                                <img src="images/thumbs/6.jpg" alt="">
+                            </a>
+                            <div class="txt-box">
+                                <h2>Bubba</h2>
+                                <p>Bubba likes to appear out of thin air.</p>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -122,8 +134,9 @@
             <div class="pop-mask">
             </div>
             <div class="pop-wrap">
-                <div class="pop-element">
-                    <a href="#" class="pop-img img-box"></a>
+                <div class="pop-inner">
+                    <div class="pop-element">
+                    </div>
                     <a href="javascript:;" class="pop-close"></a>
                     <a href="#" class="pop-link">查看代码</a>
                 </div>
@@ -309,14 +322,15 @@
 
             $(".filter-hover li").each(function () {
                 $(this).bind("click", function () {
-                    var oindex = $(this).index() + 1;
-                    $(".pop-img").append("<img src='" + "images/thumbs/" + oindex + ".jpg" + "'>");
+                    var oindex = parseInt($(this).index());
+                    var oelement = $(".grid-list").find("li").eq(oindex).html();
                     $(".pop-mask").show();
                     $(".pop-wrap").addClass("element-show");
+                    $(".pop-wrap .pop-element").append(oelement);
                 });
             });
             $(".pop-close").bind("click", function () {
-                $(this).parents(".pop-wrap").removeClass("element-show").find(".pop-img").html("");
+                $(this).parents(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
                 $(".pop-mask").hide();
             });
 
