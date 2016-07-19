@@ -502,12 +502,8 @@
     left: 50%;
     top: 50%;
     z-index: -1;
-    width: 640px;
-    height: 400px;
-    padding: 10px;
-    background: #fff;
-    border-radius: 3px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+    width: 660px;
+    height: 420px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     -webkit-transform-style: preserve-3d;
@@ -515,8 +511,12 @@
     -webkit-perspective: 800px;
     perspective: 800px;
     .pop-inner {
-        width: 620px;
-        height: 380px;
+        width: 640px;
+        height: 400px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .4);
         -webkit-transform: translateZ(600px) rotateX(20deg);
         transform: translateZ(600px) rotateX(20deg);
         opacity: 0;
@@ -536,8 +536,8 @@
         }
         .pop-close {
             position: absolute;
-            top: -26px;
-            right: -26px;
+            top: -20px;
+            right: -20px;
             width: 32px;
             height: 32px;
             background: #fff;
@@ -565,7 +565,7 @@
         .pop-link {
             position: absolute;
             right: 0;
-            bottom: -30px;
+            bottom: -22px;
             font-size: 14px;
             color: #fff;
             text-decoration: underline;
