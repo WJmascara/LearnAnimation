@@ -479,3 +479,96 @@
         }
     }
 }
+
+
+/*=========================== pop-element-animate-style ========================*/
+
+.pop-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    z-index: 9999;
+    display: none;
+}
+
+.pop-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    .pop-element {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 600px) rotateX(20deg);
+        transform: translate3d(-50%, -50%, 600px) rotateX(20deg);
+        padding: 10px;
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+        opacity: 0;
+        @include base-transition(all, .3s, ease);
+        .pop-img {
+            display: block;
+            width: 640px;
+            height: 400px;
+            overflow: hidden;
+            img {
+                border-radius: 3px;
+            }
+        }
+        .pop-close {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 32px;
+            height: 32px;
+            background: #fff;
+            line-height: 32px;
+            border-radius: 50%;
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 3px;
+                height: 14px;
+                background: #888;
+            }
+            &:before {
+                -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &:after {
+                -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+        .pop-link {
+            position: absolute;
+            right: 0;
+            bottom: -22px;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+    &.element-show {
+        z-index: 99999;
+        .pop-element {
+            opacity: 1;
+            -webkit-transform: translate3d(-50%, -50%, 0) rotateX(0);
+            transform: translate3d(-50%, -50%, 0) rotateX(0);
+        }
+    }
+}

@@ -13,6 +13,10 @@ body,
     height: 100%;
 }
 
+.content {
+    text-indent: -9999px;
+}
+
 
 /* Header */
 

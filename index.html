@@ -119,19 +119,30 @@
                     </li>
                 </ul>
             </div>
-
-            <div class="bg-img"><img src="images/bg.jpg" alt="Background Image"></div>
+            <div class="pop-mask">
+            </div>
+            <div class="pop-wrap">
+                <div class="pop-element">
+                    <a href="#" class="pop-img img-box"></a>
+                    <a href="javascript:;" class="pop-close"></a>
+                    <a href="#" class="pop-link">查看代码</a>
+                </div>
+            </div>
+            <div class="bg-img">
+                <img src="images/bg.jpg" alt="Background Image">
+            </div>
             <div class="title">
             </div>
         </header>
         <button class="trigger"><span>Trigger</span></button>
         <article class="content">
-
+            animate
         </article>
     </div>
 
     <!-- /container -->
     <script src="scripts/classie.js"></script>
+    <script src="scripts/jquery.js"></script>
     <script>
         (function () {
 
@@ -277,8 +288,8 @@
             //nav click dropdown
             var oli = document.getElementById("menu").getElementsByTagName("li");
             var tagList = document.getElementsByClassName("list-tags");
-            //            console.log(tagList instanceof Array);
-            /*--for (var i = 0, len = oli.length; i < len; i++) {
+            //console.log(tagList instanceof Array);
+            for (var i = 0, len = oli.length; i < len; i++) {
                 oli[i].index = i;
                 oli[i].onclick = function () {
 
@@ -289,16 +300,28 @@
                     this.getElementsByTagName("span")[0].className = "open";
                     tagList[this.index].style.display = "block";
                 }
-            }--*/
-
-            for (var i = 0, len = oli.length; i < len; i++) {
-                oli[i].onclick = function () {
-                    console.log(i);
-                }
             }
+
         })();
     </script>
+    <script>
+        $(function () {
 
+            $(".filter-hover li").each(function () {
+                $(this).bind("click", function () {
+                    var oindex = $(this).index() + 1;
+                    $(".pop-img").append("<img src='" + "images/thumbs/" + oindex + ".jpg" + "'>");
+                    $(".pop-mask").show();
+                    $(".pop-wrap").addClass("element-show");
+                });
+            });
+            $(".pop-close").bind("click", function () {
+                $(this).parents(".pop-wrap").removeClass("element-show").find(".pop-img").html("");
+                $(".pop-mask").hide();
+            });
+
+        })
+    </script>
 
 </body>
 
