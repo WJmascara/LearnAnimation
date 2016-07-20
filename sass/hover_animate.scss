@@ -3,6 +3,33 @@
     transition: $property $duration $type;
 }
 
+@mixin base-img-size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+%base-effect3d {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+}
+
+%base-horizon-vertical-center {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+%base-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
 
 /*==================== nav-style ====================*/
 
@@ -109,7 +136,7 @@
 }
 
 
-/*=========================== animate-style ========================*/
+/*==================== grid-list-style ====================*/
 
 .grid-list {
     position: relative;
@@ -131,35 +158,32 @@
     }
 }
 
+
+/*=========================== animate-style ========================*/
+
 [class*="hover-effect"] {
     position: relative;
     overflow: hidden;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
     background: #3C948B;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    align-items: center;
     cursor: pointer;
+    width: 620px;
+    height: 380px;
+    @extend %base-flex;
+    @extend %base-effect3d;
+    @extend %base-horizon-vertical-center;
     .img-box {
         position: absolute;
         left: 0;
         top: 0;
         z-index: 0;
+        overflow: hidden;
         @include base-transition(all, .35s, ease);
     }
     .txt-box {
         text-align: center;
         color: #fff;
-        padding: 3em;
+        padding: 15%;
         font-family: "Tahoma";
-        text-align: left;
         h2 {
             font-size: 24px;
             text-transform: uppercase;
@@ -270,7 +294,7 @@
         z-index: 1;
         -webkit-transform: translate3d(-50%, -50%, 0);
         transform: translate3d(-50%, -50%, 0);
-        width: 80%;
+        width: 60%;
         height: 1px;
         background: #fff;
         @include base-transition(all, .35s, ease);
@@ -506,10 +530,7 @@
     height: 420px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-perspective: 800px;
-    perspective: 800px;
+    @extend %base-effect3d;
     .pop-inner {
         width: 640px;
         height: 400px;
@@ -521,18 +542,8 @@
         transform: translateZ(600px) rotateX(20deg);
         opacity: 0;
         @include base-transition(all, .3s, ease);
-        [class*="hover-effect"] {
-            width: 620px;
-            height: 380px;
-            .img-box {
-                display: block;
-                width: 620px;
-                height: 380px;
-                overflow: hidden;
-                img {
-                    border-radius: 3px;
-                }
-            }
+        img {
+            border-radius: 3px;
         }
         .pop-close {
             position: absolute;
