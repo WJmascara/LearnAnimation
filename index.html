@@ -14,54 +14,57 @@
     <div id="container" class="container intro-effect-grid">
 
         <header class="header">
-            <nav class="nav">
-                <div class="menu" id="menu">
+            <div class="nav-wrap">
+                <nav class="nav">
+                    <div class="menu" id="menu">
+                        <ul>
+                            <li class="dropdown">
+                                <span>Hover Effects</span>
+                            </li>
+                            <li class="dropdown">
+                                <span>Elements Effects</span>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="list-tags filter-hover">
                     <ul>
-                        <li class="dropdown">
-                            <span>Hover Effects</span>
+                        <li>
+                            <a href="javascript:;">hover effect1</a>
                         </li>
-                        <li class="dropdown">
-                            <span>Elements Effects</span>
-                        </li>
+                        <li><a href="javascript:;" class="popular">hover effect2</a></li>
+                        <li><a href="javascript:;">hover effect3</a></li>
+                        <li><a href="javascript:;">hover effect4</a></li>
+                        <li><a href="javascript:;">hover effect5</a></li>
+                        <li><a href="javascript:;">hover effect6</a></li>
+                        <li><a href="javascript:;">hover effect7</a></li>
+                        <li><a href="javascript:;">hover effect8</a></li>
+                        <li><a href="javascript:;">hover effect9</a></li>
+                        <li><a href="javascript:;" class="popular">hover effect10</a></li>
+                        <li><a href="javascript:;">hover effect11</a></li>
+                        <li><a href="javascript:;">hover effect12</a></li>
+                        <li><a href="javascript:;">hover effect13</a></li>
+                        <li><a href="javascript:;">hover effect14</a></li>
+                        <li><a href="javascript:;">hover effect15</a></li>
+                        <li><a href="javascript:;">hover effect16</a></li>
+                        <li><a href="javascript:;">hover effect17</a></li>
+                        <li><a href="javascript:;">hover effect18</a></li>
                     </ul>
                 </div>
-            </nav>
-            <div class="list-tags filter-hover">
-                <ul>
-                    <li>
-                        <a href="javascript:;">hover effect1</a>
-                    </li>
-                    <li><a href="javascript:;" class="popular">hover effect2</a></li>
-                    <li><a href="javascript:;">hover effect3</a></li>
-                    <li><a href="javascript:;">hover effect4</a></li>
-                    <li><a href="javascript:;">hover effect5</a></li>
-                    <li><a href="javascript:;">hover effect6</a></li>
-                    <li><a href="javascript:;">hover effect7</a></li>
-                    <li><a href="javascript:;">hover effect8</a></li>
-                    <li><a href="javascript:;">hover effect9</a></li>
-                    <li><a href="javascript:;" class="popular">hover effect10</a></li>
-                    <li><a href="javascript:;">hover effect11</a></li>
-                    <li><a href="javascript:;">hover effect12</a></li>
-                    <li><a href="javascript:;">hover effect13</a></li>
-                    <li><a href="javascript:;">hover effect14</a></li>
-                    <li><a href="javascript:;">hover effect15</a></li>
-                    <li><a href="javascript:;">hover effect16</a></li>
-                    <li><a href="javascript:;">hover effect17</a></li>
-                    <li><a href="javascript:;">hover effect18</a></li>
-                </ul>
+                <div class="list-tags filter-element">
+                    <ul>
+                        <li>
+                            <a href="javascript:;">clouds</a>
+                        </li>
+                        <li><a href="javascript:;" class="popular">eyes blinking</a></li>
+                        <li><a href="javascript:;">stars</a></li>
+                        <li><a href="javascript:;">leaves</a></li>
+                        <li><a href="javascript:;">balls fly</a></li>
+                        <li><a href="javascript:;">light</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="list-tags filter-element">
-                <ul>
-                    <li>
-                        <a href="javascript:;">clouds</a>
-                    </li>
-                    <li><a href="javascript:;" class="popular">eyes blinking</a></li>
-                    <li><a href="javascript:;">stars</a></li>
-                    <li><a href="javascript:;">leaves</a></li>
-                    <li><a href="javascript:;">balls fly</a></li>
-                    <li><a href="javascript:;">light</a></li>
-                </ul>
-            </div>
+
             <div class="grid-list">
                 <ul>
                     <li>
@@ -353,6 +356,7 @@
     <script>
         $(function () {
 
+            //出现弹层
             $(".filter-hover li").each(function () {
                 $(this).bind("click", function () {
                     var oindex = parseInt($(this).index());
@@ -361,6 +365,9 @@
                     $(".pop-wrap").addClass("element-show");
                     //页面中的元素添加到弹出层
                     $(".pop-wrap .pop-element").append(oelement);
+
+                    //阻止document触发的事件
+                    event.stopPropagation();
                 });
             });
 
@@ -374,13 +381,24 @@
             $(document).bind("click", function (e) {
                 var target = $(e.target);
                 if ($(".pop-wrap").hasClass("element-show")) {
-                    if (target.closest(".pop-wrap,.list-tags").length == 0) {
+                    if (target.closest(".pop-wrap").length == 0) {
                         $(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
                         $(".pop-mask").hide();
-                        console.log(1);
                     }
                 }
+                //if (target.closest(".nav-wrap").length == 0)
 
+            });
+
+            //固定导航
+            $(window).scroll(function () {
+                var otop = parseInt($(".grid-list").scrollTop());
+                var scrollTop = parseInt($(document).scrollTop());
+                if (scrollTop >= otop) {
+                    $(".nav-wrap").addClass("fixed");
+                } else {
+                    $(".nav-wrap").removeClass("fixed");
+                }
             });
 
         })
