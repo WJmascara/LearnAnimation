@@ -129,6 +129,39 @@
                             </div>
                         </div>
                     </li>
+                    <li>
+                        <div class="hover-effect6">
+                            <a href="#" class="img-box">
+                                <img src="images/thumbs/7.jpg" alt="">
+                            </a>
+                            <div class="txt-box">
+                                <h2>Bubba</h2>
+                                <p>Bubba likes to appear out of thin air.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hover-effect7">
+                            <a href="#" class="img-box">
+                                <img src="images/thumbs/8.jpg" alt="">
+                            </a>
+                            <div class="txt-box">
+                                <h2>Bubba</h2>
+                                <p>Bubba likes to appear out of thin air.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hover-effect8">
+                            <a href="#" class="img-box">
+                                <img src="images/thumbs/9.jpg" alt="">
+                            </a>
+                            <div class="txt-box">
+                                <h2>Bubba</h2>
+                                <p>Bubba likes to appear out of thin air.</p>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="pop-mask">
@@ -326,12 +359,28 @@
                     var oelement = $(".grid-list").find("li").eq(oindex).html();
                     $(".pop-mask").show();
                     $(".pop-wrap").addClass("element-show");
+                    //页面中的元素添加到弹出层
                     $(".pop-wrap .pop-element").append(oelement);
                 });
             });
+
+            //通过关闭按钮关闭弹出层
             $(".pop-close").bind("click", function () {
                 $(this).parents(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
                 $(".pop-mask").hide();
+            });
+
+            //通过点击页面其他部分关闭弹出层
+            $(document).bind("click", function (e) {
+                var target = $(e.target);
+                if ($(".pop-wrap").hasClass("element-show")) {
+                    if (target.closest(".pop-wrap,.list-tags").length == 0) {
+                        $(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
+                        $(".pop-mask").hide();
+                        console.log(1);
+                    }
+                }
+
             });
 
         })
