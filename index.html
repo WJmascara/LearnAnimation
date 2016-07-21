@@ -335,9 +335,9 @@
             });
 
             //nav click dropdown
+            /**
             var oli = document.getElementById("menu").getElementsByTagName("li");
             var tagList = document.getElementsByClassName("list-tags");
-            //console.log(tagList instanceof Array);
             for (var i = 0, len = oli.length; i < len; i++) {
                 oli[i].index = i;
                 oli[i].onclick = function () {
@@ -350,44 +350,40 @@
                     tagList[this.index].style.display = "block";
                 }
             }
+            **/
+
 
         })();
     </script>
     <script>
         $(function () {
 
+            //导航切换
+            $(".menu li").on("click", function () {
+                var oindex = $(this).index();
+                $(".list-tags").hide().eq(oindex).show();
+                $(".menu li").find("span").removeClass("open");
+                $(this).find("span").addClass("open");
+
+                //关闭下拉
+                handleHide();
+
+                return false;
+            });
+
             //出现弹层
-            $(".filter-hover li").each(function () {
-                $(this).bind("click", function () {
-                    var oindex = parseInt($(this).index());
-                    var oelement = $(".grid-list").find("li").eq(oindex).html();
-                    $(".pop-mask").show();
-                    $(".pop-wrap").addClass("element-show");
-                    //页面中的元素添加到弹出层
-                    $(".pop-wrap .pop-element").append(oelement);
+            $(".filter-hover li,.grid-list li").on("click", function () {
+                var oindex = $(this).index();
+                var oelement = $(".grid-list").find("li").eq(oindex).html();
+                $(".pop-mask").show();
+                $(".pop-wrap").addClass("element-show");
 
-                    //阻止document触发的事件
-                    event.stopPropagation();
-                });
-            });
+                //页面中的元素添加到弹出层
+                $(".pop-wrap .pop-element").append(oelement);
+                //关闭弹窗
+                handleHide();
 
-            //通过关闭按钮关闭弹出层
-            $(".pop-close").bind("click", function () {
-                $(this).parents(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
-                $(".pop-mask").hide();
-            });
-
-            //通过点击页面其他部分关闭弹出层
-            $(document).bind("click", function (e) {
-                var target = $(e.target);
-                if ($(".pop-wrap").hasClass("element-show")) {
-                    if (target.closest(".pop-wrap").length == 0) {
-                        $(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
-                        $(".pop-mask").hide();
-                    }
-                }
-                //if (target.closest(".nav-wrap").length == 0)
-
+                return false;
             });
 
             //固定导航
@@ -401,6 +397,16 @@
                 }
             });
 
+            function handleHide() {
+                $("body,.pop-close").on("click", function () {
+                    $(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
+                    $(".pop-mask").hide();
+                    $(".list-tags").hide();
+                });
+                $(".pop-wrap,.nav-wrap").on("click", function () {
+                    return false;
+                });
+            }
         })
     </script>
 
