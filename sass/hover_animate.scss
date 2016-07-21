@@ -97,11 +97,10 @@
         }
         .list-tags {
             position: relative;
-            padding: 30px 20px 24px 20px;
+            padding: 0;
+            height: 0;
             overflow: hidden;
-            border-bottom: 1px solid #d2d6d5;
             background: #e1e3e4;
-            display: none;
             @include base-transition(all, .2s, ease);
             > ul {
                 > li {
@@ -130,6 +129,11 @@
                         }
                     }
                 }
+            }
+            &.show {
+                padding: 30px 20px 24px 20px;
+                height: auto;
+                border-bottom: 1px solid #d2d6d5;
             }
         }
         &.fixed {

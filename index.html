@@ -361,7 +361,7 @@
             //导航切换
             $(".menu li").on("click", function () {
                 var oindex = $(this).index();
-                $(".list-tags").hide().eq(oindex).show();
+                $(".list-tags").removeClass("show").eq(oindex).addClass("show");
                 $(".menu li").find("span").removeClass("open");
                 $(this).find("span").addClass("open");
 
@@ -401,7 +401,7 @@
                 $("body,.pop-close").on("click", function () {
                     $(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
                     $(".pop-mask").hide();
-                    $(".list-tags").hide();
+                    $(".list-tags").removeClass("show");
                 });
                 $(".pop-wrap,.nav-wrap").on("click", function () {
                     return false;
