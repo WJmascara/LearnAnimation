@@ -166,6 +166,13 @@
                     </li>
                 </ul>
             </div>
+            <div class="grid-list">
+                <ul>
+                    <li>
+
+                    </li>
+                </ul>
+            </div>
             <div class="pop-mask">
             </div>
             <div class="pop-wrap">
@@ -358,12 +365,13 @@
         $(function () {
 
             //导航切换
-            $(".menu li").on("click", function () {
+            $(".menu .dropdown").on("click", function () {
                 var oindex = $(this).index();
                 $(".list-tags").removeClass("show").eq(oindex).addClass("show");
                 $(".menu li").find("span").removeClass("open");
                 $(this).find("span").addClass("open");
 
+                $(".grid-list").hide().eq(oindex).show();
                 //关闭下拉
                 handleHide();
 
@@ -406,6 +414,8 @@
                     return false;
                 });
             }
+
+
         })
     </script>
 

@@ -161,10 +161,9 @@
         > li {
             float: left;
             margin: 0 0 35px 23px;
-            [class*="hover-effect"] {
-                width: 439px;
-                height: 314px;
-            }
+            width: 439px;
+            height: 314px;
+            background: #fff;
         }
     }
 }
@@ -177,8 +176,8 @@
     overflow: hidden;
     background: #3C948B;
     cursor: pointer;
-    width: 620px;
-    height: 380px;
+    width: 439px;
+    height: 314px;
     border: 5px solid #fff;
     .img-box {
         position: absolute;
@@ -674,6 +673,10 @@
         transform: translateZ(600px) rotateX(20deg);
         opacity: 0;
         @include base-transition(all, .3s, ease, 0s);
+        [class*="hover-effect"] {
+            width: 620px;
+            height: 380px;
+        }
         img {
             border-radius: 3px;
         }
