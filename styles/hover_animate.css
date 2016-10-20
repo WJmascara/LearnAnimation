@@ -38,20 +38,20 @@
   border-bottom: 1px solid #d4cdcd;
 }
 /* line 52, ../sass/hover_animate.scss */
-.header .nav-wrap .nav .menumenu > ul {
+.header .nav-wrap .nav .menu > ul {
   overflow: hidden;
 }
 /* line 54, ../sass/hover_animate.scss */
-.header .nav-wrap .nav .menumenu > ul > li {
+.header .nav-wrap .nav .menu > ul > li {
   float: left;
   border-right: 1px solid #d2d6d5;
 }
 /* line 57, ../sass/hover_animate.scss */
-.header .nav-wrap .nav .menumenu > ul > li:last-child {
+.header .nav-wrap .nav .menu > ul > li:last-child {
   border-right: none;
 }
 /* line 60, ../sass/hover_animate.scss */
-.header .nav-wrap .nav .menumenu > ul > li > span {
+.header .nav-wrap .nav .menu > ul > li > span {
   position: relative;
   display: block;
   padding: 0 30px 0 15px;
@@ -60,7 +60,7 @@
   cursor: pointer;
 }
 /* line 67, ../sass/hover_animate.scss */
-.header .nav-wrap .nav .menumenu > ul > li > span:before, .header .nav-wrap .nav .menumenu > ul > li > span:after {
+.header .nav-wrap .nav .menu > ul > li > span:before, .header .nav-wrap .nav .menu > ul > li > span:after {
   content: '';
   display: block;
   position: absolute;
@@ -76,21 +76,21 @@
   transition: all .25s ease-out;
 }
 /* line 83, ../sass/hover_animate.scss */
-.header .nav-wrap .nav .menumenu > ul > li > span:after {
+.header .nav-wrap .nav .menu > ul > li > span:after {
   right: 15px;
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
 /* line 88, ../sass/hover_animate.scss */
-.header .nav-wrap .nav .menumenu > ul > li > span.open, .header .nav-wrap .nav .menumenu > ul > li > span:hover {
+.header .nav-wrap .nav .menu > ul > li > span.open, .header .nav-wrap .nav .menu > ul > li > span:hover {
   background-color: #F4F4F4;
 }
 /* line 91, ../sass/hover_animate.scss */
-.header .nav-wrap .nav .menumenu > ul > li > span.open:before, .header .nav-wrap .nav .menumenu > ul > li > span:hover:before {
+.header .nav-wrap .nav .menu > ul > li > span.open:before, .header .nav-wrap .nav .menu > ul > li > span:hover:before {
   right: 15px;
 }
 /* line 94, ../sass/hover_animate.scss */
-.header .nav-wrap .nav .menumenu > ul > li > span.open:after, .header .nav-wrap .nav .menumenu > ul > li > span:hover:after {
+.header .nav-wrap .nav .menu > ul > li > span.open:after, .header .nav-wrap .nav .menu > ul > li > span:hover:after {
   right: 19px;
 }
 /* line 103, ../sass/hover_animate.scss */
