@@ -19,7 +19,7 @@
                     <div class="menu" id="menu">
                         <ul>
                             <li class="dropdown">
-                                <span>Hover Effects</span>
+                                <span class="open">Hover Effects</span>
                             </li>
                             <li class="dropdown">
                                 <span>Elements Effects</span>
@@ -67,7 +67,7 @@
 
             <div class="grid-list">
                 <ul>
-                    <li>
+                    <li data-name="hover effect1">
                         <div class="modal1-hover-effect0">
                             <a href="#" class="img-box">
                                 <img src="images/thumbs/1.jpg" alt="">
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li data-name="hover effect2">
                         <div class="modal1-hover-effect1">
                             <a href="#" class="img-box">
                                 <img src="images/thumbs/2.jpg" alt="">
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li data-name="hover effect3">
                         <div class="modal1-hover-effect2">
                             <a href="#" class="img-box">
                                 <img src="images/thumbs/3.jpg" alt="">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li data-name="hover effect4">
                         <div class="modal1-hover-effect3">
                             <a href="#" class="img-box">
                                 <img src="images/thumbs/4.jpg" alt="">
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li data-name="hover effect5">
                         <div class="modal1-hover-effect4">
                             <a href="#" class="img-box">
                                 <img src="images/thumbs/5.jpg" alt="">
@@ -121,7 +121,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li data-name="hover effect6">
                         <div class="modal1-hover-effect5">
                             <a href="#" class="img-box">
                                 <img src="images/thumbs/6.jpg" alt="">
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li data-name="hover effect7">
                         <div class="modal2-hover-effect0">
                             <a href="#" class="img-box">
                                 <img src="images/thumbs/7.jpg" alt="">
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li data-name="hover effect8">
                         <div class="modal2-hover-effect1 toBottom">
                             <a href="#" class="img-box">
                                 <img src="images/thumbs/8.jpg" alt="">
@@ -156,7 +156,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li data-name="hover effect9">
                         <div class="modal2-hover-effect2">
                             <a href="#" class="img-box">
                                 <img src="images/thumbs/9.jpg" alt="">
@@ -166,9 +166,18 @@
                     </li>
                 </ul>
             </div>
-            <div class="grid-list">
+            <div class="grid-list" style="display:none">
                 <ul>
-                    <li>
+                    <li data-name="clouds">
+                        <div class="cloud-box">
+                            <span class="cloud1"><img src="images/cloud1.png" alt=""></span>
+                            <span class="cloud2"><img src="images/cloud2.png" alt=""></span>
+                            <span class="cloud3"><img src="images/cloud3.png" alt=""></span>
+                            <span class="cloud4"><img src="images/cloud4.png" alt=""></span>
+                            <span class="cloud5"><img src="images/cloud5.png" alt=""></span>
+                        </div>
+                    </li>
+                    <li data-name="stars">
 
                     </li>
                 </ul>
@@ -378,20 +387,53 @@
                 return false;
             });
 
-            //出现弹层
-            $(".filter-hover li,.grid-list li").on("click", function () {
-                var oindex = $(this).index();
-                var oelement = $(".grid-list").find("li").eq(oindex).html();
-                $(".pop-mask").show();
-                $(".pop-wrap").addClass("element-show");
+            //出现区块内容出现弹层
+            $(".grid-list").each(function () {
+                var _that = $(this);
+                _that.find("li").on("click", function () {
+                    var oindex = $(this).index();
+                    var oelement = _that.find("li").eq(oindex).html();
 
-                //页面中的元素添加到弹出层
-                $(".pop-wrap .pop-element").append(oelement);
-                //关闭弹窗
-                handleHide();
+                    //弹窗出现
+                    handleShow(oelement);
 
-                return false;
+                    //关闭弹窗
+                    handleHide();
+
+                    return false;
+                });
             });
+
+            //点击顶部导航出现弹层
+            $(".list-tags").each(function () {
+
+                //确定grid-list的索引
+                var _that = $(this);
+                var oindex = _that.index();
+                var current_grid_list = $(".grid-list").eq(oindex - 1);
+                var len = current_grid_list.find("li").length;
+
+
+                _that.find("li").on("click", function () {
+
+                    var txt = $(this).find("a").html();
+                    //console.log(txt);
+                    for (var i = 0; i < len; i++) {
+                        var current_li = current_grid_list.find("li").eq(i);
+                        if (current_li.data("name") === txt) {
+
+                            //弹窗出现
+                            handleShow(current_li.html());
+
+                            //关闭弹窗
+                            handleHide();
+
+                            return false;
+                        }
+                    }
+                });
+            });
+
 
             //固定导航
             $(window).scroll(function () {
@@ -415,8 +457,17 @@
                 });
             }
 
+            //弹层内容添加
+            function handleShow(ele) {
 
-        })
+                $(".pop-mask").show();
+                $(".pop-wrap").addClass("element-show");
+                //页面中的元素添加到弹出层
+                $(".pop-wrap .pop-element").append(ele);
+            }
+
+
+        });
     </script>
 
 </body>
