@@ -191,42 +191,42 @@
                             <span class="leave4"><img src="images/leave4.png" alt=""></span>
                             <span class="leave5"><img src="images/leave5.png" alt=""></span>
                             <span class="leave6"><img src="images/leave6.png" alt=""></span>
-                            <span class="leave7"><img src="images/leave1.png " alt=" "></span>
-                            <span class="leave8"><img src="images/leave2.png " alt=" "></span>
+                            <span class="leave7"><img src="images/leave1.png" alt=""></span>
+                            <span class="leave8"><img src="images/leave2.png" alt=""></span>
                         </div>
                     </li>
-                    <li data-name="stars ">
-                        <div class="stars "></div>
-                        <div class="twinkling "></div>
+                    <li data-name="stars">
+                        <div class="stars"></div>
+                        <div class="twinkling"></div>
                     </li>
 
                 </ul>
             </div>
-            <div class="pop-mask ">
+            <div class="pop-mask">
             </div>
-            <div class="pop-wrap ">
-                <div class="pop-inner ">
-                    <div class="pop-element ">
+            <div class="pop-wrap">
+                <div class="pop-inner">
+                    <div class="pop-element">
                     </div>
-                    <a href="javascript:; " class="pop-close "></a>
-                    <a href="# " class="pop-link ">查看代码</a>
+                    <a href="javascript:;" class="pop-close"></a>
+                    <a href="#" class="pop-link">查看代码</a>
                 </div>
             </div>
-            <div class="bg-img ">
-                <img src="images/bg.jpg " alt="Background Image ">
+            <div class="bg-img">
+                <img src="images/bg.jpg" alt="Background Image">
             </div>
-            <div class="title ">
+            <div class="title">
             </div>
         </header>
-        <button class="trigger "><span>Trigger</span></button>
-        <article class="content ">
+        <button class="trigger"><span>Trigger</span></button>
+        <article class="content">
             animate
         </article>
     </div>
 
     <!-- /container -->
-    <script src="scripts/classie.js "></script>
-    <script src="scripts/jquery.js "></script>
+    <script src="scripts/classie.js"></script>
+    <script src="scripts/jquery.js"></script>
     <script>
         (function () {
 
@@ -371,18 +371,18 @@
 
             //nav click dropdown
             /**
-            var oli = document.getElementById("menu ").getElementsByTagName("li ");
-            var tagList = document.getElementsByClassName("list-tags ");
+            var oli = document.getElementById("menu").getElementsByTagName("li");
+            var tagList = document.getElementsByClassName("list-tags");
             for (var i = 0, len = oli.length; i < len; i++) {
                 oli[i].index = i;
                 oli[i].onclick = function () {
 
                     for (var j = 0, len = oli.length; j < len; j++) {
-                        oli[j].getElementsByTagName("span ")[0].className = " ";
-                        tagList[j].style.display = "none ";
+                        oli[j].getElementsByTagName("span")[0].className = "";
+                        tagList[j].style.display = "none";
                     }
-                    this.getElementsByTagName("span ")[0].className = "open ";
-                    tagList[this.index].style.display = "block ";
+                    this.getElementsByTagName("span")[0].className = "open";
+                    tagList[this.index].style.display = "block";
                 }
             }
             **/
@@ -394,13 +394,13 @@
         $(function () {
 
             //导航切换
-            $(".menu .dropdown ").on("click ", function () {
+            $(".menu .dropdown").on("click", function () {
                 var oindex = $(this).index();
-                $(".list-tags ").removeClass("show ").eq(oindex).addClass("show ");
-                $(".menu li ").find("span ").removeClass("open ");
-                $(this).find("span ").addClass("open ");
+                $(".list-tags").removeClass("show").eq(oindex).addClass("show");
+                $(".menu li").find("span").removeClass("open");
+                $(this).find("span").addClass("open");
 
-                $(".grid-list ").hide().eq(oindex).show();
+                $(".grid-list").hide().eq(oindex).show();
                 //关闭下拉
                 handleHide();
 
@@ -408,11 +408,11 @@
             });
 
             //出现区块内容出现弹层
-            $(".grid-list ").each(function () {
+            $(".grid-list").each(function () {
                 var _that = $(this);
-                _that.find("li ").on("click ", function () {
+                _that.find("li").on("click", function () {
                     var oindex = $(this).index();
-                    var oelement = _that.find("li ").eq(oindex).html();
+                    var oelement = _that.find("li").eq(oindex).html();
 
                     //弹窗出现
                     handleShow(oelement);
@@ -425,22 +425,22 @@
             });
 
             //点击顶部导航出现弹层
-            $(".list-tags ").each(function () {
+            $(".list-tags").each(function () {
 
                 //确定grid-list的索引
                 var _that = $(this);
                 var oindex = _that.index();
-                var current_grid_list = $(".grid-list ").eq(oindex - 1);
-                var len = current_grid_list.find("li ").length;
+                var current_grid_list = $(".grid-list").eq(oindex - 1);
+                var len = current_grid_list.find("li").length;
 
 
-                _that.find("li ").on("click ", function () {
+                _that.find("li").on("click", function () {
 
-                    var txt = $(this).find("a ").html();
+                    var txt = $(this).find("a").html();
                     //console.log(txt);
                     for (var i = 0; i < len; i++) {
-                        var current_li = current_grid_list.find("li ").eq(i);
-                        if (current_li.data("name ") === txt) {
+                        var current_li = current_grid_list.find("li").eq(i);
+                        if (current_li.data("name") === txt) {
 
                             //弹窗出现
                             handleShow(current_li.html());
@@ -457,23 +457,23 @@
 
             //固定导航
             $(window).scroll(function () {
-                var otop = parseInt($(".grid-list ").scrollTop());
+                var otop = parseInt($(".grid-list").scrollTop());
                 var scrollTop = parseInt($(document).scrollTop());
                 if (scrollTop >= otop) {
-                    $(".nav-wrap ").addClass("fixed ");
+                    $(".nav-wrap").addClass("fixed");
                 } else {
-                    $(".nav-wrap ").removeClass("fixed ");
+                    $(".nav-wrap").removeClass("fixed");
                 }
             });
 
             //弹窗隐藏
             function handleHide() {
-                $("body,.pop-close ").on("click ", function () {
-                    $(".pop-wrap ").removeClass("element-show ").find(".pop-element ").html(" ");
-                    $(".pop-mask ").hide();
-                    $(".list-tags ").removeClass("show ");
+                $("body,.pop-close").on("click", function () {
+                    $(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
+                    $(".pop-mask").hide();
+                    $(".list-tags").removeClass("show");
                 });
-                $(".pop-wrap,.nav-wrap ").on("click ", function () {
+                $(".pop-wrap,.nav-wrap").on("click", function () {
                     return false;
                 });
             }
@@ -481,10 +481,10 @@
             //弹层显示、内容添加
             function handleShow(ele) {
 
-                $(".pop-mask ").show();
-                $(".pop-wrap ").addClass("element-show ");
+                $(".pop-mask").show();
+                $(".pop-wrap").addClass("element-show");
                 //页面中的元素添加到弹出层
-                $(".pop-wrap .pop-element ").append(ele);
+                $(".pop-wrap .pop-element").append(ele);
             }
 
 
