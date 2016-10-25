@@ -24,6 +24,12 @@
                             <li class="dropdown">
                                 <span>Elements Effects</span>
                             </li>
+                            <li class="dropdown">
+                                <span>PopUp Effects</span>
+                            </li>
+                            <li class="dropdown">
+                                <span>PageTransition Effects</span>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -177,9 +183,21 @@
                             <span class="cloud5"><img src="images/cloud5.png" alt=""></span>
                         </div>
                     </li>
-                    <li data-name="stars">
-
+                    <li data-name="leaves">
+                        <div class="leaves-box">
+                            <span class="leave1"><img src="images/leave1.png" alt=""></span>
+                            <span class="leave2"><img src="images/leave2.png" alt=""></span>
+                            <span class="leave3"><img src="images/leave3.png" alt=""></span>
+                            <span class="leave4"><img src="images/leave4.png" alt=""></span>
+                            <span class="leave5"><img src="images/leave5.png" alt=""></span>
+                            <span class="leave6"><img src="images/leave6.png" alt=""></span>
+                        </div>
                     </li>
+                    <li data-name="stars">
+                        <div class="stars"></div>
+                        <div class="twinkling"></div>
+                    </li>
+
                 </ul>
             </div>
             <div class="pop-mask">
@@ -446,6 +464,7 @@
                 }
             });
 
+            //弹窗隐藏
             function handleHide() {
                 $("body,.pop-close").on("click", function () {
                     $(".pop-wrap").removeClass("element-show").find(".pop-element").html("");
@@ -457,7 +476,7 @@
                 });
             }
 
-            //弹层内容添加
+            //弹层显示、内容添加
             function handleShow(ele) {
 
                 $(".pop-mask").show();

@@ -28,7 +28,7 @@
 .header .nav-wrap {
   position: relative;
   box-shadow: 0 1px 2px 0 rgba(34, 32, 32, 0.3);
-  z-index: 1;
+  z-index: 3;
 }
 /* line 46, ../sass/hover_animate.scss */
 .header .nav-wrap .nav {
@@ -163,6 +163,7 @@
 }
 /* line 166, ../sass/hover_animate.scss */
 .grid-list > ul > li {
+  position: relative;
   float: left;
   margin: 0 0 35px 23px;
   width: 439px;
@@ -172,7 +173,7 @@
 }
 
 /*=========================== animate-style ========================*/
-/* line 180, ../sass/hover_animate.scss */
+/* line 181, ../sass/hover_animate.scss */
 [class*="modal1-hover-effect"], [class*="modal2-hover-effect"] {
   position: relative;
   overflow: hidden;
@@ -182,7 +183,7 @@
   height: 314px;
   border: 5px solid #fff;
 }
-/* line 188, ../sass/hover_animate.scss */
+/* line 189, ../sass/hover_animate.scss */
 [class*="modal1-hover-effect"] .img-box, [class*="modal2-hover-effect"] .img-box {
   position: absolute;
   left: 0;
@@ -192,21 +193,21 @@
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
 }
-/* line 196, ../sass/hover_animate.scss */
+/* line 197, ../sass/hover_animate.scss */
 [class*="modal1-hover-effect"] .txt-box, [class*="modal2-hover-effect"] .txt-box {
   text-align: center;
   color: #fff;
   padding: 15%;
   font-family: "Tahoma";
 }
-/* line 201, ../sass/hover_animate.scss */
+/* line 202, ../sass/hover_animate.scss */
 [class*="modal1-hover-effect"] .txt-box h2, [class*="modal2-hover-effect"] .txt-box h2 {
   font-size: 24px;
   text-transform: uppercase;
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
 }
-/* line 206, ../sass/hover_animate.scss */
+/* line 207, ../sass/hover_animate.scss */
 [class*="modal1-hover-effect"] .txt-box p, [class*="modal2-hover-effect"] .txt-box p {
   font-size: 14px;
   letter-spacing: 1px;
@@ -214,47 +215,47 @@
   transition: all 0.35s ease 0s;
 }
 
-/* line 222, ../sass/hover_animate.scss */
+/* line 223, ../sass/hover_animate.scss */
 .modal1-hover-effect0 .img-box {
   opacity: .6;
   -webkit-transform: scale(1.15);
   transform: scale(1.15);
 }
-/* line 228, ../sass/hover_animate.scss */
+/* line 229, ../sass/hover_animate.scss */
 .modal1-hover-effect0 .txt-box p,
 .modal1-hover-effect0 .txt-box h2 {
   -webkit-transform: translate3d(0, 20px, 0) scale(1.1);
   transform: translate3d(0, 20px, 0) scale(1.1);
 }
-/* line 233, ../sass/hover_animate.scss */
+/* line 234, ../sass/hover_animate.scss */
 .modal1-hover-effect0 .txt-box p {
   padding: 3%;
   border: 1px solid #fff;
   opacity: 0;
 }
-/* line 240, ../sass/hover_animate.scss */
+/* line 241, ../sass/hover_animate.scss */
 .modal1-hover-effect0:hover .img-box {
   opacity: .8;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-/* line 246, ../sass/hover_animate.scss */
+/* line 247, ../sass/hover_animate.scss */
 .modal1-hover-effect0:hover .txt-box p {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0) scale(1);
   transform: translate3d(0, 0, 0) scale(1);
 }
-/* line 251, ../sass/hover_animate.scss */
+/* line 252, ../sass/hover_animate.scss */
 .modal1-hover-effect0:hover .txt-box h2 {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 260, ../sass/hover_animate.scss */
+/* line 261, ../sass/hover_animate.scss */
 .modal1-hover-effect1 .img-box {
   opacity: .5;
 }
-/* line 263, ../sass/hover_animate.scss */
+/* line 264, ../sass/hover_animate.scss */
 .modal1-hover-effect1:before {
   content: "";
   position: absolute;
@@ -269,38 +270,38 @@
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
 }
-/* line 277, ../sass/hover_animate.scss */
+/* line 278, ../sass/hover_animate.scss */
 .modal1-hover-effect1:hover .img-box {
   opacity: .9;
 }
-/* line 281, ../sass/hover_animate.scss */
+/* line 282, ../sass/hover_animate.scss */
 .modal1-hover-effect1:hover .txt-box h2 {
   -webkit-transform: translate3d(0, 30px, 0);
   transform: translate3d(0, 30px, 0);
 }
-/* line 286, ../sass/hover_animate.scss */
+/* line 287, ../sass/hover_animate.scss */
 .modal1-hover-effect1:hover:before {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 294, ../sass/hover_animate.scss */
+/* line 295, ../sass/hover_animate.scss */
 .modal1-hover-effect2 .img-box {
   opacity: .7;
   -webkit-transform: translate3d(0, 0, 200px);
   transform: translate3d(0, 0, 200px);
 }
-/* line 300, ../sass/hover_animate.scss */
+/* line 301, ../sass/hover_animate.scss */
 .modal1-hover-effect2 .txt-box h2 {
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
 }
-/* line 304, ../sass/hover_animate.scss */
+/* line 305, ../sass/hover_animate.scss */
 .modal1-hover-effect2 .txt-box p {
   -webkit-transform: translate3d(0, 50%, 0);
   transform: translate3d(0, 50%, 0);
 }
-/* line 309, ../sass/hover_animate.scss */
+/* line 310, ../sass/hover_animate.scss */
 .modal1-hover-effect2:after, .modal1-hover-effect2:before {
   content: "";
   position: absolute;
@@ -315,50 +316,50 @@
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
 }
-/* line 324, ../sass/hover_animate.scss */
+/* line 325, ../sass/hover_animate.scss */
 .modal1-hover-effect2:hover .img-box {
   opacity: .9;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 330, ../sass/hover_animate.scss */
+/* line 331, ../sass/hover_animate.scss */
 .modal1-hover-effect2:hover .txt-box h2 {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 334, ../sass/hover_animate.scss */
+/* line 335, ../sass/hover_animate.scss */
 .modal1-hover-effect2:hover .txt-box p {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 339, ../sass/hover_animate.scss */
+/* line 340, ../sass/hover_animate.scss */
 .modal1-hover-effect2:hover:before {
   -webkit-transform: translate3d(-50%, -50%, 0) rotate(45deg);
   transform: translate3d(-50%, -50%, 0) rotate(45deg);
 }
-/* line 343, ../sass/hover_animate.scss */
+/* line 344, ../sass/hover_animate.scss */
 .modal1-hover-effect2:hover:after {
   -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
   transform: translate3d(-50%, -50%, 0) rotate(-45deg);
 }
 
-/* line 351, ../sass/hover_animate.scss */
+/* line 352, ../sass/hover_animate.scss */
 .modal1-hover-effect3 .img-box {
   width: 120%;
   opacity: .7;
   -webkit-transform: translate3d(-10%, 0, 0);
   transform: translate3d(-10%, 0, 0);
 }
-/* line 356, ../sass/hover_animate.scss */
+/* line 357, ../sass/hover_animate.scss */
 .modal1-hover-effect3 .img-box img {
   width: 120%;
 }
-/* line 361, ../sass/hover_animate.scss */
+/* line 362, ../sass/hover_animate.scss */
 .modal1-hover-effect3 .txt-box h2 {
   position: relative;
   text-align: left;
 }
-/* line 364, ../sass/hover_animate.scss */
+/* line 365, ../sass/hover_animate.scss */
 .modal1-hover-effect3 .txt-box h2:after {
   content: "";
   position: absolute;
@@ -374,39 +375,39 @@
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
 }
-/* line 379, ../sass/hover_animate.scss */
+/* line 380, ../sass/hover_animate.scss */
 .modal1-hover-effect3 .txt-box p {
   opacity: 0;
   -webkit-transform: translate3d(50px, 0, 0);
   transform: translate3d(50px, 0, 0);
 }
-/* line 386, ../sass/hover_animate.scss */
+/* line 387, ../sass/hover_animate.scss */
 .modal1-hover-effect3:hover .img-box {
   opacity: .9;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 393, ../sass/hover_animate.scss */
+/* line 394, ../sass/hover_animate.scss */
 .modal1-hover-effect3:hover .txt-box h2:after {
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
-/* line 398, ../sass/hover_animate.scss */
+/* line 399, ../sass/hover_animate.scss */
 .modal1-hover-effect3:hover .txt-box p {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 408, ../sass/hover_animate.scss */
+/* line 409, ../sass/hover_animate.scss */
 .modal1-hover-effect4 .img-box {
   opacity: .7;
 }
-/* line 411, ../sass/hover_animate.scss */
+/* line 412, ../sass/hover_animate.scss */
 .modal1-hover-effect4 .txt-box {
   position: relative;
 }
-/* line 413, ../sass/hover_animate.scss */
+/* line 414, ../sass/hover_animate.scss */
 .modal1-hover-effect4 .txt-box:before, .modal1-hover-effect4 .txt-box:after {
   content: "";
   position: absolute;
@@ -417,72 +418,72 @@
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-/* line 423, ../sass/hover_animate.scss */
+/* line 424, ../sass/hover_animate.scss */
 .modal1-hover-effect4 .txt-box:before {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
 }
-/* line 429, ../sass/hover_animate.scss */
+/* line 430, ../sass/hover_animate.scss */
 .modal1-hover-effect4 .txt-box:after {
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
   -webkit-transform: scale(1, 0);
   transform: scale(1, 0);
 }
-/* line 435, ../sass/hover_animate.scss */
+/* line 436, ../sass/hover_animate.scss */
 .modal1-hover-effect4 .txt-box h2 {
   -webkit-transform: translate3d(0, -10px, 0);
   transform: translate3d(0, -10px, 0);
 }
-/* line 439, ../sass/hover_animate.scss */
+/* line 440, ../sass/hover_animate.scss */
 .modal1-hover-effect4 .txt-box p {
   opacity: 0;
   -webkit-transform: translate3d(0, 10px, 0);
   transform: translate3d(0, 10px, 0);
 }
-/* line 446, ../sass/hover_animate.scss */
+/* line 447, ../sass/hover_animate.scss */
 .modal1-hover-effect4:hover .img-box {
   opacity: .9;
 }
-/* line 450, ../sass/hover_animate.scss */
+/* line 451, ../sass/hover_animate.scss */
 .modal1-hover-effect4:hover .txt-box:before, .modal1-hover-effect4:hover .txt-box:after {
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
-/* line 455, ../sass/hover_animate.scss */
+/* line 456, ../sass/hover_animate.scss */
 .modal1-hover-effect4:hover .txt-box h2 {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 459, ../sass/hover_animate.scss */
+/* line 460, ../sass/hover_animate.scss */
 .modal1-hover-effect4:hover .txt-box p {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 469, ../sass/hover_animate.scss */
+/* line 470, ../sass/hover_animate.scss */
 .modal1-hover-effect5 .img-box {
   height: 120%;
   opacity: .9;
   -webkit-transform: translate3d(0, -10%, 0);
   transform: translate3d(0, -10%, 0);
 }
-/* line 474, ../sass/hover_animate.scss */
+/* line 475, ../sass/hover_animate.scss */
 .modal1-hover-effect5 .img-box img {
   height: 120%;
 }
-/* line 478, ../sass/hover_animate.scss */
+/* line 479, ../sass/hover_animate.scss */
 .modal1-hover-effect5 .txt-box {
   position: relative;
 }
-/* line 480, ../sass/hover_animate.scss */
+/* line 481, ../sass/hover_animate.scss */
 .modal1-hover-effect5 .txt-box p {
   opacity: 0;
 }
-/* line 483, ../sass/hover_animate.scss */
+/* line 484, ../sass/hover_animate.scss */
 .modal1-hover-effect5 .txt-box:before, .modal1-hover-effect5 .txt-box:after {
   content: "";
   position: absolute;
@@ -491,7 +492,7 @@
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
 }
-/* line 491, ../sass/hover_animate.scss */
+/* line 492, ../sass/hover_animate.scss */
 .modal1-hover-effect5 .txt-box:before {
   width: 110%;
   height: 100%;
@@ -502,7 +503,7 @@
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
 }
-/* line 501, ../sass/hover_animate.scss */
+/* line 502, ../sass/hover_animate.scss */
 .modal1-hover-effect5 .txt-box:after {
   width: 100%;
   height: 110%;
@@ -513,23 +514,23 @@
   -webkit-transform: scale(1, 0);
   transform: scale(1, 0);
 }
-/* line 513, ../sass/hover_animate.scss */
+/* line 514, ../sass/hover_animate.scss */
 .modal1-hover-effect5:hover .img-box {
   opacity: .7;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 519, ../sass/hover_animate.scss */
+/* line 520, ../sass/hover_animate.scss */
 .modal1-hover-effect5:hover .txt-box p {
   opacity: 1;
 }
-/* line 522, ../sass/hover_animate.scss */
+/* line 523, ../sass/hover_animate.scss */
 .modal1-hover-effect5:hover .txt-box:before, .modal1-hover-effect5:hover .txt-box:after {
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
 
-/* line 536, ../sass/hover_animate.scss */
+/* line 537, ../sass/hover_animate.scss */
 .modal2-hover-effect0 .mask1,
 .modal2-hover-effect0 .mask2 {
   position: absolute;
@@ -539,19 +540,19 @@
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-/* line 544, ../sass/hover_animate.scss */
+/* line 545, ../sass/hover_animate.scss */
 .modal2-hover-effect0 .mask1 {
   left: 0;
   top: 0;
   transform: translate(-121%, -50%) rotate(144deg);
 }
-/* line 549, ../sass/hover_animate.scss */
+/* line 550, ../sass/hover_animate.scss */
 .modal2-hover-effect0 .mask2 {
   right: 0;
   bottom: 0;
   transform: translate(104%, 84%) rotate(-126deg);
 }
-/* line 554, ../sass/hover_animate.scss */
+/* line 555, ../sass/hover_animate.scss */
 .modal2-hover-effect0 .mid-box {
   padding: 30px 0;
   background: #111;
@@ -567,22 +568,22 @@
   -webkit-transition: all 0.3s ease-out 0.4s;
   transition: all 0.3s ease-out 0.4s;
 }
-/* line 569, ../sass/hover_animate.scss */
+/* line 570, ../sass/hover_animate.scss */
 .modal2-hover-effect0:hover .mask1 {
   transform: translate(-61%, -50%) rotate(144deg);
 }
-/* line 572, ../sass/hover_animate.scss */
+/* line 573, ../sass/hover_animate.scss */
 .modal2-hover-effect0:hover .mask2 {
   transform: translate(52%, 84%) rotate(-126deg);
 }
-/* line 575, ../sass/hover_animate.scss */
+/* line 576, ../sass/hover_animate.scss */
 .modal2-hover-effect0:hover .mid-box {
   opacity: 1;
   -webkit-transform: translate(0, -50%) rotate(0) scale(1, 1);
   transform: translate(0, -50%) rotate(0) scale(1, 1);
 }
 
-/* line 584, ../sass/hover_animate.scss */
+/* line 585, ../sass/hover_animate.scss */
 .modal2-hover-effect1 .top-tit {
   position: absolute;
   left: 0;
@@ -596,47 +597,47 @@
   -webkit-transition: all 0.35s ease 0s;
   transition: all 0.35s ease 0s;
 }
-/* line 596, ../sass/hover_animate.scss */
+/* line 597, ../sass/hover_animate.scss */
 .modal2-hover-effect1 .img-box {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 601, ../sass/hover_animate.scss */
+/* line 602, ../sass/hover_animate.scss */
 .modal2-hover-effect1.toBottom .top-tit {
   top: 0;
   -webkit-transform: translate3d(0, -100%, 0);
   transform: translate3d(0, -100%, 0);
 }
-/* line 607, ../sass/hover_animate.scss */
+/* line 608, ../sass/hover_animate.scss */
 .modal2-hover-effect1.toBottom:hover .img-box {
   -webkit-transform: translate3d(0, 20%, 0);
   transform: translate3d(0, 20%, 0);
 }
-/* line 611, ../sass/hover_animate.scss */
+/* line 612, ../sass/hover_animate.scss */
 .modal2-hover-effect1.toBottom:hover .top-tit {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 619, ../sass/hover_animate.scss */
+/* line 620, ../sass/hover_animate.scss */
 .modal2-hover-effect1.toTop .top-tit {
   bottom: 0;
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
-/* line 625, ../sass/hover_animate.scss */
+/* line 626, ../sass/hover_animate.scss */
 .modal2-hover-effect1.toTop:hover .img-box {
   -webkit-transform: translate3d(0, -20%, 0);
   transform: translate3d(0, -20%, 0);
 }
-/* line 629, ../sass/hover_animate.scss */
+/* line 630, ../sass/hover_animate.scss */
 .modal2-hover-effect1.toTop:hover .top-tit {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 639, ../sass/hover_animate.scss */
+/* line 640, ../sass/hover_animate.scss */
 .modal2-hover-effect2 .txt-box {
   position: relative;
   padding: 15px;
@@ -645,7 +646,7 @@
 }
 
 /*=========================== pop-element-animate-style ========================*/
-/* line 650, ../sass/hover_animate.scss */
+/* line 651, ../sass/hover_animate.scss */
 .pop-mask {
   position: fixed;
   left: 0;
@@ -657,7 +658,7 @@
   display: none;
 }
 
-/* line 661, ../sass/hover_animate.scss */
+/* line 662, ../sass/hover_animate.scss */
 .pop-wrap {
   position: absolute;
   left: 50%;
@@ -668,7 +669,7 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 671, ../sass/hover_animate.scss */
+/* line 672, ../sass/hover_animate.scss */
 .pop-wrap .pop-inner {
   width: 640px;
   height: 400px;
@@ -682,27 +683,28 @@
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-/* line 682, ../sass/hover_animate.scss */
+/* line 683, ../sass/hover_animate.scss */
 .pop-wrap .pop-inner [class*="hover-effect"] {
   width: 620px;
   height: 380px;
 }
-/* line 686, ../sass/hover_animate.scss */
+/* line 687, ../sass/hover_animate.scss */
 .pop-wrap .pop-inner img {
   border-radius: 3px;
 }
-/* line 689, ../sass/hover_animate.scss */
+/* line 690, ../sass/hover_animate.scss */
 .pop-wrap .pop-inner .pop-close {
   position: absolute;
   top: -20px;
   right: -20px;
+  z-index: 1;
   width: 32px;
   height: 32px;
   background: #fff;
   line-height: 32px;
   border-radius: 50%;
 }
-/* line 698, ../sass/hover_animate.scss */
+/* line 700, ../sass/hover_animate.scss */
 .pop-wrap .pop-inner .pop-close:before, .pop-wrap .pop-inner .pop-close:after {
   content: "";
   position: absolute;
@@ -712,17 +714,17 @@
   height: 14px;
   background: #888;
 }
-/* line 708, ../sass/hover_animate.scss */
+/* line 710, ../sass/hover_animate.scss */
 .pop-wrap .pop-inner .pop-close:before {
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
   transform: translate(-50%, -50%) rotate(45deg);
 }
-/* line 712, ../sass/hover_animate.scss */
+/* line 714, ../sass/hover_animate.scss */
 .pop-wrap .pop-inner .pop-close:after {
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-/* line 717, ../sass/hover_animate.scss */
+/* line 719, ../sass/hover_animate.scss */
 .pop-wrap .pop-inner .pop-link {
   position: absolute;
   right: 0;
@@ -731,11 +733,11 @@
   color: #fff;
   text-decoration: underline;
 }
-/* line 726, ../sass/hover_animate.scss */
+/* line 728, ../sass/hover_animate.scss */
 .pop-wrap.element-show {
   z-index: 99999;
 }
-/* line 728, ../sass/hover_animate.scss */
+/* line 730, ../sass/hover_animate.scss */
 .pop-wrap.element-show .pop-inner {
   opacity: 1;
   -webkit-transform: translateZ(0) rotateX(0);
@@ -743,7 +745,7 @@
 }
 
 /*=========================== element-animate-style ========================*/
-/* line 739, ../sass/hover_animate.scss */
+/* line 741, ../sass/hover_animate.scss */
 .cloud-box {
   position: relative;
   height: 100%;
@@ -751,7 +753,7 @@
   background: -webkit-linear-gradient(top, #c9dbe9, #fff);
   background: linear-gradient(top, #c9dbe9, #fff);
 }
-/* line 745, ../sass/hover_animate.scss */
+/* line 747, ../sass/hover_animate.scss */
 .cloud-box [class*="cloud"] {
   display: block;
   position: absolute;
@@ -760,29 +762,29 @@
   -webkit-animation: cloud-animate 7s linear 0s infinite both;
   animation: cloud-animate 7s linear 0s infinite both;
 }
-/* line 751, ../sass/hover_animate.scss */
+/* line 753, ../sass/hover_animate.scss */
 .cloud-box [class*="cloud"].cloud1 {
   top: 5px;
 }
-/* line 754, ../sass/hover_animate.scss */
+/* line 756, ../sass/hover_animate.scss */
 .cloud-box [class*="cloud"].cloud2 {
   top: 80px;
   -webkit-animation-delay: 1.1s;
   animation-delay: 1.1s;
 }
-/* line 759, ../sass/hover_animate.scss */
+/* line 761, ../sass/hover_animate.scss */
 .cloud-box [class*="cloud"].cloud3 {
   top: 70px;
   -webkit-animation-delay: 2.2s;
   animation-delay: 2.2s;
 }
-/* line 764, ../sass/hover_animate.scss */
+/* line 766, ../sass/hover_animate.scss */
 .cloud-box [class*="cloud"].cloud4 {
   top: 10px;
   -webkit-animation-delay: 3.3s;
   animation-delay: 3.3s;
 }
-/* line 769, ../sass/hover_animate.scss */
+/* line 771, ../sass/hover_animate.scss */
 .cloud-box [class*="cloud"].cloud5 {
   top: 80px;
   -webkit-animation-delay: 4.4s;
@@ -831,5 +833,107 @@
     opacity: 0;
     -webkit-transform: translate(100%, 0);
     transform: translate(100%, 0);
+  }
+}
+/* line 825, ../sass/hover_animate.scss */
+.stars {
+  z-index: 0;
+  background: #000 url(../images/stars.png) repeat center top;
+}
+/* line 829, ../sass/hover_animate.scss */
+.twinkling {
+  z-index: 1;
+  background: transparent url(../images/twinkling.png) repeat center top;
+  -webkit-animation: twinkling-animate 8s linear 0s infinite both;
+  animation: twinkling-animate 8s linear 0s infinite both;
+}
+/* line 835, ../sass/hover_animate.scss */
+.stars, .twinkling {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes twinkling-animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -65% -65%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes twinkling-animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -65% -65%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+/* line 870, ../sass/hover_animate.scss */
+.leaves-box {
+  position: relative;
+  height: 100%;
+  background: -webkit-linear-gradient(top, #f5eaf2 60%, #fff);
+  background: linear-gradient(top, #f5eaf2 60%, #fff);
+}
+/* line 875, ../sass/hover_animate.scss */
+.leaves-box [class*="leave"] {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  -webkit-animation: leave-animate 5s linear 0s infinite both;
+  animation: leave-animate 5s linear 0s infinite both;
+}
+/* line 880, ../sass/hover_animate.scss */
+.leaves-box [class*="leave"].leave1 {
+  right: 10%;
+}
+/* line 883, ../sass/hover_animate.scss */
+.leaves-box [class*="leave"].leave2 {
+  right: 15%;
+}
+/* line 886, ../sass/hover_animate.scss */
+.leaves-box [class*="leave"].leave3 {
+  right: 30%;
+}
+/* line 889, ../sass/hover_animate.scss */
+.leaves-box [class*="leave"].leave4 {
+  right: 50%;
+}
+/* line 892, ../sass/hover_animate.scss */
+.leaves-box [class*="leave"].leave5 {
+  left: 20%;
+}
+/* line 895, ../sass/hover_animate.scss */
+.leaves-box [class*="leave"].leave6 {
+  left: 40%;
+}
+
+@-webkit-keyframes leave-animate {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(-50deg) translate(0, 0);
+    transform: rotate(-50deg) translate(0, 0);
+  }
+  90% {
+    opacity: 1;
+    -webkit-transform: rotate(50deg) translate(0, 90%);
+    transform: rotate(50deg) translate(0, 90%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(50deg) translate(0, 100%);
+    transform: rotate(50deg) translate(0, 100%);
   }
 }

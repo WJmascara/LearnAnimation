@@ -8,9 +8,9 @@
     height: $height;
 }
 
-@mixin base-animation($name, $duration, $timingFunction, $delay, $count, $direction) {
-    -webkit-animation: $name $duration $timingFunction $delay $count $direction;
-    animation: $name $duration $timingFunction $delay $count $direction;
+@mixin base-animation($name, $duration, $timingFunction, $delay, $count, $fillMode) {
+    -webkit-animation: $name $duration $timingFunction $delay $count $fillMode;
+    animation: $name $duration $timingFunction $delay $count $fillMode;
 }
 
 %base-effect3d {
@@ -42,7 +42,7 @@
     .nav-wrap {
         position: relative;
         box-shadow: 0 1px 2px 0 rgba(34, 32, 32, 0.3);
-        z-index: 1;
+        z-index: 3;
         .nav {
             height: 48px;
             line-height: 48px;
@@ -164,6 +164,7 @@
         margin-left: -23px;
         overflow: hidden;
         > li {
+            position: relative;
             float: left;
             margin: 0 0 35px 23px;
             width: 439px;
@@ -690,6 +691,7 @@
             position: absolute;
             top: -20px;
             right: -20px;
+            z-index: 1;
             width: 32px;
             height: 32px;
             background: #fff;
@@ -817,5 +819,99 @@
         opacity: 0;
         -webkit-transform: translate(100%, 0);
         transform: translate(100%, 0);
+    }
+}
+
+.stars {
+    z-index: 0;
+    background: #000 url(../images/stars.png) repeat center top;
+    @extend %pos;
+    @at-root .twinkling {
+        z-index: 1;
+        background: transparent url(../images/twinkling.png) repeat center top;
+        @include base-animation(twinkling-animate, 8s, linear, 0s, infinite, both);
+        @extend %pos;
+    }
+    @at-root %pos {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@-webkit-keyframes twinkling-animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: -65% -65%;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes twinkling-animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: -65% -65%;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.leaves-box {
+    position: relative;
+    height: 100%;
+    background: -webkit-linear-gradient(top, #f5eaf2 60%, #fff);
+    background: linear-gradient(top, #f5eaf2 60%, #fff);
+    [class*="leave"] {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        @include base-animation(leave-animate, 5s, linear, 0s, infinite, both);
+        &.leave1 {
+            right: 10%;
+        }
+        &.leave2 {
+            right: 15%;
+        }
+        &.leave3 {
+            right: 30%;
+        }
+        &.leave4 {
+            right: 50%;
+        }
+        &.leave5 {
+            left: 20%;
+        }
+        &.leave6 {
+            left: 40%;
+        }
+    }
+}
+
+@-webkit-keyframes leave-animate {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotate(-50deg) translate(0, 0);
+        transform: rotate(-50deg) translate(0, 0);
+    }
+    90% {
+        opacity: 1;
+        -webkit-transform: rotate(50deg) translate(0, 90%);
+        transform: rotate(50deg) translate(0, 90%);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: rotate(50deg) translate(0, 100%);
+        transform: rotate(50deg) translate(0, 100%);
     }
 }
