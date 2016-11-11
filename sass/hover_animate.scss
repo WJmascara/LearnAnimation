@@ -966,3 +966,70 @@
         transform: translate(0, 90%) rotate(10deg);
     }
 }
+
+.grid-list .mountain {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background: -webkit-linear-gradient(top, #6a9da5, #dcede7);
+    background: linear-gradient(top, #6a9da5, #dcede7);
+    .mountain-box {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin-left: -647px;
+        background: url(../images/mountain.png) no-repeat;
+        width: 1294px;
+        height: 315px;
+    }
+    .level-list [class*="level-"] {
+        position: absolute;
+        display: block;
+        background: url(../images/flag.png) no-repeat;
+        width: 33px;
+        height: 30px;
+        font: 14px/22px "Microsoft Yahei";
+        text-align: center;
+        color: #fff100;
+        &.status-a {
+            background-position: 0 0;
+        }
+        &.status-b {
+            background-position: -58px 0;
+            color: #fff;
+        }
+        &.status-c {
+            background-position: -114px 0;
+            width: 38px;
+            height: 44px;
+        }
+        &.level-0 {
+            left: 170px;
+            bottom: 17px;
+        }
+        &.level-1 {
+            left: 216px;
+            bottom: 80px;
+        }
+        &.level-2 {
+            left: 335px;
+            bottom: 143px;
+        }
+        &.level-3 {
+            left: 470px;
+            bottom: 165px;
+        }
+        &.level-4 {
+            left: 578px;
+            top: 32px;
+        }
+        &.level-5 {
+            left: 703px;
+            top: 32px;
+        }
+        &.level-6 {
+            right: 433px;
+            top: -30px;
+        }
+    }
+}
