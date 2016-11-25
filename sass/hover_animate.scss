@@ -1032,4 +1032,150 @@
             top: -30px;
         }
     }
+    .runner-wrap {
+        position: absolute;
+        left: 170px;
+        bottom: 17px;
+        width: 30px;
+        height: 30px;
+        .runner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            -webkit-animation: run .5s step-start infinite both;
+            animation: run .5s step-start infinite both;
+            background: url(../images/runner.png) no-repeat;
+        }
+        &.runToLevel1 {
+            -webkit-animation: runToLevel1 1.5s ease-in-out both;
+            animation: runToLevel1 1.5s ease-in-out both;
+        }
+        &.runToLevel2 {
+            -webkit-animation: runToLevel2 6s ease-in-out both;
+            animation: runToLevel2 6s ease-in-out both;
+        }
+        &.runToLevel6 {
+            -webkit-animation: runToLevel6 10s ease-in-out both;
+            animation: runToLevel6 10s ease-in-out both;
+        }
+    }
+    .stop-runner {
+        position: absolute;
+        background: url(../images/stop_runner.png) no-repeat;
+        width: 16px;
+        height: 32px;
+        .flag-up {
+            position: absolute;
+            left: 11px;
+            bottom: 7px;
+            display: block;
+            background: url(../images/flag.png) no-repeat -114px 0;
+            width: 38px;
+            height: 44px;
+            font: 14px/22px "Microsoft Yahei";
+            text-align: center;
+            color: #fff100;
+        }
+        &.stopRunToLevel0 {
+            left: 164px;
+            bottom: 17px;
+        }
+        &.stopRunToLevel1 {
+            left: 216px;
+            bottom: 80px;
+        }
+    }
+}
+
+@-webkit-keyframes run {
+    0% {
+        background-position: 0 0;
+    }
+    25% {
+        background-position: -41px 0;
+    }
+    50% {
+        background-position: -75px 0;
+    }
+    75% {
+        background-position: -106px 0;
+    }
+    100% {
+        background-position: -138px 0;
+    }
+}
+
+@keyframes run {
+    0% {
+        background-position: 0 0;
+    }
+    25% {
+        background-position: -41px 0;
+    }
+    50% {
+        background-position: -75px 0;
+    }
+    75% {
+        background-position: -106px 0;
+    }
+    100% {
+        background-position: -138px 0;
+    }
+}
+
+@-webkit-keyframes runToLevel1 {
+    0% {
+        -webkit-transform: none;
+        transform: none;
+    }
+    100% {
+        -webkit-transform: translate(46px, -63px);
+        transform: translate(46px, -63px);
+    }
+}
+
+@-webkit-keyframes runToLevel2 {
+    0% {
+        -webkit-transform: none;
+        transform: none;
+    }
+    55% {
+        -webkit-transform: translate(92px, -115px);
+        transform: translate(92px, -115px);
+    }
+    70% {
+        -webkit-transform: translate(120px, -123px);
+        transform: translate(120px, -123px);
+    }
+    100% {
+        -webkit-transform: translate(165px, -126px);
+        transform: translate(165px, -126px);
+    }
+}
+
+@-webkit-keyframes runToLevel6 {
+    0% {
+        -webkit-transform: none;
+        transform: none;
+    }
+    20% {
+        transform: translate(60px, -88px)
+    }
+    45% {
+        transform: translate(115px, -124px);
+    }
+    55% {
+        transform: translate(290px, -153px);
+    }
+    70% {
+        transform: translate(400px, -232px);
+    }
+    85% {
+        transform: translate(513px, -229px);
+    }
+    100% {
+        transform: translate(650px, -294px);
+    }
 }
