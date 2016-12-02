@@ -1,0 +1,848 @@
+@charset "utf-8";
+body {
+    background: #0c1d2b;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.pages .page {
+    position: relative;
+    display: table;
+    background: url(../images/star.png) no-repeat;
+    background-size: cover;
+}
+
+.mid-pos {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.music-group span {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 999;
+    width: 10%;
+}
+
+.txt-group {
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+}
+
+.txt-group p {
+    margin-bottom: 10px;
+}
+
+.txt-group .num-cont {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 36px;
+    line-height: 54px;
+    height: 54px;
+    overflow: hidden;
+    color: #ffd500;
+    margin: 0 5px;
+}
+
+.txt-group .num-cont .w_inner {
+    float: left;
+}
+
+.txt-group .num-cont strong {
+    display: block;
+}
+
+.txt-group .txt-bold {
+    font-size: 24px;
+    color: #ffd500;
+}
+
+.tit-box {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.cartoon-box {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.cartoon-box img {
+    margin: 0 auto;
+}
+
+.dn {
+    display: none;
+}
+
+
+/*================================= page1 ===================================*/
+
+.page1 .shoot-star {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/shoot_star.png) no-repeat;
+    background-size: cover;
+}
+
+.page1 .rocket-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.page1 .rocket {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    z-index: 5;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    width: 50px;
+    opacity: 0;
+}
+
+.page1 .rocket-flame {
+    position: absolute;
+    left: 50%;
+    bottom: -18px;
+    z-index: -1;
+    width: 24px;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    opacity: 0;
+}
+
+.page1 .rocket-smoke {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    opacity: 0;
+}
+
+.page1 .rocket-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: 10%;
+    z-index: -1;
+    opacity: 0;
+}
+
+.page1 .hand {
+    position: absolute;
+    left: 50%;
+    bottom: 9%;
+    z-index: 6;
+    width: 14%;
+}
+
+.page1 .left-hand {
+    position: absolute;
+    left: 0;
+    bottom: 25%;
+    width: 52%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.page1 .right-hand {
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+    width: 55%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.page1 .clap-hands {
+    position: absolute;
+    bottom: 13%;
+    width: 100%;
+    z-index: 0;
+    opacity: 0;
+}
+
+.page1 .map-bg {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: url(../images/map.jpg) no-repeat;
+    width: 100%;
+    height: 240px;
+    background-size: 100% auto;
+}
+
+.page1 .num-group .flame {
+    display: block;
+    width: 10%;
+    margin: -55px auto 6px;
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center;
+}
+
+.page1 .num-group .flame2 {
+    width: 7%;
+}
+
+.page1 .num-group .num {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 33%;
+}
+
+.page1 .num-group .th-icon {
+    position: absolute;
+    right: -15px;
+    bottom: 0;
+    width: 20%;
+}
+
+.page1 .star-group .star1 {
+    position: absolute;
+    left: 50px;
+    top: -55px;
+    width: 9%;
+}
+
+.page1 .star-group .star2 {
+    position: absolute;
+    right: 75px;
+    top: 10px;
+    width: 6%;
+}
+
+.page1 .theme-txt {
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.page1 .theme-txt p:first-child {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.page1 .theme-txt p:last-child {
+    font-size: 24px;
+}
+
+.page1 .circle-group .circle1 {
+    position: absolute;
+    left: 50px;
+    top: 40px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ec346f;
+}
+
+.page1 .circle-group .circle2 {
+    position: absolute;
+    right: 75px;
+    top: 104px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00dc86;
+}
+
+
+/*================================= page2 ===================================*/
+
+.moon-bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: url(../images/moon.jpg) no-repeat;
+    width: 100%;
+    height: 420px;
+    background-size: 100% auto;
+}
+
+.fly-icon1 {
+    position: absolute;
+    top: 84px;
+    right: 60px;
+    width: 7%;
+}
+
+.fly-icon2 {
+    position: absolute;
+    bottom: 40px;
+    left: 27px;
+    width: 7%;
+}
+
+.other-icon {
+    position: absolute;
+    right: 54px;
+    bottom: 50px;
+    width: 10%;
+}
+
+.snow {
+    position: absolute;
+    left: 0;
+    top: -49px;
+    width: 100%;
+}
+
+.page2 .con-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -38%);
+    transform: translate(-50%, -38%);
+    width: 100%;
+    text-align: center;
+}
+
+.page2 .txt-box {
+    position: absolute;
+    font-size: 30px;
+    color: #ffd500;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    top: 220px;
+}
+
+.page2 .canlandar {
+    position: absolute;
+    width: 100%;
+    top: 150px;
+}
+
+.canlandar {
+    text-align: center;
+}
+
+.canlandar .time {
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    height: 55px;
+    width: 50px;
+    -webkit-perspective: 479px;
+    perspective: 479px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.canlandar .year.time {
+    background: #ff5493;
+}
+
+.canlandar .month.time {
+    background: #ffd500;
+}
+
+.canlandar .day.time {
+    background: #3be4d1;
+}
+
+.canlandar .count {
+    color: #f8f8f8;
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 55px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    top: 0;
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform-style: flat;
+    transform-style: flat;
+}
+
+.canlandar .year .count {
+    background: #ff5493;
+}
+
+.canlandar .month .count {
+    background: #ffd500;
+}
+
+.canlandar .day .count {
+    background: #3be4d1;
+}
+
+.canlandar .count.top {
+    border-radius: 4px 4px 0 0;
+    height: 50%;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    box-shadow: inset 0 0 0 20px rgba(0, 0, 0, .1);
+}
+
+.canlandar .count.bottom {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), transparent);
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 0 0 4px 4px;
+    line-height: 0;
+    height: 50%;
+    top: 50%;
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+}
+
+.canlandar .count.next {}
+
+.canlandar .label {
+    margin: 0 5px;
+    font-size: 12px;
+    color: #c0bebe;
+}
+
+
+/* Animation start */
+
+.canlandar .count.curr.top {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    z-index: 3;
+}
+
+.canlandar .count.next.bottom {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    z-index: 2;
+}
+
+
+/* Animation end */
+
+.canlandar .flip .count.curr.top {
+    -webkit-transition: all 250ms linear;
+    transition: all 250ms linear;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+}
+
+.canlandar .flip .count.next.bottom {
+    -webkit-transition: all 250ms linear 250ms;
+    transition: all 250ms linear 250ms;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+
+/*================================= page3 ===================================*/
+
+.page3 .txt-group {
+    width: 66%;
+    margin: 120px auto 0;
+}
+
+.page3 .txt-group .row-01 {
+    line-height: 0.8;
+    margin-bottom: 24px;
+}
+
+
+/*================================= page4 ===================================*/
+
+.page4 .txt-group {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.page4 .txt-group .row-01 {
+    line-height: 0.8;
+}
+
+.page4 .people-group {
+    position: relative;
+    margin: 60px auto 0;
+    background: url(../images/pic_bg.png) no-repeat;
+    width: 140px;
+    height: 140px;
+    background-size: 100% auto;
+}
+
+.page4 .people-group .mg {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 120px;
+    height: 120px;
+}
+
+.page4 .people-group .dialogue1 {
+    position: absolute;
+    left: -88px;
+    bottom: 0;
+    width: 80%;
+}
+
+.page4 .people-group .dialogue2 {
+    position: absolute;
+    right: -86px;
+    top: 0;
+    width: 80%;
+}
+
+.page4 .circle-line {
+    width: 70%;
+    margin: -35px auto;
+}
+
+
+/*================================= page5 ===================================*/
+
+.page5 .txt-group {
+    text-align: center;
+    line-height: 1.2;
+}
+
+.page5 .pics-group ul {
+    width: 300px;
+    margin: 20px auto 0;
+    overflow: hidden;
+}
+
+.page5 .pics-group li {
+    float: left;
+    width: 100px;
+    height: 100px;
+    box-shadow: inset 0 0 0 50px rgba(44, 48, 79, .7);
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.page5 .pics-group li.active {
+    box-shadow: inset 0 0 0 0 rgba(44, 48, 79, .1);
+}
+
+.page5 .pics-group img {
+    position: relative;
+    z-index: -1;
+    width: 100px;
+}
+
+.page5 .icons-group {
+    position: relative;
+}
+
+.page5 .icons-group .moon-icon {
+    position: absolute;
+    right: 50px;
+    top: -440px;
+    width: 12%;
+}
+
+.page5 .icons-group .round-icon {
+    position: absolute;
+    left: 60px;
+    top: 30px;
+    width: 8%;
+}
+
+
+/*================================= page6 ===================================*/
+
+.page6 .txt-group {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.page6 .money-bg,
+.page6 .cry-bg {
+    position: relative;
+    margin: 20px auto;
+    width: 60%;
+}
+
+.page6 .rocket-icon {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 20%;
+}
+
+
+/*================================= page7 ===================================*/
+
+.page7 .txt-group {
+    text-align: center;
+}
+
+.page7 .comment-group {
+    position: relative;
+    height: 70px;
+}
+
+.page7 .comment-group li {
+    width: 220px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    -webkit-transform: translateZ(0px);
+    transform: translateZ(0px);
+}
+
+.page7 .comment-group li:nth-child(1) {
+    z-index: 6;
+}
+
+.page7 .comment-group li:nth-child(2) {
+    z-index: 5;
+    top: 12px;
+}
+
+.page7 .comment-group li:nth-child(3) {
+    z-index: 4;
+    top: 27px;
+}
+
+.page7 .comment-group li:nth-child(4) {
+    z-index: 3;
+    top: 43px;
+}
+
+.page7 .comment-group li:nth-child(5) {
+    z-index: 2;
+    top: 56px;
+}
+
+.page7 .comment-group li:nth-child(6) {
+    z-index: 1;
+    top: 70px;
+}
+
+.page7 .say-hi-btn {
+    margin: 100px auto 0;
+}
+
+.page7 .say-hi-btn a {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 35%;
+    line-height: 40px;
+    background: #3be4d1;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+.page7 .say-hi-btn .heart-icon {
+    position: absolute;
+    right: -11px;
+    top: -75%;
+    width: 20%;
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center;
+}
+
+.page7 .alreay-day-hi .envelop {
+    display: block;
+    margin: 100px auto 10px;
+    width: 35%;
+}
+
+.page7 .no-comment-tit {
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+}
+
+.page7 .comment-list {
+    margin: 30px 10%;
+    padding: 20px 23px;
+    background: rgba(255, 255, 255, .2);
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.page7 .comment-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.page7 .comment-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.page7 .comment-list .star-box {
+    display: block;
+    width: 30%;
+}
+
+.page7 .comment-list .txt-group {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+
+/*================================= page8 ===================================*/
+
+.page8 .txt-group {
+    text-align: center;
+}
+
+.page8 .txt-size15 {
+    font-size: 15px;
+}
+
+
+/*================================= page9 ===================================*/
+
+.page9 .txt-group {
+    text-align: center;
+}
+
+.page9 .moon-box {
+    position: relative;
+    margin: 20px auto 0;
+    background: url(../images/moon.jpg) no-repeat;
+    width: 100%;
+    height: 420px;
+    background-size: 100% auto;
+}
+
+.page9 .moon-box [class*="footprint-"] {
+    position: absolute;
+}
+
+.page9 .moon-box .footprint-01 {
+    width: 18%;
+    left: 150px;
+    bottom: 96px;
+}
+
+.page9 .moon-box .footprint-02 {
+    width: 12%;
+    right: 125px;
+    bottom: 90px;
+}
+
+.page9 .moon-box .footprint-03 {
+    width: 10%;
+    right: 142px;
+    bottom: 162px;
+}
+
+.page9 .moon-box .footprint-04 {
+    width: 5%;
+    right: 106px;
+    bottom: 187px;
+}
+
+.page9 .moon-box .footprint-05 {
+    width: 5%;
+    right: 143px;
+    bottom: 214px;
+}
+
+.page9 .moon-box .footprint-06 {
+    width: 8%;
+    right: 115px;
+    bottom: 244px;
+}
+
+.page9 .moon-box .footprint-07 {
+    width: 8%;
+    right: 158px;
+    bottom: 257px;
+}
+
+.page9 .moon-box .footprint-08 {
+    width: 10%;
+    right: 150px;
+    bottom: 288px;
+}
+
+
+/*================================= page10 ===================================*/
+
+.page10 .fill-box {
+    margin: 0 auto;
+    background: url(../images/fill_box.png) no-repeat;
+    width: 286px;
+    height: 375px;
+    background-size: 100% auto;
+}
+
+.page10 .fill-box .text-area {
+    width: 70%;
+    height: 180px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 110px;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+}
+
+.page10 .btns-box {
+    margin-top: 34px;
+}
+
+.page10 .btns-box a {
+    display: block;
+    margin: 0 auto 15px;
+    width: 286px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.page10 .btns-box .btn-01 {
+    border: 1px solid #3be4d1;
+    background: transparent;
+    color: #3be4d1;
+}
+
+.page10 .btns-box .btn-01:visited {
+    color: #3be4d1;
+}
+
+.page10 .btns-box .btn-02 {
+    background: #3be4d1;
+    color: #fff;
+}
+
+.page10 .btns-box .btn-02:visited {
+    color: #fff;
+}

@@ -1,0 +1,440 @@
+section,
+.full-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.full-video {
+    z-index: 1;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, .5);
+}
+
+
+/*======================== loader =========================*/
+
+.loader {
+    background: url(../images/load_bg.png) no-repeat;
+    background-size: cover;
+}
+
+.ui-process {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 46%;
+    text-align: center;
+}
+
+.ui-process .progress-bar {
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.ui-process .progress-bar i {
+    position: relative;
+    display: block;
+    height: 100%;
+    background: #fff;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.ui-process .percents {
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.ui-process2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url(../images/load_bg.png) no-repeat;
+    background-size: cover;
+}
+
+.ui-process2 .plane-stage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    -webkit-animation: rotateSlide 1.5s linear both infinite;
+    animation: rotateSlide 1.5s linear both infinite;
+}
+
+.ui-process2 .percents {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #fff;
+}
+
+
+/*======================== video =========================*/
+
+video,
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/*======================== choose-box =========================*/
+
+.video-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.video-wrap .js-video,
+.video-wrap .js-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.choose-mask {
+    float: left;
+    width: 50%;
+    height: 100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.choose-mask.active {
+    background: rgba(0, 0, 0, .5);
+}
+
+.choose-tit {
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    top: 47%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.choose-btn a {
+    position: absolute;
+    bottom: 15%;
+    width: 100px;
+    z-index: 1;
+}
+
+.choose-btn .btn-01 {
+    left: 10%;
+}
+
+.choose-btn .btn-02 {
+    right: 10%;
+}
+
+.choose-btn a.active:before,
+.option-list .opt-btn.active:before,
+.resume-delivery a:before {
+    left: -20px;
+    background: url(../images/btn-icon-02.png) no-repeat;
+}
+
+.choose-btn a.active:after,
+.option-list .opt-btn.active:after,
+.resume-delivery a:after {
+    right: -20px;
+    background: url(../images/btn-icon-01.png) no-repeat;
+}
+
+.choose-btn a.active:before,
+.option-list .opt-btn.active:before,
+.resume-delivery a:before,
+.choose-btn a.active:after,
+.option-list .opt-btn.active:after,
+.resume-delivery a:after {
+    position: absolute;
+    top: 0;
+    content: "";
+    width: 16px;
+    height: 40px;
+    background-size: 100% auto;
+    -webkit-animation: scaleSlide .65s ease both infinite;
+    animation: scaleSlide .65s ease both infinite;
+}
+
+
+/*======================== option =========================*/
+
+.word-box {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 10%;
+    font-size: 23px;
+    color: #fff;
+}
+
+.option-list {
+    position: absolute;
+    bottom: 18%;
+    width: 100%;
+    z-index: 2;
+}
+
+.option-list .tit {
+    margin: 0 auto 20px;
+    width: 24%;
+}
+
+.option-list .opt-btn,
+.resume-delivery a {
+    display: block;
+    position: relative;
+    margin: 0 auto 16px;
+    width: 140px;
+}
+
+.GoToTj-txt {
+    position: absolute;
+    left: 0;
+    bottom: 25%;
+    width: 100%;
+}
+
+.GoToTj-txt img {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.campus-word {
+    position: absolute;
+    top: 11%;
+    left: 0;
+    width: 100%;
+}
+
+.campus-word img {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.campus-ewm {
+    position: absolute;
+    left: 0;
+    top: 48%;
+    width: 100%;
+}
+
+.campus-ewm img {
+    margin: 0 auto;
+    width: 40%;
+}
+
+.resume-delivery {
+    position: absolute;
+    left: 0;
+    bottom: 12%;
+    width: 100%;
+    z-index: 2;
+}
+
+
+/*======================== animate =========================*/
+
+@-webkit-keyframes scaleSlide {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.1);
+        transform: scale(.1);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleSlide {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.1);
+        transform: scale(.1);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes rotateSlide {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    12.5% {
+        opacity: .3;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    25% {
+        opacity: 1;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    37.5% {
+        opacity: .3;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    62.5% {
+        opacity: .3;
+        -webkit-transform: rotate(225deg);
+        transform: rotate(225deg);
+    }
+    75% {
+        opacity: 1;
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+    87.5% {
+        opacity: .3;
+        -webkit-transform: rotate(315deg);
+        transform: rotate(315deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateSlide {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    12.5% {
+        opacity: .3;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    25% {
+        opacity: 1;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    37.5% {
+        opacity: .3;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    62.5% {
+        opacity: .3;
+        -webkit-transform: rotate(225deg);
+        transform: rotate(225deg);
+    }
+    75% {
+        opacity: 1;
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+    87.5% {
+        opacity: .3;
+        -webkit-transform: rotate(315deg);
+        transform: rotate(315deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes wrotateSlide {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes wrotateSlide {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.wrotateSlide {
+    -webkit-animation: wrotateSlide 8s linear infinite;
+    animation: wrotateSlide 8s linear infinite;
+}
+
+.music-wrap {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    z-index: 5;
+}
+
+.music-btn {
+    display: block;
+    margin: .18rem auto;
+    background: url(../images/music.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: 100% auto;
+}
