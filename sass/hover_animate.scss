@@ -177,15 +177,35 @@ body {
                 color: #fff;
             }
             .list {
-                a {
-                    display: block;
-                    line-height: 40px;
-                    background: whitesmoke;
-                    border-bottom: 1px solid #ddd;
-                    text-align: center;
-                    font-size: 18px;
-                    color: #333;
-                    text-decoration: none;
+                li {
+                    position: relative;
+                    .item {
+                        display: block;
+                        line-height: 40px;
+                        background: whitesmoke;
+                        border-bottom: 1px solid #ddd;
+                        text-align: center;
+                        font-size: 18px;
+                        color: #333;
+                        text-decoration: none;
+                    }
+                    @at-root .ewm-pic {
+                        width: 140px;
+                        height: 140px;
+                        position: absolute;
+                        left: -150px;
+                        top: -100px;
+                        opacity: 0;
+                        transform: translate(30%, 0);
+                        -webkit-transform: translate(30%, 0);
+                        transition: all .35s linear;
+                        -webkit-transition: all .35s linear;
+                        img {
+                            display: block;
+                            width: 140px;
+                            height: 140px;
+                        }
+                    }
                 }
             }
         }
@@ -363,7 +383,8 @@ body {
     -webkit-transform: scale(0);
 }
 
-.flipUpY {
+.flipUpY,
+.flipLeftX {
     opacity: 1;
     transform: translate(0, 0);
     -webkit-transform: translate(0, 0);

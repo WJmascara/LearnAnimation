@@ -230,8 +230,14 @@
                 <p class="tit">Effect Cases</p>
                 <div class="list">
                     <ul>
-                        <li><a href="CampusRecruitment.h5/index.html" target="_blank">case1</a></li>
-                        <li><a href="AnniversaryActivity.h5/index.html" target="_blank">case2</a></li>
+                        <li>
+                            <a href="CampusRecruitment.h5/index.html" target="_blank" class="item">case1</a>
+                            <span class="ewm-pic"><img src="images/campus-ewm.png" alt=""></span>
+                        </li>
+                        <li>
+                            <a href="AnniversaryActivity.h5/index.html" target="_blank" class="item">case2</a>
+                            <span class="ewm-pic"><img src="images/campus-ewm.png" alt=""></span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -279,6 +285,14 @@
                     }, 500);
                 }, 500);
 
+            });
+
+            //出现二维码
+            $(".effect-cases li").hover(function () {
+                $(this).find(".ewm-pic").addClass("flipLeftX");
+                return false;
+            }, function () {
+                $(this).find(".ewm-pic").removeClass("flipLeftX");
             });
 
 
