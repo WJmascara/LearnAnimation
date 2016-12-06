@@ -157,6 +157,38 @@ body {
             height: 100%;
             overflow: scroll;
         }
+        @at-root .effect-cases {
+            position: absolute;
+            right: 20px;
+            bottom: 0;
+            width: 250px;
+            font-family: "Microsoft Yahei";
+            transition: all .55s linear;
+            -webkit-transition: all .55s linear;
+            transform: translate(0, 100%);
+            -webkit-transform: translate(0, 100%);
+            .tit {
+                width: 100%;
+                height: 46px;
+                background: #3C948B;
+                text-align: center;
+                font-size: 22px;
+                line-height: 46px;
+                color: #fff;
+            }
+            .list {
+                a {
+                    display: block;
+                    line-height: 40px;
+                    background: whitesmoke;
+                    border-bottom: 1px solid #ddd;
+                    text-align: center;
+                    font-size: 18px;
+                    color: #333;
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }
 

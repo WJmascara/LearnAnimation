@@ -33,9 +33,6 @@
                             <li class="dropdown">
                                 <span>PageTransition Effects</span>
                             </li>
-                            <li class="dropdown">
-                                <span>Effects Cases</span>
-                            </li>
                         </ul>
                     </div>
                     <a href="javascript:;" class="back-btn">back<i>>></i></a>
@@ -78,17 +75,6 @@
                 </div>
                 <div class="list-tags"></div>
                 <div class="list-tags"></div>
-                <div class="list-tags filter-case">
-                    <ul>
-                        <li>
-                            <a href="CampusRecruitment.h5/index.html" target="_blank">case1</a>
-                        </li>
-                        <li>
-                            <a href="AnniversaryActivity.h5/index.html" target="_blank">case2</a>
-                        </li>
-                    </ul>
-
-                </div>
             </div>
             <div class="main-con">
                 <div class="grid-list">
@@ -240,6 +226,15 @@
                     </ul>
                 </div>
             </div>
+            <div class="effect-cases">
+                <p class="tit">Effect Cases</p>
+                <div class="list">
+                    <ul>
+                        <li><a href="CampusRecruitment.h5/index.html" target="_blank">case1</a></li>
+                        <li><a href="AnniversaryActivity.h5/index.html" target="_blank">case2</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="pop-mask">
             </div>
             <div class="pop-wrap">
@@ -265,13 +260,20 @@
                     setTimeout(function () {
                         $(".page2 .grid-list").addClass("flipUpY");
                     }, 500);
+                    setTimeout(function () {
+                        $(".page2 .effect-cases").addClass("flipUpY");
+                    }, 800);
                 }, 700);
 
             });
             $(".back-btn").on("click", function () {
+
                 $(".page2 .nav-wrap").removeClass("flipUpY");
+
                 setTimeout(function () {
-                    $(".page2 .grid-list").removeClass("flipUpY");
+
+                    $(".page2 .grid-list,.page2 .effect-cases").removeClass("flipUpY");
+
                     setTimeout(function () {
                         $(".page1").removeClass("flipOutX");
                     }, 500);
