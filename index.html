@@ -228,6 +228,10 @@
             </div>
             <div class="effect-cases">
                 <p class="tit">Effect Cases</p>
+                <div class="btn-change">
+                    <a href="javscript:;" class="close-icon RollIn">x</a>
+                    <a href="javscript:;" class="open-icon RollOut">-</a>
+                </div>
                 <div class="list">
                     <ul>
                         <li>
@@ -298,6 +302,20 @@
                 $(this).find(".ewm-pic").removeClass("flipLeftX");
             });
 
+            //案例弹框关闭与显示
+            $(".btn-change a").on("click", function () {
+
+                $(this).removeClass("RollIn").siblings().removeClass("RollOut");
+                $(this).addClass("RollOut").siblings().addClass("RollIn");
+
+                var oIndex = $(this).index();
+
+                if (oIndex == 0) {
+                    $(".effect-cases").removeClass("flipUpY");
+                } else {
+                    $(".effect-cases").addClass("flipUpY");
+                }
+            });
 
             //导航切换
             $(".menu .dropdown").on("click", function () {

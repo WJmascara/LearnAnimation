@@ -159,7 +159,7 @@ body {
         }
         @at-root .effect-cases {
             position: absolute;
-            right: 20px;
+            right: 44px;
             bottom: 0;
             width: 250px;
             font-family: "Microsoft Yahei";
@@ -175,6 +175,44 @@ body {
                 font-size: 22px;
                 line-height: 46px;
                 color: #fff;
+            }
+            .close-icon,
+            .open-icon {
+                position: absolute;
+                right: -18px;
+                top: -27px;
+                width: 20px;
+                height: 20px;
+                border: 2px solid #3C948B;
+                border-radius: 50%;
+                color: #3C948B;
+                text-align: center;
+                line-height: 20px;
+                text-decoration: none;
+                -webkit-transition: all .35s linear;
+                transition: all .35s linear;
+                &.RollOut {
+                    opacity: 0;
+                    transform: translate(20px, 0) rotate(60deg);
+                    -webkit-transform: translate(20px, 0) rotate(60deg);
+                }
+                &.RollIn {
+                    opacity: 1;
+                    transform: translate(0, 0) rotate(0);
+                    -webkit-transform: translate(0, 0) rotate(0);
+                }
+            }
+            .close-icon {
+                opacity: 1;
+                transform: translate(0, 0) rotate(0);
+                -webkit-transform: translate(0, 0) rotate(0);
+            }
+            .open-icon {
+                font-size: 30px;
+                line-height: 16px;
+                opacity: 0;
+                transform: translate(20px, 0) rotate(60deg);
+                -webkit-transform: translate(20px, 0) rotate(60deg);
             }
             .list {
                 li {
