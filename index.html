@@ -38,6 +38,7 @@
                             </li>
                         </ul>
                     </div>
+                    <a href="javascript:;" class="back-btn">back<i>>></i></a>
                 </nav>
                 <div class="list-tags filter-hover">
                     <ul>
@@ -258,12 +259,23 @@
             //页面切换
             $(".trigger").on("click", function () {
                 $(".page1").addClass("flipOutX");
+
                 setTimeout(function () {
                     $(".page2 .nav-wrap").addClass("flipUpY");
                     setTimeout(function () {
                         $(".page2 .grid-list").addClass("flipUpY");
                     }, 500);
-                }, 700)
+                }, 700);
+
+            });
+            $(".back-btn").on("click", function () {
+                $(".page2 .nav-wrap").removeClass("flipUpY");
+                setTimeout(function () {
+                    $(".page2 .grid-list").removeClass("flipUpY");
+                    setTimeout(function () {
+                        $(".page1").removeClass("flipOutX");
+                    }, 500);
+                }, 500);
 
             });
 

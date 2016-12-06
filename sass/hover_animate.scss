@@ -173,6 +173,7 @@ body {
     box-shadow: 0 1px 2px 0 rgba(34, 32, 32, 0.3);
     z-index: 3;
     .nav {
+        position: relative;
         height: 48px;
         line-height: 48px;
         background: #e1e3e4;
@@ -226,6 +227,19 @@ body {
                         }
                     }
                 }
+            }
+        }
+        .back-btn {
+            position: absolute;
+            right: 50px;
+            top: 0;
+            font-size: 16px;
+            color: #333;
+            text-decoration: none;
+            i {
+                font-style: normal;
+                font-size: 10px;
+                margin-left: 3px;
             }
         }
     }
