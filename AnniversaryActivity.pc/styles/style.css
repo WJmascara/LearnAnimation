@@ -1,0 +1,669 @@
+.page-wrap {
+    height: 100%;
+    position: relative;
+    top: 0;
+}
+
+.section {
+    position: relative;
+    display: table;
+    width: 100%;
+    background: #0c1d2b;
+}
+
+.main-con {
+    position: relative;
+    z-index: 1;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.row-item {
+    margin: 0 auto;
+    width: 1190px;
+}
+
+.star {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url(../images/star.png) no-repeat center top;
+}
+
+.arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    z-index: 0;
+    margin-left: -14px;
+    background: url(../images/arrow.png) no-repeat;
+    width: 28px;
+    height: 29px;
+    cursor: pointer;
+}
+
+.txt-box {
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.txt-box .num-cont {
+    display: inline-block;
+    vertical-align: -3px;
+    margin: 0 10px;
+    font-size: 34px;
+    color: #ffd500;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.txt-box .num-cont strong {
+    display: block;
+}
+
+.txt-box .num-cont .w_inner {
+    float: left;
+}
+
+.dn {
+    display: none;
+}
+
+
+/*================================ page1 ===============================*/
+
+.p1-bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -256px;
+    margin-left: -445px;
+    background: url(../images/p1_map.png) no-repeat center top;
+    opacity: .35;
+    filter: alpha(opacity=35);
+    width: 891px;
+    height: 517px;
+}
+
+.p1-con {
+    position: relative;
+    width: 891px;
+    height: 517px;
+    margin: 0 auto;
+}
+
+.p1-txt {
+    margin: 40px auto 0;
+    background: url(../images/p1_txt.png) no-repeat center top;
+    width: 379px;
+    height: 389px;
+}
+
+.p1-list li {
+    position: absolute;
+    background: url(../images/p1_dot.png) no-repeat;
+    width: 37px;
+    height: 37px;
+}
+
+.p1-list li .mg-box {
+    position: absolute;
+    left: -22px;
+    bottom: 30px;
+    opacity: 0;
+}
+
+.p1-list li.item1 {
+    left: 118px;
+    top: 223px;
+}
+
+.p1-list li.item2 {
+    top: 40px;
+    left: 265px;
+}
+
+.p1-list li.item3 {
+    top: 96px;
+    right: 239px;
+}
+
+.p1-list li.item4 {
+    top: 191px;
+    right: 90px;
+}
+
+.p1-list li.item5 {
+    bottom: 87px;
+    right: 42px;
+}
+
+.fluid-star {
+    background: url(../images/fliud-star.png) no-repeat;
+    width: 96px;
+    height: 54px;
+}
+
+.fluid-star1 {
+    position: absolute;
+    top: 207px;
+    right: 75px;
+}
+
+.fluid-star2 {
+    position: absolute;
+    top: 180px;
+    left: 132px;
+}
+
+.fluid-star3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/*================================ page2 ===============================*/
+
+.section2 .main-con {
+    z-index: 0;
+}
+
+.section2 .star {
+    z-index: 1;
+}
+
+.p2-bg {
+    margin: 0 auto;
+    background: url(../images/p2_bg.jpg) no-repeat center top;
+    width: 1130px;
+    height: 730px;
+}
+
+.p2-bg .txt-box {
+    padding-top: 335px;
+}
+
+
+/*================================ page3 ===============================*/
+
+.section3 .txt-box {
+    padding-top: 75px;
+}
+
+.landlord-pic {
+    position: relative;
+    margin: 35px auto 0;
+    background: url(../images/p3_landlord.png) no-repeat;
+    width: 248px;
+    height: 248px;
+}
+
+.landlord-pic .people-mg {
+    position: absolute;
+    left: 23px;
+    top: 23px;
+    width: 203px;
+    height: 203px;
+}
+
+.landlord-pic .dialogue1,
+.landlord-pic .dialogue2 {
+    padding: 0 20px;
+    width: 200px;
+    height: 34px;
+    line-height: 34px;
+    background: #3be4d1;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+}
+
+.landlord-pic .txt-cont {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.landlord-pic .dialogue1 strong {
+    font-weight: bold;
+}
+
+.landlord-pic .dialogue1 {
+    position: absolute;
+    left: -254px;
+    top: 130px;
+}
+
+.landlord-pic .dialogue1:after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent #3be4d1;
+    border-width: 17px 0 17px 18px;
+}
+
+.landlord-pic .dialogue2:after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 0;
+    border-style: dashed solid dashed dashed;
+    border-color: transparent #3be4d1 transparent transparent;
+    border-width: 17px 18px 17px 0;
+}
+
+.landlord-pic .dialogue2 {
+    position: absolute;
+    left: 244px;
+    top: 33px;
+}
+
+.p3-line {
+    margin: -90px auto;
+    background: url(../images/p3_line.png) no-repeat;
+    width: 531px;
+    height: 179px;
+}
+
+
+/*================================ page4 ===============================*/
+
+.have-house-sec {
+    position: relative;
+}
+
+.have-house-sec .txt-box {
+    padding: 60px 0 20px 0;
+}
+
+.have-house-sec .house-list ul {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 932px;
+}
+
+.have-house-sec .house-list li {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.have-house-sec .p4-moon {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    background: url(../images/p4_moon.png) no-repeat;
+    width: 91px;
+    height: 90px;
+}
+
+.have-house-sec .p4-ball {
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+    background: url(../images/p4_ball.png) no-repeat;
+    width: 56px;
+    height: 55px;
+}
+
+.no-house-sec .tit-box {
+    margin: 0 auto;
+    background: url(../images/p4_cartoon_tit.png) no-repeat;
+    width: 284px;
+    height: 84px;
+}
+
+.no-house-sec .txt-box {
+    margin-top: 15px;
+}
+
+.no-house-sec .txt-box .row1 {
+    font-size: 18px;
+}
+
+.p4-cartoon-01 {
+    text-align: center;
+}
+
+
+/*================================ page5 ===============================*/
+
+.have-orders {
+    position: relative;
+}
+
+.have-orders .mg-box {
+    position: relative;
+    margin: 15px auto 0;
+    background: url(../images/have_order_mg.jpg) no-repeat;
+    width: 470px;
+    height: 468px;
+}
+
+.have-orders .gold1 {
+    display: block;
+    position: absolute;
+    top: 114px;
+    left: 200px;
+    background: url(../images/p5_gold1.png) no-repeat;
+    width: 26px;
+    height: 100%;
+}
+
+.have-orders .gold2 {
+    display: block;
+    position: absolute;
+    top: 190px;
+    left: 230px;
+    background: url(../images/p5_gold2.png) no-repeat;
+    width: 31px;
+    height: 100%;
+}
+
+.have-orders .gold3 {
+    display: block;
+    position: absolute;
+    top: 145px;
+    left: 184px;
+    background: url(../images/p5_gold3.png) no-repeat;
+    width: 36px;
+    height: 100%;
+}
+
+.have-orders .gold4 {
+    display: block;
+    position: absolute;
+    top: 190px;
+    left: 184px;
+    background: url(../images/p5_gold4.png) no-repeat;
+    width: 27px;
+    height: 100%;
+}
+
+.have-orders .gold5 {
+    display: block;
+    position: absolute;
+    top: 150px;
+    right: 180px;
+    background: url(../images/p5_gold5.png) no-repeat;
+    width: 21px;
+    height: 100%;
+}
+
+.have-orders .gold6 {
+    display: block;
+    position: absolute;
+    top: 87px;
+    right: 198px;
+    background: url(../images/p5_gold6.png) no-repeat;
+    width: 17px;
+    height: 100%;
+}
+
+.have-orders .gold7 {
+    display: block;
+    position: absolute;
+    top: 110px;
+    left: 255px;
+    background: url(../images/p5_gold2.png) no-repeat;
+    width: 31px;
+    height: 100%;
+}
+
+.have-orders .gold8 {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 224px;
+    background: url(../images/p5_gold4.png) no-repeat;
+    width: 27px;
+    height: 100%;
+}
+
+.have-orders .rocket {
+    position: absolute;
+    left: 226px;
+    top: 110px;
+    background: url(../images/p5_rockets.png) no-repeat;
+    width: 85px;
+    height: 85px;
+}
+
+.no-orders .p4-cartoon-02 {
+    margin: 20px auto 0;
+    background: url(../images/p4_cartoon_02.png) no-repeat;
+    width: 380px;
+    height: 271px;
+}
+
+
+/*================================ page6 ===============================*/
+
+.have-comment {
+    margin: 0 auto;
+    background: url(../images/p4_comment.png) no-repeat;
+    width: 804px;
+    height: 381px;
+}
+
+.no-comment {
+    position: relative;
+}
+
+.no-comment .envelop {
+    position: relative;
+    margin: 60px auto;
+    width: 175px;
+    height: 123px;
+    cursor: pointer;
+}
+
+.no-comment .envelop .envelop-body {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../images/p6_envelope.png) no-repeat;
+    width: 175px;
+    height: 123px;
+}
+
+.no-comment .envelop .swing1 {
+    position: absolute;
+    top: 25px;
+    left: -78px;
+    background: url(../images/p6_swing_01.png) no-repeat;
+    width: 73px;
+    height: 47px;
+}
+
+.no-comment .envelop .swing2 {
+    position: absolute;
+    top: 25px;
+    right: -78px;
+    background: url(../images/p6_swing_02.png) no-repeat;
+    width: 73px;
+    height: 47px;
+}
+
+.no-comment .over-txt {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 185px;
+    font-size: 16px;
+}
+
+
+/*================================ page7 ===============================*/
+
+.section7 .row1 {
+    font-size: 18px;
+}
+
+.section7 .body-box {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.section7 .birthday-btn {
+    display: block;
+    margin: 30px auto;
+    width: 204px;
+    height: 50px;
+    background: #c81300;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    line-height: 50px;
+}
+
+.section7 .birthday-btn:hover {
+    text-decoration: none;
+    opacity: .8;
+    filter: alpha(opacity=80);
+}
+
+.section7 .tit-box {
+    margin: 0 auto;
+    width: 284px;
+    height: 84px;
+}
+
+.DaSheng .tit-box {
+    background: url(../images/p7_tit_01.png) no-repeat;
+}
+
+.NiuMoWang .tit-box {
+    background: url(../images/p7_tit_02.png) no-repeat;
+}
+
+.NeZha .tit-box {
+    background: url(../images/p7_tit_03.png) no-repeat;
+}
+
+.BaiLongMa .tit-box {
+    background: url(../images/p7_tit_04.png) no-repeat;
+}
+
+.TuDiGong .tit-box {
+    background: url(../images/p7_tit_05.png) no-repeat;
+}
+
+.ChiJiaoDaXian .tit-box {
+    background: url(../images/p7_tit_06.png) no-repeat;
+}
+
+
+/*================================ page8 ===============================*/
+
+.section8 .txt-box {
+    font-size: 24px;
+}
+
+.section8 .input-wrap {
+    margin: 20px auto 0;
+    width: 673px;
+    height: 267px;
+    background: transparent;
+    border: 1px solid #3d4a55;
+}
+
+.section8 .input-wrap textarea {
+    display: block;
+    width: 557px;
+    height: 178px;
+    padding: 15px 30px;
+    background: #fff;
+    margin: 29px auto;
+    font-size: 16px;
+    color: #333;
+}
+
+.section8 .wish-btn a {
+    display: block;
+    margin: 35px auto;
+    width: 205px;
+    height: 57px;
+    background: #3be4d1;
+    font-size: 22px;
+    color: #000;
+    text-align: center;
+    line-height: 57px;
+    border-radius: 10px;
+}
+
+.section8 .wish-btn a:hover {
+    text-decoration: none;
+}
+
+.section8 .wish-btn a.disabled {
+    background: #615f5f;
+    color: #fff;
+}
+
+
+/*================================ pop-up ===============================*/
+
+.fixed-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    z-index: 1;
+}
+
+.pop-up {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -347px;
+    z-index: 2;
+    background: url(../images/pop_bg.png) no-repeat center top;
+    height: 694px;
+    width: 100%;
+}
+
+.pop-up .close-btn {
+    position: absolute;
+    left: 50%;
+    top: 140px;
+    margin-left: 210px;
+    background: url(../images/close_btn.png) no-repeat;
+    width: 42px;
+    height: 42px;
+}
+
+.pop-up .info-btn {
+    position: absolute;
+    left: 50%;
+    margin-left: -103px;
+    bottom: 135px;
+    display: block;
+    width: 207px;
+    line-height: 49px;
+    background: #3be4d1;
+    color: #0c1d2b;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
