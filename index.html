@@ -12,7 +12,12 @@
     <div class="container">
         <div class="page page1">
             <div class="bg-img">
-                <img src="images/bg.jpg" alt="">
+                <img src="images/bg/1.jpg" alt="" class="fadeIn">
+                <img src="images/bg/2.jpg" alt="" class="">
+                <img src="images/bg/3.jpg" alt="" class="">
+                <img src="images/bg/4.jpg" alt="" class="">
+                <img src="images/bg/5.jpg" alt="" class="">
+                <img src="images/bg/6.jpg" alt="" class="">
             </div>
             <button class="trigger FlipYFade"><span>Trigger</span></button>
         </div>
@@ -263,6 +268,37 @@
     <script src="scripts/jquery.js"></script>
     <script>
         $(function () {
+
+            //首页图片切换
+            var i = 0;
+            var len = $(".bg-img").find("img").length;
+
+            classChange();
+
+            function classChange(){
+                //console.log(i);
+
+                $(".bg-img img").eq(i).addClass("fadeOut").removeClass("fadeIn");
+                $(".bg-img img").eq(i+1).addClass("fadeIn").removeClass("fadeOut");
+
+                i++;
+
+                if(i>len-1) {
+                    i=0;
+                    $(".bg-img img").eq(len-1).addClass("fadeOut").removeClass("fadeIn");
+                    $(".bg-img img").eq(0).addClass("fadeIn").removeClass("fadeOut");
+                }
+
+                setTimeout(function(){
+                    classChange();
+                    // console.log(i);
+                },3000);
+                
+                
+                
+            }
+                
+
 
             //页面切换
             $(".trigger").on("click", function () {
