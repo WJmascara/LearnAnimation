@@ -1044,6 +1044,7 @@ body {
       right: 433px;
       top: -30px; }
   .grid-list .mountain .runner-wrap {
+    opacity: 0;
     position: absolute;
     left: 170px;
     bottom: 17px;
@@ -1059,20 +1060,26 @@ body {
       animation: run .5s step-start infinite both;
       background: url(../images/runner.png) no-repeat; }
     .grid-list .mountain .runner-wrap.runToLevel1 {
+      opacity: 1;
       -webkit-animation: runToLevel1 1.5s ease-in-out both;
       animation: runToLevel1 1.5s ease-in-out both; }
     .grid-list .mountain .runner-wrap.runToLevel2 {
+      opacity: 1;
       -webkit-animation: runToLevel2 6s ease-in-out both;
       animation: runToLevel2 6s ease-in-out both; }
     .grid-list .mountain .runner-wrap.runToLevel6 {
+      opacity: 1;
       -webkit-animation: runToLevel6 10s ease-in-out both;
       animation: runToLevel6 10s ease-in-out both; }
   .grid-list .mountain .stop-runner {
     position: absolute;
+    left: 152px;
+    bottom: 10px;
     background: url(../images/stop_runner.png) no-repeat;
     width: 16px;
     height: 32px; }
     .grid-list .mountain .stop-runner .flag-up {
+      opacity: 0;
       position: absolute;
       left: 11px;
       bottom: 7px;
@@ -1084,11 +1091,15 @@ body {
       text-align: center;
       color: #fff100; }
     .grid-list .mountain .stop-runner.stopRunToLevel0 {
-      left: 164px;
-      bottom: 17px; }
+      left: 152px;
+      bottom: 10px; }
+      .grid-list .mountain .stop-runner.stopRunToLevel0 .flag-up {
+        opacity: 1; }
     .grid-list .mountain .stop-runner.stopRunToLevel1 {
       left: 216px;
       bottom: 80px; }
+      .grid-list .mountain .stop-runner.stopRunToLevel1 .flag-up {
+        opacity: 1; }
 
 @-webkit-keyframes run {
   0% {
