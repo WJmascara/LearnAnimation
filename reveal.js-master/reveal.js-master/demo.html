@@ -38,34 +38,40 @@
             opacity: .5;
             position: relative;
             display: block;
-            width: 508px;
-            height: 408px;
+            width: 907px;
+            height: 730px;
+            border: 3px solid #fff;
             margin: 0 auto;
+            overflow: hidden;
             transition: all .35s ease;
             -webkit-transition: all .35s ease;
         }
-        
-        .reveal .mg-wrap:hover {
-            opacity: 1;
+
+        .reveal .mg-wrap:before,
+        .reveal .mg-wrap:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 2px;
+            background: #fff;
+            -webkit-transition: all 0.35s ease 0s;
+            transition: all 0.35s ease 0s;
         }
-        
-        .reveal .mg-wrap:hover .txt-box {
-            transform: translate(0, 0);
-            -webkit-transform: translate(0, 0);
-            opacity: 1;
-        }
-        
-        .reveal .mg-wrap:hover img {
-            border-color: #fff;
-        }
-        
         .reveal .mg-wrap img {
             position: absolute;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            border: 3px solid #fff;
+            -webkit-transition: all 0.35s ease 0s;
+            transition: all 0.35s ease 0s;
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
         }
         
         .reveal .mg-wrap .txt-box {
@@ -73,7 +79,7 @@
             width: 100%;
             left: 0;
             top: 0;
-            line-height: 408px;
+            line-height: 730px;
             text-align: center;
             color: #fff;
             transition: all .35s ease;
@@ -82,6 +88,32 @@
             -webkit-transform: translate(0, -50px);
             opacity: 0;
         }
+        .reveal .mg-wrap:hover:after {
+            -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg); 
+        }
+        .reveal .mg-wrap:hover:before {
+            -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg); 
+        }
+        
+        .reveal .mg-wrap:hover {
+            opacity: 1;
+       }
+        
+        .reveal .mg-wrap:hover .txt-box {
+            transform: translate(0, 0);
+            -webkit-transform: translate(0, 0);
+            opacity: 1;
+        }
+        
+        .reveal .mg-wrap:hover img {
+            border:none;
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+        
+        
     </style>
 </head>
 
@@ -108,12 +140,18 @@
                     <h2>过渡动画</h2>
                     <p>过渡动画(transition)指的是元素的样式属性从一种状态过渡到另外一种状态的过程，需要外界触发，如增删class，添加伪类等等，过渡动画是双向的。</p>
                 </section>
-                <section>
-                    <h3>案例分析</h3>
+                <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+                    <h3 style="margin-top: -100px">案例分析</h3>
                     <a href="javascript:;" class="mg-wrap">
                         <img src="../reveal.js-master/images/2.jpg" alt="" style="">
                         <span class="txt-box">TRANSITION</span>
                     </a>
+                </section>
+                <section>
+                    <h2 style="margin-top: -500px;">关键代码</h2>
+                    <p style="text-align: center;"><img src="../reveal.js-master/images/style1.png" alt="" style="display: block;width: 100%;height: 100%;object-fit: cover;"></p>
+                    <p style="text-align: center;"><img src="../reveal.js-master/images/style2.png" alt="" style="display: block;width: 100%;height: 100%;object-fit: cover;"></p>
+                    
                 </section>
             </section>
             <section>
@@ -122,12 +160,40 @@
             </section>
 
             <!-- Example of nested vertical slides -->
-
             <section>
-                <h2>如何分析复杂动画？</h2>
+                <section>
+                    <h2>如何分析复杂动画？</h2>
+                    <p style="text-align: center">
+                        <a href="https://wjmascara.github.io/LearnAnimation/AnniversaryActivity.h5/index.html">动画案例</a></p>
+                </section>
+                <section>
+                    <p>1.沟通，把交互设计师的想法跟自己的想法融合到一起，分析出最适合的动画形式。此时应该确定好需要动的元素。</p>
+                    <p>此处火箭上升的效果可能需要考虑的：火箭、火焰、柱状喷烟、扩散的喷烟</p>
+                </section>
+                <section>
+                    <p>2.针对第一步找出的元素，确定布局，有关联的元素合并到一个整体元素，无关连的作为单独元素。</p>
+                    <p>
+                        火箭上升的动画拆分出来的元素应该为：<strong style="color: red">火箭+火焰</strong>、<strong style="color: red">扩散的喷烟</strong>、<strong style="color: red">一直上升的柱状喷烟</strong><br>
+                        注意：因为火焰跟火箭出场不同步，所以火焰应该单独放在火箭里面，先单独动，最后再与火箭同步
+                    </p>
+                </section>
+                <section>
+                    <p>3.针对第二步中的布局，确定并编写单个元素的动画</p>
+                    <p>
+                        <ul>
+                            <li>火箭：直线上升，涉及到的属性:translateY值的变化</li>
+                            <li>火焰：渐现，涉及到的属性：opacity的变化</li>
+                            <li>扩散喷烟：渐现上升然后扩散消失，涉及到的属性：opacity,translateY,scale的变化</li>
+                            <li>柱状喷烟：渐现Y轴拉伸再消失，涉及到的属性：opacity，scaleY的变化</li>
+                        </ul> 
+                    </p>
+                </section>
+                <section>
+                    <p>4.单个动画的拼接，常用的是css3的animation-delay属性，或者js的setTimeout()方法将一系列单个动画按一定的顺序拼接成有一定意义的复杂效果。</p>
+                </section>
             </section>
 
-            <section>
+            <!--<section>
                 <h2>Point of View</h2>
                 <p>
                     Press <strong>ESC</strong> to enter the slide overview.
@@ -154,7 +220,7 @@
                 </script>
             </section>
 
-            <section>
+            <!-- <section>
                 <section id="fragments">
                     <h2>Fragments</h2>
                     <p>Hit the next arrow...</p>
@@ -197,7 +263,7 @@
                     reveal.js comes with a few themes built in:
                     <br>
                     <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+                   <!-- <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
                     <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
                     <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
                     <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
@@ -405,7 +471,7 @@ Reveal.addEventListener( 'customevent', function() {
                     - <a href="http://slides.com">Try the online editor</a>
                     <br> - <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
                 </p>
-            </section>
+            </section>!-->
 
         </div>
 
