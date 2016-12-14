@@ -110,9 +110,13 @@ body {
             width: 100%;
             height: 100%;
             img {
+                position: absolute;
+                left: 0;
+                right: 0;
                 display: block;
                 width: 100%;
                 height: 100%;
+                opacity: 0;
             }
         }
         .trigger {
@@ -417,6 +421,46 @@ body {
 
 
 /*==================== page-transition-style ====================*/
+.fadeIn {
+    animation: fadeIn 3s ease both;
+    -webkit-animation: fadeIn 3s ease both;
+}
+@-webkit-keyframes fadeIn{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeIn{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.fadeOut{
+    animation: fadeOut 3s ease both;
+    -webkit-animation: fadeOut 3s ease both;
+}
+@-webkit-keyframes fadeOut{
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes fadeOut{
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 
 .flipOutX {
     transform: scale(0);
@@ -1400,6 +1444,7 @@ body {
         }
     }
     .runner-wrap {
+        opacity: 0;
         position: absolute;
         left: 170px;
         bottom: 17px;
@@ -1416,24 +1461,30 @@ body {
             background: url(../images/runner.png) no-repeat;
         }
         &.runToLevel1 {
+            opacity: 1;
             -webkit-animation: runToLevel1 1.5s ease-in-out both;
             animation: runToLevel1 1.5s ease-in-out both;
         }
         &.runToLevel2 {
+            opacity: 1;
             -webkit-animation: runToLevel2 6s ease-in-out both;
             animation: runToLevel2 6s ease-in-out both;
         }
         &.runToLevel6 {
+            opacity: 1;
             -webkit-animation: runToLevel6 10s ease-in-out both;
             animation: runToLevel6 10s ease-in-out both;
         }
     }
     .stop-runner {
         position: absolute;
+        left: 152px;
+        bottom: 10px;
         background: url(../images/stop_runner.png) no-repeat;
         width: 16px;
         height: 32px;
         .flag-up {
+            opacity: 0;
             position: absolute;
             left: 11px;
             bottom: 7px;
@@ -1446,10 +1497,16 @@ body {
             color: #fff100;
         }
         &.stopRunToLevel0 {
-            left: 164px;
-            bottom: 17px;
+            .flag-up {
+                opacity: 1;
+            }
+            left: 152px;
+            bottom: 10px;
         }
         &.stopRunToLevel1 {
+            .flag-up {
+                opacity: 1;
+            }
             left: 216px;
             bottom: 80px;
         }
