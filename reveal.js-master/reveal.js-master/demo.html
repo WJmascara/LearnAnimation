@@ -46,7 +46,7 @@
             transition: all .35s ease;
             -webkit-transition: all .35s ease;
         }
-
+        
         .reveal .mg-wrap:before,
         .reveal .mg-wrap:after {
             content: "";
@@ -62,6 +62,7 @@
             -webkit-transition: all 0.35s ease 0s;
             transition: all 0.35s ease 0s;
         }
+        
         .reveal .mg-wrap img {
             position: absolute;
             left: 0;
@@ -88,18 +89,20 @@
             -webkit-transform: translate(0, -50px);
             opacity: 0;
         }
+        
         .reveal .mg-wrap:hover:after {
             -webkit-transform: translate(-50%, -50%) rotate(45deg);
-            transform: translate(-50%, -50%) rotate(45deg); 
+            transform: translate(-50%, -50%) rotate(45deg);
         }
+        
         .reveal .mg-wrap:hover:before {
             -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-            transform: translate(-50%, -50%) rotate(-45deg); 
+            transform: translate(-50%, -50%) rotate(-45deg);
         }
         
         .reveal .mg-wrap:hover {
             opacity: 1;
-       }
+        }
         
         .reveal .mg-wrap:hover .txt-box {
             transform: translate(0, 0);
@@ -108,12 +111,10 @@
         }
         
         .reveal .mg-wrap:hover img {
-            border:none;
+            border: none;
             transform: scale(1);
             -webkit-transform: scale(1);
         }
-        
-        
     </style>
 </head>
 
@@ -151,17 +152,16 @@
                     <h2 style="margin-top: -500px;">关键代码</h2>
                     <p style="text-align: center;"><img src="../reveal.js-master/images/style1.png" alt="" style="display: block;width: 100%;height: 100%;object-fit: cover;"></p>
                     <p style="text-align: center;"><img src="../reveal.js-master/images/style2.png" alt="" style="display: block;width: 100%;height: 100%;object-fit: cover;"></p>
-                    
+
                 </section>
             </section>
-            <section>
-                <h2>逐帧动画</h2>
-                <p>逐帧动画(animation)是作用于元素本身而不是样式属性，可以通过关键帧实现较自由较复杂的动画效果。这种动画形式属于自发过程,给元素定义完整的animation属性即可触发，逐帧动画是单向的。</p>
-            </section>
-
             <!-- Example of nested vertical slides -->
             <section>
                 <section>
+                    <h2>逐帧动画</h2>
+                    <p>逐帧动画(animation)是作用于元素本身而不是样式属性，可以通过关键帧实现较自由较复杂的动画效果。这种动画形式属于自发过程,给元素定义完整的animation属性即可触发，逐帧动画是单向的。</p>
+                </section>
+                <section data-transition="slide" data-background="#b5533c" data-background-transition="slide">
                     <h2>如何分析复杂动画？</h2>
                     <p style="text-align: center">
                         <a href="https://wjmascara.github.io/LearnAnimation/AnniversaryActivity.h5/index.html">动画案例</a></p>
@@ -173,8 +173,8 @@
                 <section>
                     <p>2.针对第一步找出的元素，确定布局，有关联的元素合并到一个整体元素，无关连的作为单独元素。</p>
                     <p>
-                        火箭上升的动画拆分出来的元素应该为：<strong style="color: red">火箭+火焰</strong>、<strong style="color: red">扩散的喷烟</strong>、<strong style="color: red">一直上升的柱状喷烟</strong><br>
-                        注意：因为火焰跟火箭出场不同步，所以火焰应该单独放在火箭里面，先单独动，最后再与火箭同步
+                        火箭上升的动画拆分出来的元素应该为：<strong style="color: red">火箭+火焰</strong>、<strong style="color: red">扩散的喷烟</strong>、<strong style="color: red">一直上升的柱状喷烟</strong>
+                        <br> 注意：因为火焰跟火箭出场不同步，所以火焰应该单独放在火箭里面，先单独动，最后再与火箭同步
                     </p>
                 </section>
                 <section>
@@ -185,7 +185,7 @@
                             <li>火焰：渐现，涉及到的属性：opacity的变化</li>
                             <li>扩散喷烟：渐现上升然后扩散消失，涉及到的属性：opacity,translateY,scale的变化</li>
                             <li>柱状喷烟：渐现Y轴拉伸再消失，涉及到的属性：opacity，scaleY的变化</li>
-                        </ul> 
+                        </ul>
                     </p>
                 </section>
                 <section>
@@ -263,7 +263,7 @@
                     reveal.js comes with a few themes built in:
                     <br>
                     <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-                   <!-- <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+            <!-- <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
                     <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
                     <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
                     <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
