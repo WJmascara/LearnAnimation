@@ -115,7 +115,6 @@ body {
                 right: 0;
                 display: block;
                 width: 100%;
-                height: 100%;
                 opacity: 0;
             }
         }
@@ -421,43 +420,49 @@ body {
 
 
 /*==================== page-transition-style ====================*/
+
 .fadeIn {
     animation: fadeIn 3s ease both;
     -webkit-animation: fadeIn 3s ease both;
 }
-@-webkit-keyframes fadeIn{
+
+@-webkit-keyframes fadeIn {
     0% {
         opacity: 0;
     }
-    100%{
+    100% {
         opacity: 1;
     }
 }
-@keyframes fadeIn{
+
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }
-    100%{
+    100% {
         opacity: 1;
     }
 }
-.fadeOut{
+
+.fadeOut {
     animation: fadeOut 3s ease both;
     -webkit-animation: fadeOut 3s ease both;
 }
-@-webkit-keyframes fadeOut{
+
+@-webkit-keyframes fadeOut {
     0% {
         opacity: 1;
     }
-    100%{
+    100% {
         opacity: 0;
     }
 }
-@keyframes fadeOut{
+
+@keyframes fadeOut {
     0% {
         opacity: 1;
     }
-    100%{
+    100% {
         opacity: 0;
     }
 }
