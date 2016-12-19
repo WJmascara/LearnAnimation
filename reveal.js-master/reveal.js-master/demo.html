@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js – The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+    <style>
+        .reveal .mg-wrap {
+            opacity: .5;
+            position: relative;
+            display: block;
+            width: 907px;
+            height: 730px;
+            border: 3px solid #fff;
+            margin: 0 auto;
+            overflow: hidden;
+            transition: all .35s ease;
+            -webkit-transition: all .35s ease;
+        }
+        
+        .reveal .mg-wrap:before,
+        .reveal .mg-wrap:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 2px;
+            background: #fff;
+            -webkit-transition: all 0.35s ease 0s;
+            transition: all 0.35s ease 0s;
+        }
+        
+        .reveal .mg-wrap img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all 0.35s ease 0s;
+            transition: all 0.35s ease 0s;
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+        }
+        
+        .reveal .mg-wrap .txt-box {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            line-height: 730px;
+            text-align: center;
+            color: #fff;
+            transition: all .35s ease;
+            -webkit-transition: all .35s ease;
+            transform: translate(0, -50px);
+            -webkit-transform: translate(0, -50px);
+            opacity: 0;
+        }
+        
+        .reveal .mg-wrap:hover:after {
+            -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        .reveal .mg-wrap:hover:before {
+            -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        
+        .reveal .mg-wrap:hover {
+            opacity: 1;
+        }
+        
+        .reveal .mg-wrap:hover .txt-box {
+            transform: translate(0, 0);
+            -webkit-transform: translate(0, 0);
+            opacity: 1;
+        }
+        
+        .reveal .mg-wrap:hover img {
+            border: none;
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section data-transition="slide" data-background="#b5533c" data-background-transition="slide">
+                <h1>animation learning</h1>
+            </section>
+            <section>
+                <h2>css3基础动画形式</h2>
+                <div>
+                    过渡动画——transition
+                </div>
+                <div>
+                    逐帧动画——animation
+                </div>
+            </section>
+            <section>
+                <section>
+                    <h2>过渡动画</h2>
+                    <p>过渡动画(transition)指的是元素的样式属性从一种状态过渡到另外一种状态的过程，需要外界触发，如增删class，添加伪类等等，过渡动画是双向的。</p>
+                </section>
+                <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+                    <h3 style="margin-top: -100px">案例分析</h3>
+                    <a href="javascript:;" class="mg-wrap">
+                        <img src="../reveal.js-master/images/2.jpg" alt="" style="">
+                        <span class="txt-box">TRANSITION</span>
+                    </a>
+                </section>
+                <section>
+                    <h2 style="margin-top: -450px;">关键代码</h2>
+                    <p style="text-align: center;"><img src="../reveal.js-master/images/style1.png" alt="" style="display: block;width: 100%;height: 100%;object-fit: contain;"></p>
+                    <p style="text-align: center;"><img src="../reveal.js-master/images/style2.png" alt="" style="display: block;width: 100%;height: 100%;object-fit: contain;"></p>
+
+                </section>
+            </section>
+            <!-- Example of nested vertical slides -->
+            <section>
+                <section>
+                    <h2>逐帧动画</h2>
+                    <p>逐帧动画(animation)是作用于元素本身而不是样式属性，可以通过关键帧实现较自由较复杂的动画效果。这种动画形式属于自发过程,给元素定义完整的animation属性即可触发，逐帧动画是单向的。</p>
+                </section>
+                <section data-transition="slide" data-background="#b5533c" data-background-transition="slide">
+                    <h2>如何分析复杂动画？</h2>
+                    <p style="text-align: center">
+                        <a href="https://wjmascara.github.io/LearnAnimation/AnniversaryActivity.h5/index.html" style="font-weight:bold">动画案例</a>
+                        <br>
+                        <img src="images/ewem.png" alt="" style="margin-top:30px">
+                    </p>
+                </section>
+                <section>
+                    <p>1.沟通，把交互设计师的想法跟自己的想法融合到一起，分析出最适合的动画形式。此时应该确定好需要动的元素。</p>
+                    <p>此处火箭上升的效果可能需要考虑的：火箭、火焰、柱状喷烟、扩散的喷烟</p>
+                </section>
+                <section>
+                    <p>2.针对第一步找出的元素，确定布局，有关联的元素合并到一个整体元素，无关连的作为单独元素。</p>
+                    <p>
+                        火箭上升的动画拆分出来的元素应该为：<strong style="color: red">火箭+火焰</strong>、<strong style="color: red">扩散的喷烟</strong>、<strong style="color: red">一直上升的柱状喷烟</strong>
+                        <br> 注意：因为火焰跟火箭出场不同步，所以火焰应该单独放在火箭里面，先单独动，最后再与火箭同步
+                    </p>
+                </section>
+                <section>
+                    <p>3.针对第二步中的布局，确定并编写单个元素的动画</p>
+                    <p>
+                        <ul>
+                            <li>火箭：直线上升，涉及到的属性:translateY值的变化</li>
+                            <li>火焰：渐现，涉及到的属性：opacity的变化</li>
+                            <li>扩散喷烟：渐现上升然后扩散消失，涉及到的属性：opacity,translateY,scale的变化</li>
+                            <li>柱状喷烟：渐现Y轴拉伸再消失，涉及到的属性：opacity，scaleY的变化</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <p>4.单个动画的拼接，常用的是css3的animation-delay属性，或者js的setTimeout()方法将一系列单个动画按一定的顺序拼接成有一定意义的复杂效果。</p>
+                </section>
+            </section>
+            <section data-transition="slide" data-background="#4d7e65" data-background-transition="convex">
+                <h2>thank you</h2>
+            </section>
+
+            <!--<section>
+                <h2>Point of View</h2>
+                <p>
+                    Press <strong>ESC</strong> to enter the slide overview.
+                </p>
+                <p>
+                    Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+                </p>
+            </section>
+
+            <section>
+                <h2>Touch Optimized</h2>
+                <p>
+                    Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
+                </p>
+            </section>
+
+            <section data-markdown>
+                <script type="text/template">
+                    ## Markdown support Write content using inline or external Markdown. Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown). ```
+                    <section data-markdown>
+                        ## Markdown support Write content using inline or external Markdown. Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+                    </section>
+                    ```
+                </script>
+            </section>
+
+            <!-- <section>
+                <section id="fragments">
+                    <h2>Fragments</h2>
+                    <p>Hit the next arrow...</p>
+                    <p class="fragment">... to step through ...</p>
+                    <p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+
+                    <aside class="notes">
+                        This slide has fragments which are also stepped through in the notes window.
+                    </aside>
+                </section>
+                <section>
+                    <h2>Fragment Styles</h2>
+                    <p>There's different types of fragments, like:</p>
+                    <p class="fragment grow">grow</p>
+                    <p class="fragment shrink">shrink</p>
+                    <p class="fragment fade-out">fade-out</p>
+                    <p class="fragment fade-up">fade-up (also down, left and right!)</p>
+                    <p class="fragment current-visible">current-visible</p>
+                    <p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+                </section>
+            </section>
+
+            <section id="transitions">
+                <h2>Transition Styles</h2>
+                <p>
+                    You can select from different transitions, like:
+                    <br>
+                    <a href="?transition=none#/transitions">None</a> -
+                    <a href="?transition=fade#/transitions">Fade</a> -
+                    <a href="?transition=slide#/transitions">Slide</a> -
+                    <a href="?transition=convex#/transitions">Convex</a> -
+                    <a href="?transition=concave#/transitions">Concave</a> -
+                    <a href="?transition=zoom#/transitions">Zoom</a>
+                </p>
+            </section>
+
+            <section id="themes">
+                <h2>Themes</h2>
+                <p>
+                    reveal.js comes with a few themes built in:
+                    <br>
+                    <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+            <!-- <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a>
+                    <br>
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+                </p>
+            </section>
+
+            <section>
+                <section data-background="#dddddd">
+                    <h2>Slide Backgrounds</h2>
+                    <p>
+                        Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+                    </p>
+                    <a href="#" class="navigate-down">
+                        <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                    </a>
+                </section>
+                <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+                    <h2>Image Backgrounds</h2>
+                    <pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+                </section>
+                <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+                    <h2>Tiled Backgrounds</h2>
+                    <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+                </section>
+                <section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+                    <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+                        <h2>Video Backgrounds</h2>
+                        <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+                    </div>
+                </section>
+                <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+                    <h2>... and GIFs!</h2>
+                </section>
+            </section>
+
+            <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+                <h2>Background Transitions</h2>
+                <p>
+                    Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+                </p>
+                <pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+            </section>
+
+            <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+                <h2>Background Transitions</h2>
+                <p>
+                    You can override background transitions per-slide.
+                </p>
+                <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Pretty Code</h2>
+                <pre><code class="hljs" data-trim contenteditable>
+                    function linkify( selector ) {
+                      if( supports3DTransforms ) {
+
+                        var nodes = document.querySelectorAll( selector );
+
+                        for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+                          var node = nodes[i];
+
+                          if( !node.className ) {
+                            node.className += ' roll';
+                          }
+                        }
+                      }
+                    }
+					</code></pre>
+                <p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+            </section>
+
+            <section>
+                <h2>Marvelous List</h2>
+                <ul>
+                    <li>No order here</li>
+                    <li>Or here</li>
+                    <li>Or here</li>
+                    <li>Or here</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Fantastic Ordered List</h2>
+                <ol>
+                    <li>One is smaller than...</li>
+                    <li>Two is smaller than...</li>
+                    <li>Three!</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Tabular Tables</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Value</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Apples</td>
+                            <td>$1</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>Lemonade</td>
+                            <td>$2</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>Bread</td>
+                            <td>$3</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Clever Quotes</h2>
+                <p>
+                    These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+                </p>
+                <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+                    &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+                </blockquote>
+            </section>
+
+            <section>
+                <h2>Intergalactic Interconnections</h2>
+                <p>
+                    You can link between slides internally,
+                    <a href="#/2/3">like this</a>.
+                </p>
+            </section>
+
+            <section>
+                <h2>Speaker View</h2>
+                <p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+                <p>Press the <em>S</em> key to try it out.</p>
+
+                <aside class="notes">
+                    Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+                </aside>
+            </section>
+
+            <section>
+                <h2>Export to PDF</h2>
+                <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+                <iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+            </section>
+
+            <section>
+                <h2>Global State</h2>
+                <p>
+                    Set <code>data-state="something"</code> on a slide and <code>"something"</code> will be added as a class to the document element when the slide is open. This lets you apply broader style changes, like switching the page background.
+                </p>
+            </section>
+
+            <section data-state="customevent">
+                <h2>State Events</h2>
+                <p>
+                    Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+                </p>
+                <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+            </section>
+
+            <section>
+                <h2>Take a Moment</h2>
+                <p>
+                    Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+                </p>
+            </section>
+
+            <section>
+                <h2>Much more</h2>
+                <ul>
+                    <li>Right-to-left support</li>
+                    <li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
+                    <li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
+                    <li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
+                    <li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+                </ul>
+            </section>
+
+            <section style="text-align: left;">
+                <h1>THE END</h1>
+                <p>
+                    - <a href="http://slides.com">Try the online editor</a>
+                    <br> - <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+                </p>
+            </section>!-->
+
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                {
+                    src: 'lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/markdown/marked.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/markdown/markdown.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: 'plugin/zoom-js/zoom.js',
+                    async: true
+                },
+                {
+                    src: 'plugin/notes/notes.js',
+                    async: true
+                }
+				]
+        });
+    </script>
+
+</body>
+
+</html>
