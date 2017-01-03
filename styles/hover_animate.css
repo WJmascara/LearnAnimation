@@ -1499,18 +1499,10 @@ body {
   left: 152px;
   bottom: 10px;
 }
-/* line 1505, ../sass/hover_animate.scss */
-.grid-list .mountain .stop-runner.stopRunToLevel0 .flag-up {
-  opacity: 1;
-}
-/* line 1511, ../sass/hover_animate.scss */
+/* line 1508, ../sass/hover_animate.scss */
 .grid-list .mountain .stop-runner.stopRunToLevel1 {
   left: 216px;
   bottom: 80px;
-}
-/* line 1512, ../sass/hover_animate.scss */
-.grid-list .mountain .stop-runner.stopRunToLevel1 .flag-up {
-  opacity: 1;
 }
 
 @-webkit-keyframes run {

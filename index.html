@@ -287,24 +287,24 @@
 
             classChange();
 
-            function classChange(){
+            function classChange() {
                 //console.log(i);
 
                 $(".bg-img img").eq(i).addClass("fadeOut").removeClass("fadeIn");
-                $(".bg-img img").eq(i+1).addClass("fadeIn").removeClass("fadeOut");
+                $(".bg-img img").eq(i + 1).addClass("fadeIn").removeClass("fadeOut");
 
                 i++;
 
-                if(i>len-1) {
-                    i=0;
-                    $(".bg-img img").eq(len-1).addClass("fadeOut").removeClass("fadeIn");
+                if (i > len - 1) {
+                    i = 0;
+                    $(".bg-img img").eq(len - 1).addClass("fadeOut").removeClass("fadeIn");
                     $(".bg-img img").eq(0).addClass("fadeIn").removeClass("fadeOut");
                 }
 
-                setTimeout(function(){
+                setTimeout(function () {
                     classChange();
                     // console.log(i);
-                },3000);
+                }, 3000);
             }
 
 
@@ -376,21 +376,21 @@
             });
 
             //出现区块内容出现弹层
-            $(".grid-list").each(function () {
-                var _that = $(this);
-                _that.find("li").on("click", function () {
-                    var oindex = $(this).index();
-                    var oelement = _that.find("li").eq(oindex).html();
-
-                    //弹窗出现
-                    handleShow(oelement);
-
-                    //关闭弹窗
-                    handleHide();
-
-                    return false;
-                });
-            });
+            //            $(".grid-list").each(function () {
+            //                var _that = $(this);
+            //                _that.find("li").on("click", function () {
+            //                    var oindex = $(this).index();
+            //                    var oelement = _that.find("li").eq(oindex).html();
+            //
+            //                    //弹窗出现
+            //                    handleShow(oelement);
+            //
+            //                    //关闭弹窗
+            //                    handleHide();
+            //
+            //                    return false;
+            //                });
+            //            });
 
             //点击顶部导航出现弹层
             $(".list-tags").each(function () {
@@ -457,21 +457,22 @@
 
 
             // 爬山
-            $(".select-list select").on("change",function(){
+            $(".select-list select").on("change", function () {
                 var oindex = $(this).find(":selected").index();
 
                 console.log($(".runner-wrap").attr("class").indexOf("runToLevel"));
-                if($(".runner-wrap").attr("class").indexOf("runToLevel")<0) {
-                    $(".runner-wrap").addClass("runToLevel"+(oindex-1));
+                if ($(".runner-wrap").attr("class").indexOf("runToLevel") < 0) {
+                    $(".runner-wrap").addClass("runToLevel" + (oindex - 1));
                 }
-                
+
 
                 var delay_time = $()
 
-                setTimeout(function(){
-                    $(".stop-runner").addClass("stopRunToLevel"+(oindex-1));
-                },400);
-                
+                setTimeout(function () {
+                    $(".stop-runner").addClass("stopRunToLevel" + (oindex - 1));
+                    $(".runner-wrap").removeClass("runToLevel1");
+                }, 1600);
+
 
             });
 
