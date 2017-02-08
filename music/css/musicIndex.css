@@ -739,7 +739,7 @@ body {
           left: 0;
           top: 0;
           height: 100%;
-          background: blue;
+          background: #31c27c;
 }
 .song_module .music_controls .btns {
       margin-top: 6.4px;
@@ -880,6 +880,41 @@ body {
       font-size: 11.2px;
       font-size: .7rem;
       border-top: 2px solid #ddd;
+}
+
+.recommend_module .banner_list {
+  width: 100%;
+  overflow: scroll;
+}
+.recommend_module .banner_list li {
+  float: left;
+}
+.recommend_module .banner_list li img {
+    width: 100%;
+}
+.recommend_module .radio_list {
+  padding: 0 4.8px;
+  padding: 0 .3rem;
+}
+.recommend_module .radio_list h2 {
+    font-size: 9.6px;
+    font-size: .6rem;
+    line-height: 3;
+}
+.recommend_module .radio_list ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.recommend_module .radio_list ul li {
+      width: 50%;
 }
 
 /*# sourceMappingURL=../sourceMap/css/musicIndex.css.map*/

@@ -40,7 +40,8 @@
 <link href="css/musicIndex.css" rel="stylesheet"></head>
 <body>
   <div id="app">
-    <div class="nav_box"><a>推荐</a>
+    <div class="nav_box">
+      <router-link :to="{name:'recom'}">推荐</router-link>
       <router-link :to="{name:'topList'}">排行榜</router-link><a>搜索</a>
     </div>
     <router-view></router-view>

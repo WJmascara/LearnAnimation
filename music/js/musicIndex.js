@@ -330,7 +330,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     on: {
       "click": function($event) {
-        _vm.chooseSong('prev')
+        _vm.playNextSong('prev')
       }
     }
   }), _c('a', {
@@ -353,7 +353,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     on: {
       "click": function($event) {
-        _vm.chooseSong('next')
+        _vm.playNextSong('next')
       }
     }
   }), _c('a', {
@@ -370,7 +370,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "mid_circle",
     style: ({
       backgroundImage: 'url(' + (_vm.dataModel.topinfo.pic ? _vm.dataModel.topinfo.pic : '') + ')',
-      transform: 'rotate(' + (_vm.songData.rotatedeg ? _vm.songData.rotatedeg : '30deg') + ')'
+      transform: 'rotate(' + _vm.songData.rotatedeg + ')'
     })
   }), _c('div', {
     staticClass: "song_list",
@@ -523,7 +523,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				isPaused: false
 			},
 			dataModel: window.dataModel,
-			isShow: false
+			isShow: false,
+			timer: ""
 		};
 	},
 	mounted() {
@@ -549,7 +550,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				audio.play();
 
 				//加载条的变化
-				var timer = setInterval(function () {
+				_that.timer = setInterval(function () {
 					var loaded_time = audio.currentTime;
 					var loaded_percent = audio.currentTime / audio.duration * 100 + "%";
 					var loaded_deg = 360 * parseFloat(loaded_percent);
@@ -566,12 +567,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 						audio.pause();
 
 						//清除计数器
-						clearInterval(timer);
+						clearInterval(_that.timer);
 					}
 				}, 500);
 			});
 		},
-		chooseSong: function (argument) {
+		playNextSong: function (argument) {
 
 			var result_index = 0;
 			var current_index = this.$route.params.songindex;
@@ -787,6 +788,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_music_vue_songsList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_music_vue_songsList_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_music_vue_song_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_music_vue_song_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_music_vue_song_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_music_vue_recom_vue__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_music_vue_recom_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_music_vue_recom_vue__);
 
 
 __webpack_require__(4);
@@ -795,19 +798,162 @@ __webpack_require__(4);
 
 
 
+
 var router = new VueRouter({
 	routes: [{
-		name: "topList", path: "/", component: __WEBPACK_IMPORTED_MODULE_0__components_music_vue_topList_vue___default.a
+		name: "topList", path: "/topList", component: __WEBPACK_IMPORTED_MODULE_0__components_music_vue_topList_vue___default.a
 	}, {
-		name: "songsList", path: "/songsList/:id", component: __WEBPACK_IMPORTED_MODULE_1__components_music_vue_songsList_vue___default.a
+		name: "songsList", path: "/topList/songsList/:id", component: __WEBPACK_IMPORTED_MODULE_1__components_music_vue_songsList_vue___default.a
 	}, {
-		name: "song", path: "/songsList/song/:songid/:songindex", component: __WEBPACK_IMPORTED_MODULE_2__components_music_vue_song_vue___default.a
+		name: "song", path: "/topList/songsList/song/:songid/:songindex", component: __WEBPACK_IMPORTED_MODULE_2__components_music_vue_song_vue___default.a
+	}, {
+		name: "recom", path: "/recom", component: __WEBPACK_IMPORTED_MODULE_3__components_music_vue_recom_vue___default.a
 	}]
 });
 
 new Vue({
 	router: router
 }).$mount("#app");
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(17)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(18),
+  /* template */
+  __webpack_require__(16),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Tujia Study\\codeSummary\\codes\\codes\\vue.js\\Tour_Heroes_vue\\public\\src\\components\\music-vue\\recom.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] recom.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1e24ca57", Component.options)
+  } else {
+    hotAPI.reload("data-v-1e24ca57", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "recommend_module"
+  }, [_c('div', {
+    staticClass: "banner_list"
+  }, [_c('ul', {
+    style: ({
+      width: '500%'
+    })
+  }, _vm._l((_vm.recomData.data.slider), function(item, i) {
+    return _c('li', {
+      style: ({
+        width: '20%'
+      })
+    }, [_c('img', {
+      attrs: {
+        "src": item.picUrl
+      }
+    })])
+  }))]), _c('div', {
+    staticClass: "radio_list"
+  }, [_c('h2', [_vm._v("电台")]), _c('ul', _vm._l((_vm.recomData.data.radioList), function(item, i) {
+    return _c('li', [_c('div', {
+      staticClass: "radio_item"
+    }, [_c('img', {
+      attrs: {
+        "src": item.picUrl
+      }
+    }), _c('span', {
+      staticClass: "icon_play"
+    })])])
+  }))])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1e24ca57", module.exports)
+  }
+}
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+	name: "recommend_module",
+	data() {
+		return {
+			recomData: {
+				data: ""
+			}
+		};
+	},
+	created() {
+		this.getList();
+	},
+	mounted() {},
+	methods: {
+		getSuccessList: function (data) {
+			this.recomData = data;
+		},
+		getList: function () {
+
+			$.ajax({
+				url: "https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?g_tk=5381&uin=0&format=jsonp&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&_=1486545054837&jsonpCallback=?",
+				dataType: "jsonp",
+				type: "get",
+				jsonp: "callback"
+			}).done(this.getSuccessList).fail(function () {}).always(function () {});
+		}
+	}
+};
 
 /***/ })
 /******/ ]);
