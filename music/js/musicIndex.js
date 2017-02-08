@@ -137,7 +137,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/wangjie/Desktop/vueStudy/Tour_Heroes_vue/public/src/components/music-vue/song.vue"
+Component.options.__file = "D:\\Tujia Study\\codeSummary\\codes\\codes\\vue.js\\Tour_Heroes_vue\\public\\src\\components\\music-vue\\song.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] song.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -175,7 +175,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/wangjie/Desktop/vueStudy/Tour_Heroes_vue/public/src/components/music-vue/songsList.vue"
+Component.options.__file = "D:\\Tujia Study\\codeSummary\\codes\\codes\\vue.js\\Tour_Heroes_vue\\public\\src\\components\\music-vue\\songsList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] songsList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -213,7 +213,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/wangjie/Desktop/vueStudy/Tour_Heroes_vue/public/src/components/music-vue/topList.vue"
+Component.options.__file = "D:\\Tujia Study\\codeSummary\\codes\\codes\\vue.js\\Tour_Heroes_vue\\public\\src\\components\\music-vue\\topList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] topList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -302,7 +302,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "song_module",
     style: ({
-      backgroundImage: 'url(' + (_vm.dataModel.topinfo.pic ? _vm.dataModel.topinfo.pic : '') + ')'
+      backgroundImage: 'url(' + (_vm.dataModel.topinfo.pic ? _vm.dataModel.topinfo.pic_album : '') + ')'
     })
   }, [_c('div', {
     staticClass: "mask_bg"
@@ -330,7 +330,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     on: {
       "click": function($event) {
-        _vm.prevSong()
+        _vm.chooseSong('prev')
       }
     }
   }), _c('a', {
@@ -353,7 +353,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     on: {
       "click": function($event) {
-        _vm.nextSong()
+        _vm.chooseSong('next')
       }
     }
   }), _c('a', {
@@ -367,12 +367,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })])]), _c('div', {
+    staticClass: "mid_circle",
+    style: ({
+      backgroundImage: 'url(' + (_vm.dataModel.topinfo.pic ? _vm.dataModel.topinfo.pic : '') + ')',
+      transform: 'rotate(' + (_vm.songData.rotatedeg ? _vm.songData.rotatedeg : '30deg') + ')'
+    })
+  }), _c('div', {
     staticClass: "song_list",
     class: {
       show: _vm.isShow
     }
   }, [_c('ul', _vm._l((_vm.dataModel.songlist), function(item, i) {
-    return _c('li', [_vm._v(_vm._s(item.data.songname) + " " + _vm._s(item.data.singer[0].name))])
+    return _c('li', {
+      on: {
+        "click": function($event) {
+          _vm.selectSong(i)
+        }
+      }
+    }, [_vm._v(_vm._s(item.data.songname) + " " + _vm._s(item.data.singer[0].name))])
   })), _c('a', {
     staticClass: "close_btn",
     attrs: {
@@ -386,7 +398,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("关闭")])]), _c('audio', {
     ref: "audio",
     attrs: {
-      "src": _vm.getAudio()
+      "src": _vm.getAudio(this.$route.params.songid)
     }
   })])
 },staticRenderFns: []}
@@ -428,7 +440,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "to": {
           name: 'song',
           params: {
-            songid: item.data.songid
+            songid: item.data.songid,
+            songindex: i
           }
         }
       }
@@ -495,6 +508,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = {
 	name: "song_module",
@@ -505,6 +519,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				beginTime: "",
 				endTime: "",
 				loadedPercent: "",
+				rotatedeg: "",
 				isPaused: false
 			},
 			dataModel: window.dataModel,
@@ -515,8 +530,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		this.getSongData();
 	},
 	methods: {
-		getAudio: function () {
-			var song_url = "http://ws.stream.qqmusic.qq.com/" + this.$route.params.songid + ".m4a?fromtag=46";
+		getAudio: function (songid) {
+			var song_url = "http://ws.stream.qqmusic.qq.com/" + songid + ".m4a?fromtag=46";
 			return song_url;
 		},
 		getSongData: function () {
@@ -537,10 +552,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				var timer = setInterval(function () {
 					var loaded_time = audio.currentTime;
 					var loaded_percent = audio.currentTime / audio.duration * 100 + "%";
+					var loaded_deg = 360 * parseFloat(loaded_percent);
 
 					_that.songData.beginTime = _that.getTime(loaded_time);
 					_that.songData.loadedPercent = loaded_percent;
-					//console.log(loaded_data);
+					_that.songData.rotatedeg = loaded_deg + "deg";
+					//console.log(typeof loaded_percent);
 
 					//播放完成自动暂停
 					if (audio.currentTime == audio.duration) {
@@ -554,8 +571,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				}, 500);
 			});
 		},
-		prevSong: function () {},
-		nextSong: function () {},
+		chooseSong: function (argument) {
+
+			var result_index = 0;
+			var current_index = this.$route.params.songindex;
+			var songs_len = this.dataModel.songlist.length;
+
+			if (argument == "prev") {
+
+				if (current_index > 0) {
+					result_index = current_index - 1;
+				} else {
+					result_index = songs_len - 1;
+				}
+			} else if (argument == "next") {
+
+				if (current_index < songs_len - 1) {
+					result_index = current_index + 1;
+				} else {
+					current_index = 0;
+				}
+			} else {}
+
+			//console.log(result_index);
+			var songid = this.dataModel.songlist[result_index].data.songid;
+
+			//重置songindex
+			this.$route.params.songindex = result_index;
+			this.$route.params.songid = this.dataModel.songlist[result_index].data.songid;
+
+			//播放
+			this.getAudio(songid);
+		},
 		playerPaused: function () {
 
 			if (!this.songData.isPaused) {
@@ -573,6 +620,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		},
 		closeSongList: function () {
 			this.isShow = false;
+		},
+		selectSong: function (index) {
+
+			var songid = this.dataModel.songlist[index].data.songid;
+			this.$route.params.songid = songid;
+
+			console.log(songid);
+
+			this.getAudio(songid);
+			this.closeSongList();
 		},
 		getTime: function (time) {
 
@@ -744,7 +801,7 @@ var router = new VueRouter({
 	}, {
 		name: "songsList", path: "/songsList/:id", component: __WEBPACK_IMPORTED_MODULE_1__components_music_vue_songsList_vue___default.a
 	}, {
-		name: "song", path: "/songsList/song/:songid", component: __WEBPACK_IMPORTED_MODULE_2__components_music_vue_song_vue___default.a
+		name: "song", path: "/songsList/song/:songid/:songindex", component: __WEBPACK_IMPORTED_MODULE_2__components_music_vue_song_vue___default.a
 	}]
 });
 

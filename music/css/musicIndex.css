@@ -666,6 +666,27 @@ body {
   width: 100%;
   height: 100%;
   background-size: cover;
+  background-position: center center;
+}
+.song_module .mid_circle {
+    width: 112px;
+    width: 7rem;
+    height: 112px;
+    height: 7rem;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+    border-radius: 50%;
+    margin-top: -48px;
+    margin-top: -3rem;
+    margin-left: -48px;
+    margin-left: -3rem;
+    border: 16px solid #000;
+    border: 1rem solid #000;
+    -webkit-transition: all 3s linear;
+    transition: all 3s linear;
 }
 .song_module .mask_bg {
     position: absolute;
@@ -674,7 +695,7 @@ body {
     z-index: 1;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .9);
+    background: rgba(0, 0, 0, .7);
 }
 .song_module .music_controls {
     position: absolute;
