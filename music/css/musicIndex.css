@@ -669,24 +669,26 @@ body {
   background-position: center center;
 }
 .song_module .mid_circle {
-    width: 112px;
-    width: 7rem;
-    height: 112px;
-    height: 7rem;
+    width: 137.6px;
+    width: 8.6rem;
+    height: 137.6px;
+    height: 8.6rem;
     background-size: cover;
     position: absolute;
     left: 50%;
     top: 50%;
     z-index: 3;
     border-radius: 50%;
-    margin-top: -48px;
-    margin-top: -3rem;
-    margin-left: -48px;
-    margin-left: -3rem;
+    margin-top: -68.8px;
+    margin-top: -4.3rem;
+    margin-left: -68.8px;
+    margin-left: -4.3rem;
     border: 16px solid #000;
     border: 1rem solid #000;
-    -webkit-transition: all 3s linear;
-    transition: all 3s linear;
+}
+.song_module .mid_circle.transition {
+      transition: all 3s linear;
+      -webkit-transition: all 3s linear;
 }
 .song_module .mask_bg {
     position: absolute;
@@ -912,9 +914,59 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
 }
 .recommend_module .radio_list ul li {
-      width: 50%;
+      position: relative;
+      width: 112px;
+      width: 7rem;
+      height: 112px;
+      height: 7rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+.recommend_module .radio_list ul li .icon_play {
+        position: absolute;
+        right: 4.8px;
+        right: .3rem;
+        bottom: 4.8px;
+        bottom: .3rem;
+        width: 19.2px;
+        width: 1.2rem;
+        height: 19.2px;
+        height: 1.2rem;
+        background: rgba(0, 0, 0, .5);
+        border: 2px solid #fff;
+        border-radius: 50%;
+}
+.recommend_module .radio_list ul li .icon_play:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          margin-left: 0.8px;
+          margin-left: .05rem;
+          border-style: dashed dashed dashed solid;
+          border-width: 4.8px 0 4.8px 8px;
+          border-width: .3rem 0 .3rem .5rem;
+          border-color: transparent transparent transparent #fff;
+}
+.recommend_module .radio_list ul li .tit_box {
+        margin-top: 112px;
+        margin-top: 7rem;
+        font-size: 8px;
+        font-size: .5rem;
+        padding: 4.8px 4.8px;
+        padding: .3rem .3rem;
+        background: #fff;
+        border: 1px solid #eee;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 }
 
 /*# sourceMappingURL=../sourceMap/css/musicIndex.css.map*/
