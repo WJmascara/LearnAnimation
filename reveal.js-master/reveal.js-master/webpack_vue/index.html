@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>webpack+vue分享</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/night.css" id="theme">
+		<style type="text/css" media="screen">
+			.slides section.has-dark-background,
+			.slides section.has-dark-background h3 {
+				color: #fff;
+			}
+			.slides section.has-light-background,
+			.slides section.has-light-background h3 {
+				color: #222;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h2>webpack+Vue.js</h2>
+				</section>
+
+				<section>
+					<section>
+						<h3>webpack配置</h3>
+					</section>
+					<section>
+						<p>什么是webpack？</p>
+						<div style="font-size: 16px;text-align: left">
+							<p>webpack是一个web前端的模块打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader 的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等。</p>
+							<p>webpack工作如下图：</p>
+							<p style="background:#fff;width:90%"><img src="images/what-is-webpack.png"></p>
+						</div>
+					</section>
+					<section>
+						<p>如何配置适合自己的webpack？</p>
+						<div style="font-size: 16px;text-align: left">
+							<p>1.Node与NPM的安装　　通过 <span style="color: red;font-weight: bold">npm init</span> 创建 <span style="color: red;font-weight: bold">package.json</span> 文件
+							</p>
+							<p>2.初学webpack</p>
+							<p>
+								<img src="images/1.png" style="margin: 0">
+								<img src="images/2.png" style="margin: 0">
+								<img src="images/3.png" style="margin: 0">
+							</p>
+							<p>执行 <span style="color: red;font-weight: bold">webpack webpack.config.js</span> 即可以自动生成bundle.js文件</p>
+						</div>
+					</section>
+					<section>
+						<div style="font-size: 16px;text-align: left">
+							<p>3.webpack loaders的配置
+							<p>----- 通过 <span style="color: red;font-weight: bold">npm install loaderName --save</span> 安装依赖包，并将对应的依赖写入package.json文件中</p>
+							</p>
+							<p>4.webpack插件的配置</p>
+							<p
+								（1）extract-text-webpack-plugin插件   作用：提取css文件，并把对应文件放入指定的目录下
+								<img src="images/7.png" style="margin-top: 10px">
+								<img src="images/4.png" style="margin: 0">
+							</p>
+						</div>
+					</section> 
+					<section>
+						<div style="font-size: 16px;text-align: left">
+							<img src="images/5.png" style="margin: 0">
+							<img src="images/6.png" style="margin: 0">
+							<p>
+							（2）html-webpack-plugin插件  作用：将模板文件转成html文件
+							</p>
+							<p>
+								（3）browser-sync-webpack-plugin 插件
+							</p>
+						</div>
+					</section>
+				</section>
+
+				<section data-transition="zoom">
+					<section><h3>Vue.js的学习</h3></section>
+					<section>
+						<p>Vue.js的概念模型</p>
+						<img src="images/vue01.jpg">
+						<p style="font-size: 16px;text-align: left">小注：Vue.js和jQuery最大的不同点在于jQuery通过操作DOM来改变页面的显示，而Vue通过操作数据来实现页面的更新与展示。</p>
+					</section>
+					<section>
+						<p>基础的Vue.js实例</p>
+						<p>
+							<img src="images/vue02.jpg">
+						</p>
+					</section>
+					<section>
+						<p>单文件组件</p>
+						<p>
+							<img src="images/vue03.jpg">
+						</p>
+					</section>
+					<section>
+						<p>父子组件通信</p>
+						<p>
+							<img src="images/vue04.png" style="width: 60%">
+						</p>
+					</section>
+					<section>
+						<p>路由配置</p>
+					</section>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				center: true,
+				history: true,
+
+				// transition: 'slide',
+				// transitionSpeed: 'slow',
+				// backgroundTransition: 'slide'
+			});
+
+		</script>
+
+	</body>
+</html>
