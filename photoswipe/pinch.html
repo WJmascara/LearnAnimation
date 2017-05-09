@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" /> 
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta content="email=no" name="format-detection" />
+	<style type="text/css">
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	</style>
+</head>
+<body>
+	<div id="pinchzoom">
+        <div>
+            <img id="rect" src="images/1.jpg" width="2835" height="4289" ondragstart="return false" alt="" />
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.staticfile.org/hammer.js/2.0.8/hammer.js"></script>
+    <script type="text/javascript">
+    	var image = document.getElementById('rect');
+
+		var mc = new Hammer.Manager(image);
+
+		var pinch = new Hammer.Pinch();
+		var pan = new Hammer.Pan();
+
+		pinch.recognizeWith(pan);
+
+		mc.add([pinch, pan]);
+
+		var adjustScale = 1;
+		var adjustDeltaX = 0;
+		var adjustDeltaY = 0;
+
+		var currentScale = null;
+		var currentDeltaX = null;
+		var currentDeltaY = null;
+
+		// Prevent long press saving on mobiles.
+		webpage.addEventListener('touchstart', function (e) {
+		    e.preventDefault()
+		});
+
+		// Handles pinch and pan events/transforming at the same time;
+		mc.on("pinch pan", function (ev) {
+
+		    var transforms = [];
+
+		    // Adjusting the current pinch/pan event properties using the previous ones set when they finished touching
+		    currentScale = adjustScale * ev.scale;
+		    currentDeltaX = adjustDeltaX + (ev.deltaX / currentScale);
+		    currentDeltaY = adjustDeltaY + (ev.deltaY / currentScale);
+
+		    // Concatinating and applying parameters.
+		    transforms.push('scale({0})'.format(currentScale));
+		    transforms.push('translate({0}px,{1}px)'.format(currentDeltaX, currentDeltaY));
+		    webpage.style.transform = transforms.join(' ');
+
+		});
+
+
+		mc.on("panend pinchend", function (ev) {
+
+		    // Saving the final transforms for adjustment next time the user interacts.
+		    adjustScale = currentScale;
+		    adjustDeltaX = currentDeltaX;
+		    adjustDeltaY = currentDeltaY;
+
+		});
+    </script>
+</body>
+</html>
